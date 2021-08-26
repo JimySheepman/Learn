@@ -1,0 +1,78 @@
+/* 
+* Name	Hex Values	RGB Values	HSL Values
+* black	#000000	rgb(0, 0, 0)	hsl(0, 0%, 0%)
+* silver	#c0c0c0	rgb(192, 192, 192)	hsl(0, 0%, 75%)
+* gray	#808080	rgb(128, 128, 128)	hsl(0, 0%, 50%)
+* white	#ffffff	rgb(255, 255, 255)	hsl(0, 100%, 100%)
+* maroon	#800000	rgb(128, 0, 0)	hsl(0, 100%, 25%)
+! red	#ff0000	rgb(255, 0, 0)	hsl(0, 100%, 50%)
+? purple	#800080	rgb(128, 0, 128)	hsl(300, 100%, 25%)
+TODO fuchsia	#ff00ff	rgb(255, 0, 255)	hsl(300, 100%, 50%)
+* green	#008000	rgb(0, 128, 0)	hsl(120, 100%, 25%)
+* olive	#808000	rgb(128, 128, 0)	hsl(60, 100%, 25%)
+* lime	#00ff00	rgb(0, 255, 0)	hsl(120, 100%, 50%)
+* yellow	#ffff00	rgb(255, 255, 0)	hsl(60, 100%, 50%)
+* navy	#000080	rgb(0, 0, 128)	hsl(240, 100%, 25%)
+* blue	#0000ff	rgb(0, 0, 255)	hsl(240, 100%, 50%)
+* teal	#008080	rgb(0, 128, 128)	hsl(180, 100%, 25%)
+* aqua	#00ffff	rgb(0, 255, 255)	hsl(180, 100%, 50%)
+*/
+p {
+  
+  background: green;
+  
+  font-size: 24px;
+}
+p {
+    background: orange;
+}
+
+#food {
+    background: green;
+}
+
+.hotdog{
+    background: brown;
+}
+.hotdog p.mustard {
+    background: yellow;
+}
+
+
+.btn {
+    font-size: 16px;
+}
+.btn-danger {
+    background: red;
+}
+.btn-success{
+    background: green;
+}
+
+.task {
+    background: maroon;
+    background: #800000;
+    background: rgb(128, 0, 0);
+    background: rgba(128, 0, 0, .25);
+    background: hsl(0, 100%, 25%);
+  }
+  .count {
+    background: yellow;
+    background: #ff0;
+    background: rgb(255, 255, 0);
+    background: rgba(255, 255, 0, 1);
+    background: hsl(60, 100%, 50%);
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  .col {
+    width: 50%;
+  }
+
+  .banner {
+    font-size: 14px;
+    width: 5em;
+  }
