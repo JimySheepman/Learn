@@ -1,0 +1,91 @@
+p {
+  display: block;
+}
+p {
+  display: inline;
+}
+div {
+  border: 6px solid #949599;
+  height: 100px;
+  margin: 20px;
+  padding: 20px;
+  width: 400px;
+  border-top-right-radius: 5px;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  box-sizing: padding-box;
+  box-sizing: border-box;
+}
+.container {
+  margin: 0 auto;
+  padding-left: 30px;
+  padding-right: 30px;
+  width: 960px;
+}
+code {
+  background: #eaeaed;
+  color: #666;
+  font: 14px/24px "Source Code Pro", Inconsolata, "Lucida Console", Terminal,
+    "Courier New", Courier;
+  display: inline-block;
+  height: 70px;
+  margin: 0 14px;
+  padding-top: 20px;
+  text-align: center;
+  width: 90px;
+}
+.border-solid {
+  border: 2px solid #9799a7;
+}
+.border-double {
+  border: 6px double #9799a7;
+}
+.border-dashed {
+  border: 8px dashed #9799a7;
+}
+.border-dotted {
+  border: 4px dotted #9799a7;
+}
+
+#code {
+  background: #eaeaed;
+  color: #666;
+  font: 14px/24px "Source Code Pro", Inconsolata, "Lucida Console", Terminal,
+    "Courier New", Courier;
+  display: inline-block;
+  height: 90px;
+  line-height: 90px;
+  margin: 0 14px;
+  text-align: center;
+  width: 90px;
+}
+.border-rounded {
+  border-radius: 5px;
+}
+.border-circle {
+  border-radius: 50%;
+}
+.border-football {
+  border-radius: 15px 75px;
+}
+h1,
+h3,
+h4,
+h5,
+p {
+  margin-bottom: 22px;
+}
+
+.btn {
+  border-radius: 5px;
+  display: inline-block;
+  margin: 0;
+}
+.btn-alt {
+    border: 1px solid #dfe2e5;
+    padding: 10px 30px;
+  }
+  .hero {
+    padding: 22px 80px 66px 80px;
+  }
