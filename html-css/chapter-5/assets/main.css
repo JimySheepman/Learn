@@ -1,0 +1,292 @@
+img{
+    float: left;
+}
+
+/*
+    ! #1 
+*/
+code {
+    background: #2db34a;
+    border-radius: 6px;
+    color: #fff;
+    display: block;
+    font: 14px/24px "Source Code Pro", Inconsolata, "Lucida Console", Terminal, "Courier New", Courier;
+    padding: 24px 15px;
+    text-align: center;
+  }
+  header,
+  section,
+  aside,
+  footer {
+    margin: 0 1.5% 24px 1.5%;
+  }
+  footer {
+    margin-bottom: 0;
+  }
+  section {
+    float: left;
+    margin: 0 1.5%;
+    width: 63%;
+  }
+  aside {
+    float: right;
+    margin: 0 1.5%;
+    width: 30%;
+  }
+
+  /*
+    ! #2
+*/
+
+  code {
+    background: #2db34a;
+    border-radius: 6px;
+    color: #fff;
+    display: block;
+    font: 14px/24px "Source Code Pro", Inconsolata, "Lucida Console", Terminal, "Courier New", Courier;
+    padding: 24px 15px;
+    text-align: center;
+  }
+  header,
+  section,
+  aside,
+  footer {
+    margin: 0 1.5% 24px 1.5%;
+  }
+  section {
+    float: left;
+    width: 63%;
+  }
+  aside {
+    float: right;
+    width: 30%;
+  }
+  footer {
+    clear: both;
+    margin-bottom: 0;
+  }
+/*
+    ! #3
+*/
+  code {
+    background: #2db34a;
+    border-radius: 6px;
+    color: #fff;
+    display: block;
+    font: 14px/24px "Source Code Pro", Inconsolata, "Lucida Console", Terminal, "Courier New", Courier;
+    padding: 24px 15px;
+    text-align: center;
+  }
+  header,
+  section,
+  aside,
+  footer {
+    margin: 0 1.5% 24px 1.5%;
+  }
+  section {
+    float: left;
+    width: 30%;
+  }
+  footer {
+    clear: both;
+    margin-bottom: 0;
+  }
+/*
+    ! #4
+*/
+  code {
+    background: #2db34a;
+    border-radius: 6px;
+    color: #fff;
+    display: block;
+    font: 14px/24px "Source Code Pro", Inconsolata, "Lucida Console", Terminal, "Courier New", Courier;
+    padding: 24px 15px;
+    text-align: center;
+  }
+  header,
+  section,
+  aside,
+  footer {
+    margin: 0 1.5% 24px 1.5%;
+  }
+  section {
+    float: left;
+  }
+  aside {
+    float: right;
+  }
+  section,
+  aside,
+  footer {
+    margin-bottom: 0;
+  }
+/*
+    ! #5
+*/
+  code {
+    background: #2db34a;
+    border-radius: 6px;
+    color: #fff;
+    display: block;
+    font: 14px/24px "Source Code Pro", Inconsolata, "Lucida Console", Terminal, "Courier New", Courier;
+    padding: 24px 15px;
+    text-align: center;
+  }
+  header,
+  section,
+  aside,
+  footer {
+    margin: 0 1.5% 24px 1.5%;
+  }
+  section {
+    float: left;
+    width: 63%;
+  }
+  aside {
+    float: right;
+    width: 30%;
+  }
+  footer {
+    clear: both;
+    margin-bottom: 0;
+  }
+/*
+    ! #6
+*/
+  .group:before,
+  .group:after {
+    content: "";
+    display: table;
+  }
+  .group:after {
+    clear: both;
+  }
+  .group {
+    clear: both;
+    *zoom: 1;
+  }
+  section {
+    float: left;
+    margin: 0 1.5%;
+    width: 63%;
+  }
+  aside {
+    float: right;
+    margin: 0 1.5%;
+    width: 30%;
+  }
+
+/*
+    ! #7
+*/
+  code {
+    background: #2db34a;
+    border-radius: 6px;
+    color: #fff;
+    display: block;
+    font: 14px/24px "Source Code Pro", Inconsolata, "Lucida Console", Terminal, "Courier New", Courier;
+    padding: 24px 15px;
+    text-align: center;
+  }
+  .default {
+    background: none;
+    color: #666;
+  }
+  .group:before,
+  .group:after {
+    content: "";
+    display: table;
+  }
+  .group:after {
+    clear: both;
+  }
+  .group {
+    background: #eaeaed;
+    border-radius: 6px;
+    clear: both;
+    *zoom: 1;
+  }
+  /*
+    ! #8
+*/
+  .group,
+  header,
+  section,
+  aside,
+  footer {
+    margin: 0 1.5% 24px 1.5%;
+  }
+  section {
+    float: left;
+    width: 63%;
+  }
+  aside {
+    float: right;
+    width: 30%;
+  }
+  footer {
+    margin-bottom: 0;
+  }
+/*
+    ! #9 
+*/
+  code {
+    background: #2db34a;
+    border-radius: 6px;
+    color: #fff;
+    display: block;
+    font: 14px/24px "Source Code Pro", Inconsolata, "Lucida Console", Terminal, "Courier New", Courier;
+    padding: 24px 15px;
+    text-align: center;
+  }
+  header,
+  section,
+  aside,
+  footer {
+    margin: 0 1.5% 24px 1.5%;
+  }
+  section {
+    display: inline-block;
+    width: 30%;
+  }
+  footer {
+    margin-bottom: 0;
+  }
+
+/*
+    ! #10
+*/
+  code {
+    color: #666;
+    font: 14px/24px "Source Code Pro", Inconsolata, "Lucida Console", Terminal, "Courier New", Courier;
+  }
+  section,
+  .offset,
+  .offset code {
+    border-radius: 6px;
+    padding: 24px 30px;
+  }
+  section {
+    background: #eaeaed;
+    height: 145px;
+    position: relative;
+  }
+  .offset,
+  .offset code {
+    height: 96px;
+    position: absolute;
+    width: 160px;
+  }
+  .offset {
+    border: 2px dashed #9799a7;
+    right: 0;
+    top: 0;
+  
+  }
+  .offset code {
+    background: #2db34a;
+    color: #fff;
+    display: block;
+    right: 20px;
+    top: 20px;
+  }
