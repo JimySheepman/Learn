@@ -85,3 +85,4 @@ let firma = {
   
   alert(maaslariTopla(firma)); 
 console.log(maaslariTopla(firma));
+console.log("merlins");

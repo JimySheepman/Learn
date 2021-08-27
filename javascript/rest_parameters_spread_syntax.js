@@ -47,5 +47,5 @@ console.log(Math.max(...arr1, ...arr2,25));
 console.log(Math.min(...arr1, ...arr2));
 
 let str = "Hello";
-
+console.log(str);
 console.log( [...str] );
