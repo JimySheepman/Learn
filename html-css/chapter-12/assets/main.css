@@ -1,0 +1,43 @@
+.alert {
+  background-color: red;
+}
+.alert-succes {
+  background-color: green;
+}
+
+/*
+! clean code exanmple
+Primary header 
+header { ... }
+Featured article 
+article { ... }
+ Buttons 
+ .btn { ... }
+ .alert-message { ... }
+.news a { ... }
+.news .special { ... }
+.text-offset { ... }
+img {
+  margin: 5px 10px;
+}
+button {
+  padding-left: 20px;
+}
+.module {
+  background: #ddd;
+  color: #f60;
+}
+div {
+  margin: 20px 0;
+  letter-spacing: 0;
+  padding: 0 5px;
+}
+div {
+background: -webkit-linear-gradient(#a1d3b0, #f6f1d3);
+background:    -moz-linear-gradient(#a1d3b0, #f6f1d3);
+background:         linear-gradient(#a1d3b0, #f6f1d3);
+-webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+        box-sizing: border-box;
+}
+*/
