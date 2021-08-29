@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/main.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="/login" method="post">
+        <input type="text" name="username">
+        <input type="date" name="birthday">
+        <input type="time" name="game-time">
+        <input type="email" name="email-address">
+        <br>
+        <hr>
+        <input type="url" name="website">
+        <input type="number" name="cost">
+        <input type="tel" name="phone-number">
+        <br>
+        <hr>
+        <textarea name="comment">Add your comment here</textarea>
+        <br>
+        <hr>
+        <hr>
+        <input type="radio" name="day" value="Friday" checked> Friday
+        <input type="radio" name="day" value="Saturday"> Saturday
+        <input type="radio" name="day" value="Sunday"> Sunday
+        <br>
+        <hr>
+        <input type="checkbox" name="day" value="Friday" checked> Friday
+        <input type="checkbox" name="day" value="Saturday"> Saturday
+        <input type="checkbox" name="day" value="Sunday"> Sunday
+        <br>
+        <hr>
+        <select name="day">
+            <option value="Friday" selected>Friday</option>
+            <option value="Saturday">Saturday</option>
+            <option value="Sunday">Sunday</option>
+        </select>
+        <br>
+        <hr>
+        <select name="day" multiple>
+            <option value="Friday" selected>Friday</option>
+            <option value="Saturday">Saturday</option>
+            <option value="Sunday">Sunday</option>
+        </select>
+        <br>
+        <hr>
+        <input type="submit" name="submit" value="Send">
+        <br>
+        <hr>
+        <button name="submit">
+            <strong>Send Us</strong> a Message
+        </button>
+        <br>
+        <hr>
+
+        <input type="hidden" name="tracking-code" value="abc-123">
+        <br>
+        <hr>
+        <input type="file" name="file">
+        <br>
+        <hr>
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username">
+        <br>
+        <hr>
+        <label>
+            <input type="radio" name="day" value="Friday" checked> Friday
+        </label>
+        <label>
+            <input type="radio" name="day" value="Saturday"> Saturday
+        </label>
+        <label>
+            <input type="radio" name="day" value="Sunday"> Sunday
+        </label>
+        <br>
+        <hr>
+        <fieldset>
+            <label>
+                Username
+                <input type="text" name="username">
+            </label>
+            <label>
+                Password
+                <input type="text" name="password">
+            </label>
+        </fieldset>
+        <br>
+        <hr>
+        <fieldset>
+            <legend>Login</legend>
+            <label>
+                Username
+                <input type="text" name="username">
+            </label>
+            <label>
+                Password
+                <input type="text" name="password">
+            </label>
+        </fieldset>
+        <br>
+        <hr>
+        <label>
+            Username
+            <input type="text" name="username" disabled>
+        </label>
+        <br>
+        <hr>
+        <label>
+            Email Address
+            <input type="email" name="email-address" placeholder="name@domain.com">
+        </label>
+        <br>
+        <hr>
+        <form>
+
+            <label>
+                Email Address
+                <input type="email" name="email-address" required>
+            </label>
+
+            <input type="submit" name="submit">
+
+        </form>
+        <br>
+        <hr>
+        <form>
+            <fieldset class="account-info">
+                <label>
+                    Username
+                    <input type="text" name="username">
+                </label>
+                <label>
+                    Password
+                    <input type="password" name="password">
+                </label>
+            </fieldset>
+            <fieldset class="account-action">
+                <input class="btn" type="submit" name="submit" value="Login">
+                <label>
+                    <input type="checkbox" name="remember"> Stay signed in
+                </label>
+            </fieldset>
+        </form>
+        <br>
+        <hr>
+        <section class="row">
+            <div class="grid">
+                ...
+            </div>
+        </section>
+        <br>
+        <hr>
+        <section class="row">
+            <div class="grid">
+
+                <section class="col-2-3">
+                    ...
+                </section>
+                <!--
+          
+              -->
+                <form class="col-1-3">
+                    ...
+                </form>
+
+            </div>
+        </section>
+        <br>
+        <hr>
+        <section class="col-2-3">
+
+            <h2>Purchase a Conference Pass</h2>
+            <h5>$99 per Pass</h5>
+
+            <p>Purchase your Styles Conference pass using the form to the right. Multiple passes may be purchased within
+                the same order, so feel free to bring a friend or two along. Once your order is finished we&#8217;ll
+                follow up and provide a receipt for your purchase. See you soon!</p>
+
+            <h4>Why Attend?</h4>
+
+            <ul>
+                <li>Over twenty world-class speakers</li>
+                <li>One full day of workshops and two full days of presentations</li>
+                <li>Hosted at The Chicago Theatre, a historical landmark</li>
+                <li>August in Chicago is simply amazing</li>
+            </ul>
+
+        </section>
+        <br>
+        <hr>
+        <ul class="why-attend">
+            ...
+        </ul>
+        <form class="col-1-3" action="#" method="post">
+            ...
+          </form>
+        <br>
+        <hr>
+        <form class="col-1-3" action="#" method="post">
+
+            <fieldset>
+          
+              <label>
+                Name
+                <input type="text" name="name" placeholder="Full name" required>
+              </label>
+          
+              <label>
+                Email
+                <input type="email" name="email" placeholder="Email address" required>
+              </label>
+          
+              <label>
+                Number of Passes
+                <select name="quantity" required>
+                  <option value="1" selected>1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </label>
+          
+              <label>
+                Comments
+                <textarea name="comments"></textarea>
+              </label>
+          
+            </fieldset>
+          
+            <input type="submit" name="submit" value="Purchase">
+          
+          </form>
+        <br>
+        <hr>
+        <fieldset class="register-group">
+            <input class="btn btn-default" type="submit" name="submit" value="Purchase">
+          </fieldset>
+        <br>
+        <hr>
+
+        <br>
+        <hr>
+
+        <br>
+        <hr>
+
+        <br>
+        <hr>
+
+        <br>
+        <hr>
+
+        <br>
+        <hr>
+
+        <br>
+        <hr>
+
+        <br>
+        <hr>
+
+    </form>
+</body>
+
+</html>
