@@ -1,0 +1,48 @@
+img {
+  display: block;
+  max-width: 100%;
+  height: 200px;
+  width: 200px;
+}
+img {
+  display: block;
+}
+img {
+  background: #eaeaed;
+  border: 1px solid #9799a7;
+  float: right;
+  margin: 8px 0 0 20px;
+  padding: 4px;
+}
+.teaser img {
+  border-radius: 5px;
+  display: block;
+  margin-bottom: 22px;
+  max-width: 100%;
+}
+.speaker-info img {
+  border-radius: 50%;
+  height: 130px;
+  margin: -66px 0 22px 0;
+  vertical-align: top;
+}
+.speaker-info {
+  border: 1px solid #dfe2e5;
+  border-radius: 5px;
+  margin-top: 88px;
+  padding-bottom: 22px;
+  text-align: center;
+}
+video {
+  max-width: 540px;
+}
+.venue-theatre {
+  margin-bottom: 66px;
+}
+.venue-hotel {
+  margin-bottom: 22px;
+}
+img {
+    display: block;
+    max-width: 100%;
+  }
