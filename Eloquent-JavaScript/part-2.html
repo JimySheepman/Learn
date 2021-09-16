@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>My home page</h1>
+    <p>Hello, I am merlins and this is my home page</p>
+    <p>ı also wrote a book! Read it <a href="http://eloquentjavascript.net">here</a>.</p>
+    <h1>Testing alert</h1>
+    <script src="chapter-13.js">
+        <button onclick="alert('Boom!');">DO NOT PRESS</button>
+    </script>
+    <p>My ostrich Gertrude:</p>
+    <p><img id="gertrude" src="https://i.pinimg.com/564x/ac/58/7f/ac587fc0c34d0f7f7d6abd9d39a37b03.jpg"></p>
+
+    <script>
+        let ostrich = document.getElementById("gertrude");
+        console.log(ostrich.src);
+    </script>
+    <p>One</p>
+    <p>Two</p>
+    <p>Three</p>
+
+    <script>
+        let paragraphs = document.body.getElementsByTagName("p");
+        document.body.insertBefore(paragraphs[2], paragraphs[0]);
+    </script>
+
+    <p>The <img
+            src="https://w7.pngwing.com/pngs/664/275/png-transparent-himalayan-cat-thai-cat-siamese-cat-balinese-cat-birman-ragdoll-cat-mammal-animals-cat-like-mammal-thumbnail.png"
+            alt="Cat"> in the
+        <img src="https://icon2.cleanpng.com/20171221/pbq/movember-bowler-hat-clipart-image-5a3bf18a748e12.0482073915138778984774.jpg"
+            alt="Hat">.
+    </p>
+
+    <p><button onclick="replaceImages()">Replace</button></p>
+
+    <script>
+        function replaceImages() {
+            let images = document.body.getElementsByTagName("img");
+            for (let i = images.length - 1; i >= 0; i--) {
+                let image = images[i];
+                if (image.alt) {
+                    let text = document.createTextNode(image.alt);
+                    image.parentNode.replaceChild(text, image);
+                }
+            }
+        }
+    </script>
+
+    <blockquote id="quote">
+        No book can ever be finished. While working on it we learn
+        just enough to find it immature the moment we turn away
+        from it.
+    </blockquote>
+
+    <script>
+        function elt(type, ...children) {
+            let node = document.createElement(type);
+            for (let child of children) {
+                if (typeof child != "string") node.appendChild(child);
+                else node.appendChild(document.createTextNode(child));
+            }
+            return node;
+        }
+
+        document.getElementById("quote").appendChild(
+            elt("footer", "—",
+                elt("strong", "Karl Popper"),
+                ", preface to the second edition of ",
+                elt("em", "The Open Society and Its Enemies"),
+                ", 1950"));
+    </script>
+
+    <p data-classified="secret">The launch code is 00000000.</p>
+    <p data-classified="unclassified">I have two feet.</p>
+
+    <script>
+        let paras = document.body.getElementsByTagName("p");
+        for (let para of Array.from(paras)) {
+            if (para.getAttribute("data-classified") == "secret") {
+                para.remove();
+            }
+        }
+    </script>
+
+    <p style="border: 3px solid red">
+        I'm boxed in
+    </p>
+
+    <script>
+        let para = document.body.getElementsByTagName("p")[0];
+        console.log("clientHeight:", para.clientHeight);
+        console.log("offsetHeight:", para.offsetHeight);
+    </script>
+
+    <p><span id="one"></span></p>
+    <p><span id="two"></span></p>
+
+    <script>
+        function time(name, action) {
+            let start = Date.now(); // Current time in milliseconds
+            action();
+            console.log(name, "took", Date.now() - start, "ms");
+        }
+
+        time("naive", () => {
+            let target = document.getElementById("one");
+            while (target.offsetWidth < 2000) {
+                target.appendChild(document.createTextNode("X"));
+            }
+        });
+
+
+        time("clever", function () {
+            let target = document.getElementById("two");
+            target.appendChild(document.createTextNode("XXXXX"));
+            let total = Math.ceil(2000 / (target.offsetWidth / 5));
+            target.firstChild.nodeValue = "X".repeat(total);
+        });
+
+    </script>
+
+    
+</body>
+
+</html>
