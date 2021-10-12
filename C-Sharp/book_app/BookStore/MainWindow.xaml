@@ -1,0 +1,29 @@
+﻿<Window
+    x:Class="BookStore.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:BookStore"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="BookStore App"
+    Width="800"
+    Height="450"
+    mc:Ignorable="d" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="100" />
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0">
+            <Image Source="icon/book.jpg" />
+        </Border>
+        <Border Grid.Row="1">
+            <Button
+                x:Name="GoButton"
+                Width="150"
+                Height="50"
+                Click="GoButton_Click"
+                Content="Go To App.." />
+        </Border>
+    </Grid>
+</Window>

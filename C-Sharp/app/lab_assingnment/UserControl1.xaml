@@ -1,0 +1,57 @@
+﻿<UserControl
+    x:Class="lab_assingnment.UserControl1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:lab_assingnment"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="400"
+    d:DesignWidth="300"
+    mc:Ignorable="d">
+    <Grid>
+        <Label
+            x:Name="user_label1"
+            Width="160"
+            Height="40"
+            Margin="0,0,80,280"
+            Content="Enter Height in m."
+            FontSize="12" />
+        <TextBox
+            x:Name="height_textbox"
+            Width="200"
+            Height="30"
+            Margin="0,0,30,230" />
+        <Label
+            x:Name="user_label2"
+            Width="160"
+            Height="40"
+            Margin="0,0,80,150"
+            Content="Enter Height in m."
+            FontSize="12" />
+        <TextBox
+            x:Name="weight_textbox"
+            Width="200"
+            Height="30"
+            Margin="0,0,30,100" />
+        <Button
+            x:Name="calculate_button"
+            Width="200"
+            Height="40"
+            Margin="0,30,30,0"
+            Click="calculate_button_Click"
+            Content="Calculate"
+            FontSize="16" />
+        <Label
+            x:Name="user_label3"
+            Width="160"
+            Height="40"
+            Margin="0,150,80,0"
+            Content="Your BMI:"
+            FontSize="12" />
+        <TextBox
+            x:Name="result_textbox"
+            Width="200"
+            Height="30"
+            Margin="0,210,30,0" />
+    </Grid>
+</UserControl>

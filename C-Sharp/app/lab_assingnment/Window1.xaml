@@ -1,0 +1,25 @@
+﻿<Window x:Class="lab_assingnment.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:lab_assingnment"
+        xmlns:control="clr-namespace:lab_assingnment"
+        mc:Ignorable="d"
+        Title="BMI - Activities" Height="400" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <control:UserControl1 Margin="0,40,400,0"/>
+        <Label x:Name="bmi_label1" Content="Calculate BMI:" Height="50" Width="200" FontSize="16" FontWeight="Bold" Margin="0,0,300,300"/>
+        <Label x:Name="bmi_label2" Content="Select Physical Activities:" Height="50" Width="200" FontSize="16" FontWeight="Bold" Margin="300,0,0,300"/>
+        <ListBox x:Name="menu_listbox" Width="146" Height="230" Margin="457,60,0,0" SelectionMode="Multiple" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <ListBoxItem Content="Jogging" />
+            <ListBoxItem Content="Running" />
+            <ListBoxItem Content="Swimming" />
+            <ListBoxItem Content="Play Tennis" />
+            <ListBoxItem Content="Play Basketball" />
+        </ListBox>
+        <Button x:Name="result_button" Content="Result" Height="50" Width="150" Margin="600,0,0,200" Click="result_button_Click"/>
+        <Button x:Name="web_button" Content="Visit Be Healhty Web" Height="50" Width="150" Margin="600,0,0,50" Click="web_button_Click"/>
+        <Button x:Name="back_button" Content="Back to Menu" Height="50" Width="150" Margin="600,100,0,0" Click="back_button_Click"/>
+    </Grid>
+</Window>

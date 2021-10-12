@@ -1,0 +1,62 @@
+﻿<Window
+    x:Class="BookStore.Window2"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:BookStore"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Select Catagory"
+    Width="500"
+    Height="450"
+    WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d">
+    <Grid>
+        <Label
+            Width="110"
+            Height="30"
+            Margin="0,0,250,250"
+            Content="Select a Catogory:" />
+        <ComboBox
+            x:Name="CatagoryComboBox"
+            Width="150"
+            Height="30"
+            Margin="100,0,0,250"
+            SelectionChanged="CatagoryComboBox_SelectionChanged">
+            <ComboBoxItem>Adventure</ComboBoxItem>
+            <ComboBoxItem>Classics</ComboBoxItem>
+            <ComboBoxItem>cience Fiction</ComboBoxItem>
+        </ComboBox>
+        <Label
+            Width="110"
+            Height="30"
+            Margin="0,0,250,150"
+            Content="Select a Book:" />
+        <ComboBox
+            x:Name="BookComboBox"
+            Width="150"
+            Height="30"
+            Margin="100,0,0,150" />
+        <Button
+            x:Name="AddButoon"
+            Width="150"
+            Height="35"
+            Margin="0,100,210,0"
+            Click="AddButoon_Click"
+            Content="Add Book to List.." />
+        <CheckBox
+            x:Name="NextCheckbox"
+            Width="80"
+            Height="20"
+            Margin="0,250,280,0"
+            Click="NextCheckbox_Click"
+            Content="Confirm" />
+        <Button
+            x:Name="NextButton"
+            Width="100"
+            Height="30"
+            Margin="150,350,0,0"
+            Click="NextButton_Click"
+            Content="Next"
+            IsEnabled="False" />
+    </Grid>
+</Window>
