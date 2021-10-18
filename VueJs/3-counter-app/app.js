@@ -1,21 +1,30 @@
 const app = Vue.createApp({
-    data() {
-        return {
-            counter:0,
-            counter2:0,
-        }
+  data() {
+    return {
+      counter: 0,
+      counter2: 0,
+    };
+  },
+  methods: {},
+  computed: {
+    getCounterResult() {
+      console.log("Counter 1 Çalıştı");
+      return this.counter > 5 ? "BÜYÜK" : "KÜÇÜK";
     },
-    methods: {
-        getCounterResult(){
-            console.log("Counter 1 Çalıştı");
-           return this.counter > 5 ? 'BÜYÜK': 'KÜÇÜK';
-        },
-        getCounter2Result(){
-            console.log("Counter 2 Çalıştı");
-            return this.counter2 > 5 ? 'BÜYÜK': 'KÜÇÜK';
-         }
+    getCounter2Result() {
+      console.log("Counter 2 Çalıştı");
+      return this.counter2 > 5 ? "BÜYÜK" : "KÜÇÜK";
     },
-/*     methods: {
+  },
+  watch: {
+    counter(newValue, oldValue) {
+      console.log(oldValue, "=>", newValue);
+    },
+    getCounterResult(newValue, oldValue) {
+      console.log(oldValue, "=>", newValue);
+    },
+  },
+  /*     methods: {
         inc(){
             this.counter++;
         },
@@ -24,4 +33,4 @@ const app = Vue.createApp({
         }
     },
  */
-}).mount("#app")
+}).mount("#app");
