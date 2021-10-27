@@ -1,3 +1,5 @@
 .directory
 python
 .ipynb_checkpoints
+out
+.idea
