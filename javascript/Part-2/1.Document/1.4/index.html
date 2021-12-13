@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="elem">
+        <div id="elem-content">Element</div>
+    </div>
+
+    <script>
+        // get the element
+        let elem = document.getElementById('elem');
+
+        // make its background red
+        elem.style.background = 'red';
+    </script>
+    <ul>
+        <li>The</li>
+        <li>test</li>
+    </ul>
+    <ul>
+        <li>has</li>
+        <li>passed</li>
+    </ul>
+    <script>
+        let elements = document.querySelectorAll('ul > li:last-child');
+
+        for (let elem of elements) {
+            alert(elem.innerHTML); // "test", "passed"
+        }
+    </script>
+    <h1>Contents</h1>
+
+    <div class="contents">
+        <ul class="book">
+            <li class="chapter">Chapter 1</li>
+            <li class="chapter">Chapter 1</li>
+        </ul>
+    </div>
+
+    <script>
+        let chapter = document.querySelector('.chapter'); // LI
+
+        alert(chapter.closest('.book')); // UL
+        alert(chapter.closest('.contents')); // DIV
+
+        alert(chapter.closest('h1')); // null (because h1 is not an ancestor)
+    </script>
+    <table id="table">
+        <tr>
+            <td>Your age:</td>
+
+            <td>
+                <label>
+                    <input type="radio" name="age" value="young" checked> less than 18
+                </label>
+                <label>
+                    <input type="radio" name="age" value="mature"> from 18 to 50
+                </label>
+                <label>
+                    <input type="radio" name="age" value="senior"> more than 60
+                </label>
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        let inputs = table.getElementsByTagName('input');
+
+        for (let input of inputs) {
+            alert(input.value + ': ' + input.checked);
+        }
+    </script>
+</body>
+
+</html>

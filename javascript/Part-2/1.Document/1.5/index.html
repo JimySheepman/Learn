@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let elem = document.body;
+        // let's examine what it is?
+        alert(elem.nodeType); // 1 => element
+        // and the first child is...
+        alert(elem.firstChild.nodeType); // 3 => text
+        // for the document object, the type is 9
+        alert(document.nodeType); // 9
+    </script>
+    <p>A paragraph</p>
+    <div>A div</div>
+    <script>
+        alert(document.body.innerHTML); // read the current contents
+        document.body.innerHTML = 'The new BODY!'; // replace it
+    </script>
+    <div>Hello, world!</div>
+
+    <script>
+        let div = document.querySelector('div');
+
+        // replace div.outerHTML with <p>...</p>
+        div.outerHTML = '<p>A new element</p>'; // (*)
+
+        // Wow! 'div' is still the same!
+        alert(div.outerHTML); // <div>Hello, world!</div> (**)
+    </script>
+    <div>Both divs below are hidden</div>
+
+    <div hidden>With the attribute "hidden"</div>
+
+    <div id="elem">JavaScript assigned the property "hidden"</div>
+
+    <script>
+        elem.hidden = true;
+    </script>
+    <input type="text" id="elem" value="value">
+
+    <script>
+        alert(elem.type); // "text"
+        alert(elem.id); // "elem"
+        alert(elem.value); // value
+    </script>
+</body>
+
+</html>
