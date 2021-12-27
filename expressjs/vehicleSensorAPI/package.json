@@ -1,0 +1,17 @@
+{
+  "name": "sensor_api",
+  "version": "1.0.0",
+  "description": "API that enables the management of sensors on the transport company's vehicles ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "JimySheepman",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.2",
+    "nodemon": "^2.0.15",
+    "pg": "^8.7.1"
+  }
+}
