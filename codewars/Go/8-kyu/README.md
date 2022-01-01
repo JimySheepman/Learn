@@ -21,3 +21,6 @@ Answers to the questions I solved in the 8-kyu degree:
 17. Function 1 - hello world
 18. Sum of positive
 19. Beginner - Lost Without a Map
+20. Grasshopper - Check for factor
+21. Quarter of the year
+22. Grasshopper - Grade book
