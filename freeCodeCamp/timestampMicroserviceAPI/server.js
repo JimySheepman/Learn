@@ -30,17 +30,17 @@ app.get("/api/", function (req, res) {
   res.json({ unix: dateRes.getTime(), utc: dateRes.toUTCString() });
 });
 
-app.get("/api/:date", function (req, res) {
-  let dateStr = req.params.date;
-  console.log(dateStr);
-  if (dateStr.indexOf("-") === -1) {
-    dateStr = new Number(dateStr);
-  }
-  let dateRes = new Date(dateStr);
-  if (isValidDate(dateRes)) {
-    res.json({ unix: dateRes.getTime(), utc: dateRes.toUTCString() });
+app.get("/api/:date", (req, res) => {
+  let dateString = req.params.date;
+
+  if (!isNaN(Date.parse(dateString))) {
+    let dateObject = new Date(dateString);
+    res.json({ unix: dateObject.valueOf(), utc: dateObject.toUTCString() });
+  } else if (/\d{5,}/.test(dateString)) {
+    let dateInt = parseInt(dateString);
+    res.json({ unix: dateInt, utc: new Date(dateInt).toUTCString() });
   } else {
-    res.json({ unix: null, utc: "Invalid Date" });
+    res.json({ error: "Invalid Date" });
   }
 });
 
