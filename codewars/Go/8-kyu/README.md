@@ -27,3 +27,5 @@ Answers to the questions I solved in the 8-kyu degree:
 23. Sort and Star
 24. Multiplication table for number
 25. Is it a palindrome?
+26. MakeUpperCase
+27. Jenny's secret message
