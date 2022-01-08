@@ -29,3 +29,6 @@ Answers to the questions I solved in the 8-kyu degree:
 25. Is it a palindrome?
 26. MakeUpperCase
 27. Jenny's secret message
+28. To square(root) or not to square(root)
+29. If you can't sleep, just count sheep!!
+30. Count Odd Numbers below n
