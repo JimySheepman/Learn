@@ -1,0 +1,29 @@
+{
+  "name": "misfitapi",
+  "version": "1.0.0",
+  "description": "misfit sport project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "express",
+    "node"
+  ],
+  "author": "JimySheepman",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "connect-mongo": "^4.4.1",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "express-validator": "^6.11.1",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.12.7",
+    "nodemailer": "^6.6.0",
+    "slugify": "^1.5.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
