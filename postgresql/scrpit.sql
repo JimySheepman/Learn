@@ -1,0 +1,1953 @@
+--- select 
+select
+	contact_name
+from
+	customers;
+
+select
+	customer_id,
+	company_name
+from
+	customers;
+
+select
+	*
+from
+	customers;
+
+select
+	contact_name || ' ' || contact_title,
+	address
+from
+	customers;
+
+--- column aliases
+select
+	company_name,
+	contact_name
+from
+	customers
+order by
+	company_name asc;
+
+select
+	company_name,
+	contact_name
+from
+	customers
+order by
+	company_name;
+
+select
+	company_name,
+	contact_name
+from
+	customers
+order by
+	company_name desc;
+
+select
+	company_name,
+	contact_name
+from
+	customers
+order by
+	company_name asc,
+	contact_name desc;
+
+select
+	company_name,
+	Length(contact_name) len
+from
+	customers
+order by
+	len desc;
+
+create table sort_demo(num INT);
+
+insert into
+	sort_demo(num)
+values
+	(1),
+	(2),
+	(3),
+	(null);
+
+select
+	num
+from
+	sort_demo
+order by
+	num;
+
+select
+	num
+from
+	sort_demo
+order by
+	num nulls last;
+
+select
+	num
+from
+	sort_demo
+order by
+	num nulls first;
+
+select
+	num
+from
+	sort_demo
+order by
+	num desc;
+
+select
+	num
+from
+	sort_demo
+order by
+	num desc nulls last;
+
+--- select distinct
+CREATE TABLE distinct_demo (
+	id serial NOT NULL PRIMARY KEY,
+	bcolor VARCHAR,
+	fcolor VARCHAR
+);
+
+INSERT INTO
+	distinct_demo (bcolor, fcolor)
+VALUES
+	('red', 'red'),
+	('red', 'red'),
+	('red', NULL),
+	(NULL, 'red'),
+	('red', 'green'),
+	('red', 'blue'),
+	('green', 'red'),
+	('green', 'blue'),
+	('green', 'green'),
+	('blue', 'red'),
+	('blue', 'green'),
+	('blue', 'blue');
+
+select
+	id,
+	bcolor,
+	fcolor
+from
+	distinct_demo;
+
+select
+	distinct bcolor
+from
+	distinct_demo
+order by
+	bcolor;
+
+select
+	distinct bcolor,
+	fcolor
+from
+	distinct_demo
+order by
+	bcolor,
+	fcolor;
+
+select
+	distinct on (bcolor) bcolor,
+	fcolor
+from
+	distinct_demo
+order by
+	bcolor,
+	fcolor;
+
+--- where
+select
+	*
+from
+	customers;
+
+select
+	contact_name,
+	contact_title
+from
+	customers
+where
+	contact_title = 'Owner';
+
+select
+	contact_name,
+	contact_title
+from
+	customers
+where
+	contact_title = 'Owner'
+	and contact_name = 'Yang Wang';
+
+select
+	contact_name,
+	contact_title
+from
+	customers
+where
+	contact_title = 'Owner'
+	or contact_name = 'Thomas Hardy';
+
+select
+	contact_name,
+	contact_title
+from
+	customers
+where
+	contact_title in ('Owner', 'Sales Representative');
+
+select
+	contact_name,
+	contact_title
+from
+	customers
+where
+	contact_name like 'Ma%';
+
+select
+	contact_name,
+	length(contact_name) len
+from
+	customers
+where
+	contact_name like 'M%'
+	and length(contact_name) between 3
+	and 15
+order by
+	len;
+
+select
+	contact_name,
+	contact_title
+from
+	customers
+where
+	contact_name like 'Ma%'
+	and contact_title <> 'Owner';
+
+--- limit
+select
+	*
+from
+	products;
+
+select
+	product_id,
+	product_name,
+	units_in_stock
+from
+	products
+order by
+	product_id
+limit
+	5;
+
+select
+	product_id,
+	product_name,
+	units_in_stock
+from
+	products
+order by
+	product_id
+limit
+	4 offset 3;
+
+select
+	product_id,
+	product_name,
+	units_in_stock
+from
+	products
+order by
+	product_id desc
+limit
+	10;
+
+--- fecth
+select
+	product_id,
+	product_name
+from
+	products
+order by
+	product_id
+fetch first
+	row only;
+
+select
+	product_id,
+	product_name
+from
+	products
+order by
+	product_id
+fetch first
+	5 row only;
+
+select
+	product_id,
+	product_name
+from
+	products
+order by
+	product_id offset 5 rows
+fetch first
+	5 row only;
+
+--- in
+SELECT
+	customer_id,
+	rental_id,
+	return_date
+from
+	rental
+where
+	customer_id IN (1, 2)
+ORDER by
+	return_date DESC;
+
+select
+	rental_id,
+	customer_id,
+	return_date
+from
+	rental
+where
+	customer_id = 1
+	OR customer_id = 2
+ORDER by
+	return_date DESC;
+
+select
+	customer_id,
+	rental_id,
+	return_date
+from
+	rental
+where
+	customer_id NOT IN (1, 2);
+
+select
+	customer_id,
+	rental_id,
+	return_date
+from
+	rental
+where
+	customer_id <> 1
+	AND customer_id <> 2;
+
+SELECT
+	customer_id
+FROM
+	rental
+WHERE
+	CAST (return_date AS DATE) = '2005-05-27'
+ORDER BY
+	customer_id;
+
+select
+	customer_id,
+	first_name,
+	last_name
+from
+	customer
+WHERE
+	customer_id IN (
+		SELECT
+			customer_id
+		FROM
+			rental
+		WHERE
+			CAST (return_date AS DATE) = '2005-05-27'
+	)
+ORDER BY
+	customer_id;
+
+--- between
+select
+	customer_id,
+	payment_id,
+	amount
+from
+	payment
+where
+	amount BETWEEN 8
+	AND 9;
+
+select
+	customer_id,
+	payment_id,
+	amount
+from
+	payment
+where
+	amount NOT BETWEEN 8
+	AND 9;
+
+select
+	customer_id,
+	payment_id,
+	amount,
+	payment_date
+from
+	payment
+where
+	payment_date BETWEEN '2007-02-07'
+	AND '2007-02-15';
+
+--- like
+select
+	first_name,
+	last_name
+from
+	customer
+where
+	first_name LIKE '%er%'
+ORDER by
+	first_name;
+
+select
+	first_name,
+	last_name
+from
+	customer
+where
+	first_name LIKE '_her%'
+ORDER by
+	first_name;
+
+select
+	first_name,
+	last_name
+from
+	customer
+where
+	first_name NOT LIKE 'Jen%'
+ORDER by
+	first_name
+select
+	first_name,
+	last_name
+from
+	customer
+WHERE
+	first_name ILIKE 'BAR%';
+
+--- is null
+CREATE TABLE contacts(
+	id SERIAL,
+	-- id INT GENERATED BY DEFAULT AS IDENTITY,
+	first_name VARCHAR(50) NOT NULL,
+	last_name VARCHAR(50) NOT NULL,
+	email VARCHAR(255) NOT NULL,
+	phone VARCHAR(15),
+	PRIMARY KEY (id)
+);
+
+INSERT INTO
+	contacts(first_name, last_name, email, phone)
+VALUES
+	('John', 'Doe', 'john.doe@example.com', NULL),
+	(
+		'Lily',
+		'Bush',
+		'lily.bush@example.com',
+		'(408-234-2764)'
+	);
+
+select
+	id,
+	first_name,
+	last_name,
+	email,
+	phone
+from
+	contacts
+where
+	phone = NULL;
+
+select
+	id,
+	first_name,
+	last_name,
+	email,
+	phone
+from
+	contacts
+where
+	phone IS NULL;
+
+select
+	id,
+	first_name,
+	last_name,
+	email,
+	phone
+from
+	contacts
+where
+	phone IS NOT NULL;
+
+--- join
+CREATE TABLE basket_a (
+	a INT PRIMARY KEY,
+	fruit_a VARCHAR (100) NOT NULL
+);
+
+CREATE TABLE basket_b (
+	b INT PRIMARY KEY,
+	fruit_b VARCHAR (100) NOT NULL
+);
+
+INSERT INTO
+	basket_a (a, fruit_a)
+VALUES
+	(1, 'Apple'),
+	(2, 'Orange'),
+	(3, 'Banana'),
+	(4, 'Cucumber');
+
+INSERT INTO
+	basket_b (b, fruit_b)
+VALUES
+	(1, 'Orange'),
+	(2, 'Apple'),
+	(3, 'Watermelon'),
+	(4, 'Pear');
+
+select
+	*
+from
+	basket_a,
+	basket_b -- inner join (A n B) 
+select
+	a,
+	fruit_a,
+	b,
+	fruit_b
+from
+	basket_a
+	inner join basket_b on fruit_a = fruit_b;
+
+-- left outer join (A n B) + (A/B)
+select
+	a,
+	fruit_a,
+	b,
+	fruit_b
+from
+	basket_a
+	left join basket_b on fruit_a = fruit_b;
+
+-- right join (A n B) + (B/A)
+select
+	a,
+	fruit_a,
+	b,
+	fruit_b
+from
+	basket_a
+	right join basket_b on fruit_a = fruit_b;
+
+-- full outer join  (A n B) + (B/A) + (A/B)
+select
+	a,
+	fruit_a,
+	b,
+	fruit_b
+from
+	basket_a full
+	outer join basket_b on fruit_a = fruit_b;
+
+-- cross join 
+select
+	*
+from
+	basket_a
+	cross join basket_b;
+
+-- natural join 
+select
+	*
+from
+	basket_a natural
+	join basket_b;
+
+--- table aliases
+select
+	c.customer_id,
+	first_name,
+	amount,
+	payment_date
+from
+	customer c
+	INNER JOIN payment p ON p.customer_id = c.customer_id
+ORDER by
+	payment_date DESC;
+
+select
+	e.first_name employee,
+	m.first_name manager
+from
+	employee e
+	INNER JOIN employee m ON m.employee_id = e.manager_id
+ORDER BY
+	manager;
+
+--- group by
+SELECT
+	customer_id
+FROM
+	payment
+GROUP BY
+	customer_id;
+
+SELECT
+	customer_id,
+	SUM (amount)
+FROM
+	payment
+GROUP BY
+	customer_id;
+
+SELECT
+	first_name || ' ' || last_name full_name,
+	SUM (amount) amount
+FROM
+	payment
+	INNER JOIN customer USING (customer_id)
+GROUP BY
+	full_name
+ORDER BY
+	amount DESC;
+
+SELECT
+	staff_id,
+	COUNT (payment_id)
+FROM
+	payment
+GROUP BY
+	staff_id;
+
+SELECT
+	customer_id,
+	staff_id,
+	SUM(amount)
+FROM
+	payment
+GROUP BY
+	staff_id,
+	customer_id
+ORDER BY
+	customer_id;
+
+SELECT
+	DATE(payment_date) paid_date,
+	SUM(amount) sum
+FROM
+	payment
+GROUP BY
+	DATE(payment_date);
+
+--- having
+SELECT
+	customer_id,
+	SUM (amount)
+FROM
+	payment
+GROUP BY
+	customer_id
+HAVING
+	SUM (amount) > 200;
+
+SELECT
+	store_id,
+	COUNT (customer_id)
+FROM
+	customer
+GROUP BY
+	store_id
+HAVING
+	COUNT (customer_id) > 300;
+
+--- union
+DROP TABLE IF EXISTS top_rated_films;
+
+CREATE TABLE top_rated_films(
+	title VARCHAR NOT NULL,
+	release_year SMALLINT
+);
+
+DROP TABLE IF EXISTS most_popular_films;
+
+CREATE TABLE most_popular_films(
+	title VARCHAR NOT NULL,
+	release_year SMALLINT
+);
+
+INSERT INTO
+	top_rated_films(title, release_year)
+VALUES
+	('The Shawshank Redemption', 1994),
+	('The Godfather', 1972),
+	('12 Angry Men', 1957);
+
+INSERT INTO
+	most_popular_films(title, release_year)
+VALUES
+	('An American Pickle', 2020),
+	('The Godfather', 1972),
+	('Greyhound', 2020);
+
+SELECT
+	*
+FROM
+	top_rated_films
+UNION
+SELECT
+	*
+FROM
+	most_popular_films;
+
+SELECT
+	*
+FROM
+	top_rated_films
+UNION
+ALL
+SELECT
+	*
+FROM
+	most_popular_films;
+
+SELECT
+	*
+FROM
+	top_rated_films
+UNION
+ALL
+SELECT
+	*
+FROM
+	most_popular_films
+ORDER BY
+	title;
+
+--- intersect
+SELECT
+	select_list
+FROM
+	A
+INTERSECT
+SELECT
+	select_list
+FROM
+	B
+ORDER BY
+	sort_expression;
+
+SELECT
+	*
+FROM
+	most_popular_films
+INTERSECT
+SELECT
+	*
+FROM
+	top_rated_films;
+
+--- except
+SELECT
+	*
+FROM
+	top_rated_films
+EXCEPT
+SELECT
+	*
+FROM
+	most_popular_films;
+
+SELECT
+	*
+FROM
+	top_rated_films
+EXCEPT
+SELECT
+	*
+FROM
+	most_popular_films
+ORDER BY
+	title;
+
+--- grouping sets
+DROP TABLE IF EXISTS sales;
+
+CREATE TABLE sales (
+	brand VARCHAR NOT NULL,
+	segment VARCHAR NOT NULL,
+	quantity INT NOT NULL,
+	PRIMARY KEY (brand, segment)
+);
+
+INSERT INTO
+	sales (brand, segment, quantity)
+VALUES
+	('ABC', 'Premium', 100),
+	('ABC', 'Basic', 200),
+	('XYZ', 'Premium', 100),
+	('XYZ', 'Basic', 300);
+
+SELECT
+	brand,
+	segment,
+	SUM (quantity)
+FROM
+	sales
+GROUP BY
+	brand,
+	segment;
+
+SELECT
+	brand,
+	SUM (quantity)
+FROM
+	sales
+GROUP BY
+	brand;
+
+SELECT
+	segment,
+	SUM (quantity)
+FROM
+	sales
+GROUP BY
+	segment;
+
+SELECT
+	brand,
+	segment,
+	SUM (quantity)
+FROM
+	sales
+GROUP BY
+	brand,
+	segment
+UNION
+ALL
+SELECT
+	brand,
+	NULL,
+	SUM (quantity)
+FROM
+	sales
+GROUP BY
+	brand
+UNION
+ALL
+SELECT
+	NULL,
+	segment,
+	SUM (quantity)
+FROM
+	sales
+GROUP BY
+	segment
+UNION
+ALL
+SELECT
+	NULL,
+	NULL,
+	SUM (quantity)
+FROM
+	sales;
+
+SELECT
+	c1,
+	c2,
+	aggregate_function(c3)
+FROM
+	table_name
+GROUP BY
+	GROUPING SETS ((c1, c2), (c1), (c2), ());
+
+SELECT
+	brand,
+	segment,
+	SUM (quantity)
+FROM
+	sales
+GROUP BY
+	GROUPING SETS (
+		(brand, segment),
+		(brand),
+		(segment),
+		()
+	);
+
+SELECT
+	GROUPING(brand) grouping_brand,
+	GROUPING(segment) grouping_segment,
+	brand,
+	segment,
+	SUM (quantity)
+FROM
+	sales
+GROUP BY
+	GROUPING SETS ((brand), (segment), ())
+ORDER BY
+	brand,
+	segment;
+
+SELECT
+	GROUPING(brand) grouping_brand,
+	GROUPING(segment) grouping_segment,
+	brand,
+	segment,
+	SUM (quantity)
+FROM
+	sales
+GROUP BY
+	GROUPING SETS ((brand), (segment), ())
+HAVING
+	GROUPING(brand) = 0
+ORDER BY
+	brand,
+	segment;
+
+--- rollup
+SELECT
+	c1,
+	c2,
+	c3,
+	aggregate(c4)
+FROM
+	table_name
+GROUP BY
+	ROLLUP (c1, c2, c3);
+
+SELECT
+	c1,
+	c2,
+	c3,
+	aggregate(c4)
+FROM
+	table_name
+GROUP BY
+	c1,
+	ROLLUP (c2, c3);
+
+DROP TABLE IF EXISTS sales;
+
+CREATE TABLE sales (
+	brand VARCHAR NOT NULL,
+	segment VARCHAR NOT NULL,
+	quantity INT NOT NULL,
+	PRIMARY KEY (brand, segment)
+);
+
+INSERT INTO
+	sales (brand, segment, quantity)
+VALUES
+	('ABC', 'Premium', 100),
+	('ABC', 'Basic', 200),
+	('XYZ', 'Premium', 100),
+	('XYZ', 'Basic', 300);
+
+SELECT
+	brand,
+	segment,
+	SUM (quantity)
+FROM
+	sales
+GROUP BY
+	ROLLUP (brand, segment)
+ORDER BY
+	brand,
+	segment;
+
+SELECT
+	segment,
+	brand,
+	SUM (quantity)
+FROM
+	sales
+GROUP BY
+	ROLLUP (segment, brand)
+ORDER BY
+	segment,
+	brand;
+
+SELECT
+	segment,
+	brand,
+	SUM (quantity)
+FROM
+	sales
+GROUP BY
+	segment,
+	ROLLUP (brand)
+ORDER BY
+	segment,
+	brand;
+
+SELECT
+	EXTRACT (
+		YEAR
+		FROM
+			rental_date
+	) y,
+	EXTRACT (
+		MONTH
+		FROM
+			rental_date
+	) M,
+	EXTRACT (
+		DAY
+		FROM
+			rental_date
+	) d,
+	COUNT (rental_id)
+FROM
+	rental
+GROUP BY
+	ROLLUP (
+		EXTRACT (
+			YEAR
+			FROM
+				rental_date
+		),
+		EXTRACT (
+			MONTH
+			FROM
+				rental_date
+		),
+		EXTRACT (
+			DAY
+			FROM
+				rental_date
+		)
+	);
+
+--- cube
+SELECT
+	c1,
+	c2,
+	c3,
+	aggregate (c4)
+FROM
+	table_name
+GROUP BY
+	CUBE (c1, c2, c3);
+
+SELECT
+	c1,
+	c2,
+	c3,
+	aggregate (c4)
+FROM
+	table_name
+GROUP BY
+	c1,
+	CUBE (c1, c2);
+
+--- subquery
+SELECT
+	AVG (rental_rate)
+FROM
+	film;
+
+SELECT
+	film_id,
+	title,
+	rental_rate
+FROM
+	film
+WHERE
+	rental_rate > 2.98;
+
+SELECT
+	film_id,
+	title,
+	rental_rate
+FROM
+	film
+WHERE
+	rental_rate > (
+		SELECT
+			AVG (rental_rate)
+		FROM
+			film
+	);
+
+SELECT
+	inventory.film_id
+FROM
+	rental
+	INNER JOIN inventory ON inventory.inventory_id = rental.inventory_id
+WHERE
+	return_date BETWEEN '2005-05-29'
+	AND '2005-05-30';
+
+SELECT
+	film_id,
+	title
+FROM
+	film
+WHERE
+	film_id IN (
+		SELECT
+			inventory.film_id
+		FROM
+			rental
+			INNER JOIN inventory ON inventory.inventory_id = rental.inventory_id
+		WHERE
+			return_date BETWEEN '2005-05-29'
+			AND '2005-05-30'
+	);
+
+EXISTS (
+	SELECT
+		1
+	FROM
+		tbl
+	WHERE
+		condition
+);
+
+SELECT
+	first_name,
+	last_name
+FROM
+	customer
+WHERE
+	EXISTS (
+		SELECT
+			1
+		FROM
+			payment
+		WHERE
+			payment.customer_id = customer.customer_id
+	);
+
+--- any operator
+SELECT
+	title
+FROM
+	film
+WHERE
+	length >= ANY(
+		SELECT
+			MAX(length)
+		FROM
+			film
+			INNER JOIN film_category USING(film_id)
+		GROUP BY
+			category_id
+	);
+
+SELECT
+	title,
+	category_id
+FROM
+	film
+	INNER JOIN film_category USING(film_id)
+WHERE
+	category_id = ANY(
+		SELECT
+			category_id
+		FROM
+			category
+		WHERE
+			NAME = 'Action'
+			OR NAME = 'Drama'
+	);
+
+SELECT
+	title,
+	category_id
+FROM
+	film
+	INNER JOIN film_category USING(film_id)
+WHERE
+	category_id IN(
+		SELECT
+			category_id
+		FROM
+			category
+		WHERE
+			NAME = 'Action'
+			OR NAME = 'Drama'
+	);
+
+--- all operator
+SELECT
+	ROUND(AVG(length), 2) avg_length
+FROM
+	film
+GROUP BY
+	rating
+ORDER BY
+	avg_length DESC;
+
+SELECT
+	film_id,
+	title,
+	length
+FROM
+	film
+WHERE
+	length > ALL (
+		SELECT
+			ROUND(AVG (length), 2)
+		FROM
+			film
+		GROUP BY
+			rating
+	)
+ORDER BY
+	length;
+
+--- exists
+SELECT
+	column1
+FROM
+	table_1
+WHERE
+	EXISTS(
+		SELECT
+			1
+		FROM
+			table_2
+		WHERE
+			column_2 = table_1.column_1
+	);
+
+SELECT
+	first_name,
+	last_name
+FROM
+	customer c
+WHERE
+	EXISTS (
+		SELECT
+			1
+		FROM
+			payment p
+		WHERE
+			p.customer_id = c.customer_id
+			AND amount > 11
+	)
+ORDER BY
+	first_name,
+	last_name;
+
+SELECT
+	first_name,
+	last_name
+FROM
+	customer c
+WHERE
+	NOT EXISTS (
+		SELECT
+			1
+		FROM
+			payment p
+		WHERE
+			p.customer_id = c.customer_id
+			AND amount > 11
+	)
+ORDER BY
+	first_name,
+	last_name;
+
+SELECT
+	first_name,
+	last_name
+FROM
+	customer
+WHERE
+	EXISTS(
+		SELECT
+			NULL
+	)
+ORDER BY
+	first_name,
+	last_name;
+
+--- cte
+WITH cte_film AS (
+	SELECT
+		film_id,
+		title,
+		(
+			CASE
+				WHEN length < 30 THEN 'Short'
+				WHEN length < 90 THEN 'Medium'
+				ELSE 'Long'
+			END
+		) length
+	FROM
+		film
+)
+SELECT
+	film_id,
+	title,
+	length
+FROM
+	cte_film
+WHERE
+	length = 'Long'
+ORDER BY
+	title;
+
+WITH cte_film AS (
+	SELECT
+		film_id,
+		title,
+		(
+			CASE
+				WHEN length < 30 THEN 'Short'
+				WHEN length >= 30
+				AND length < 90 THEN 'Medium'
+				WHEN length >= 90 THEN 'Long'
+			END
+		) length
+	FROM
+		film
+) WITH cte_rental AS (
+	SELECT
+		staff_id,
+		COUNT(rental_id) rental_count
+	FROM
+		rental
+	GROUP BY
+		staff_id
+)
+SELECT
+	s.staff_id,
+	first_name,
+	last_name,
+	rental_count
+FROM
+	staff s
+	INNER JOIN cte_rental USING (staff_id);
+
+WITH cte_film AS (
+	SELECT
+		film_id,
+		title,
+		rating,
+		length,
+		RANK() OVER (
+			PARTITION BY rating
+			ORDER BY
+				length DESC
+		) length_rank
+	FROM
+		film
+)
+SELECT
+	*
+FROM
+	cte_film
+WHERE
+	length_rank = 1;
+
+--- recursive query
+CREATE TABLE employees (
+	employee_id serial PRIMARY KEY,
+	full_name VARCHAR NOT NULL,
+	manager_id INT
+);
+
+INSERT INTO
+	employees (employee_id, full_name, manager_id)
+VALUES
+	(1, 'Michael North', NULL),
+	(2, 'Megan Berry', 1),
+	(3, 'Sarah Berry', 1),
+	(4, 'Zoe Black', 1),
+	(5, 'Tim James', 1),
+	(6, 'Bella Tucker', 2),
+	(7, 'Ryan Metcalfe', 2),
+	(8, 'Max Mills', 2),
+	(9, 'Benjamin Glover', 2),
+	(10, 'Carolyn Henderson', 3),
+	(11, 'Nicola Kelly', 3),
+	(12, 'Alexandra Climo', 3),
+	(13, 'Dominic King', 3),
+	(14, 'Leonard Gray', 4),
+	(15, 'Eric Rampling', 4),
+	(16, 'Piers Paige', 7),
+	(17, 'Ryan Henderson', 7),
+	(18, 'Frank Tucker', 8),
+	(19, 'Nathan Ferguson', 8),
+	(20, 'Kevin Rampling', 8);
+
+WITH RECURSIVE subordinates AS (
+	SELECT
+		employee_id,
+		manager_id,
+		full_name
+	FROM
+		employees
+	WHERE
+		employee_id = 2
+	UNION
+	SELECT
+		e.employee_id,
+		e.manager_id,
+		e.full_name
+	FROM
+		employees e
+		INNER JOIN subordinates s ON s.employee_id = e.manager_id
+)
+SELECT
+	*
+FROM
+	subordinates;
+
+--- insert
+DROP TABLE IF EXISTS links;
+
+CREATE TABLE links (
+	id SERIAL PRIMARY KEY,
+	url VARCHAR(255) NOT NULL,
+	name VARCHAR(255) NOT NULL,
+	description VARCHAR (255),
+	last_update DATE
+);
+
+INSERT INTO
+	links (url, name)
+VALUES
+	(
+		'https://www.postgresqltutorial.com',
+		'PostgreSQL Tutorial'
+	);
+
+SELECT
+	*
+FROM
+	links;
+
+INSERT INTO
+	links (url, name)
+VALUES
+	('http://www.oreilly.com', 'O''Reilly Media');
+
+INSERT INTO
+	links (url, name, last_update)
+VALUES
+	('https://www.google.com', 'Google', '2013-06-01');
+
+INSERT INTO
+	links (url, name)
+VALUES
+	('http://www.postgresql.org', 'PostgreSQL') RETURNING id;
+
+--- insert multiple rows
+INSERT INTO
+	links (url, name)
+VALUES
+	('https://www.google.com', 'Google'),
+	('https://www.yahoo.com', 'Yahoo'),
+	('https://www.bing.com', 'Bing');
+
+INSERT INTO
+	links(url, name, description)
+VALUES
+	(
+		'https://duckduckgo.com/',
+		'DuckDuckGo',
+		'Privacy & Simplified Search Engine'
+	),
+	(
+		'https://swisscows.com/',
+		'Swisscows',
+		'Privacy safe WEB-search'
+	) RETURNING *;
+
+INSERT INTO
+	links(url, name, description)
+VALUES
+	(
+		'https://www.searchencrypt.com/',
+		'SearchEncrypt',
+		'Search Encrypt'
+	),
+	(
+		'https://www.startpage.com/',
+		'Startpage',
+		'The world''s most private search engine'
+	) RETURNING id;
+
+--- update
+DROP TABLE IF EXISTS courses;
+
+CREATE TABLE courses(
+	course_id serial primary key,
+	course_name VARCHAR(255) NOT NULL,
+	description VARCHAR(500),
+	published_date date
+);
+
+INSERT INTO
+	courses(course_name, description, published_date)
+VALUES
+	(
+		'PostgreSQL for Developers',
+		'A complete PostgreSQL for Developers',
+		'2020-07-13'
+	),
+	(
+		'PostgreSQL Admininstration',
+		'A PostgreSQL Guide for DBA',
+		NULL
+	),
+	('PostgreSQL High Performance', NULL, NULL),
+	(
+		'PostgreSQL Bootcamp',
+		'Learn PostgreSQL via Bootcamp',
+		'2013-07-11'
+	),
+	(
+		'Mastering PostgreSQL',
+		'Mastering PostgreSQL in 21 Days',
+		'2012-06-30'
+	);
+
+UPDATE
+	courses
+SET
+	published_date = '2020-08-01'
+WHERE
+	course_id = 3;
+
+UPDATE
+	courses
+SET
+	published_date = '2020-07-01'
+WHERE
+	course_id = 2 RETURNING *;
+
+--- update join
+CREATE TABLE product_segment (
+	id SERIAL PRIMARY KEY,
+	segment VARCHAR NOT NULL,
+	discount NUMERIC (4, 2)
+);
+
+INSERT INTO
+	product_segment (segment, discount)
+VALUES
+	('Grand Luxury', 0.05),
+	('Luxury', 0.06),
+	('Mass', 0.1);
+
+CREATE TABLE product(
+	id SERIAL PRIMARY KEY,
+	name VARCHAR NOT NULL,
+	price NUMERIC(10, 2),
+	net_price NUMERIC(10, 2),
+	segment_id INT NOT NULL,
+	FOREIGN KEY(segment_id) REFERENCES product_segment(id)
+);
+
+INSERT INTO
+	product (name, price, segment_id)
+VALUES
+	('diam', 804.89, 1),
+	('vestibulum aliquet', 228.55, 3),
+	('lacinia erat', 366.45, 2),
+	('scelerisque quam turpis', 145.33, 3),
+	('justo lacinia', 551.77, 2),
+	('ultrices mattis odio', 261.58, 3),
+	('hendrerit', 519.62, 2),
+	('in hac habitasse', 843.31, 1),
+	('orci eget orci', 254.18, 3),
+	('pellentesque', 427.78, 2),
+	('sit amet nunc', 936.29, 1),
+	('sed vestibulum', 910.34, 1),
+	('turpis eget', 208.33, 3),
+	('cursus vestibulum', 985.45, 1),
+	('orci nullam', 841.26, 1),
+	('est quam pharetra', 896.38, 1),
+	('posuere', 575.74, 2),
+	('ligula', 530.64, 2),
+	('convallis', 892.43, 1),
+	('nulla elit ac', 161.71, 3);
+
+UPDATE
+	product
+SET
+	net_price = price - price * discount
+FROM
+	product_segment
+WHERE
+	product.segment_id = product_segment.id;
+
+UPDATE
+	product p
+SET
+	net_price = price - price * discount
+FROM
+	product_segment s
+WHERE
+	p.segment_id = s.id;
+
+--- delete
+DROP TABLE IF EXISTS links;
+
+CREATE TABLE links (
+	id serial PRIMARY KEY,
+	url varchar(255) NOT NULL,
+	name varchar(255) NOT NULL,
+	description varchar(255),
+	rel varchar(10),
+	last_update date DEFAULT now()
+);
+
+INSERT INTO
+	links
+VALUES
+	(
+		'1',
+		'https://www.postgresqltutorial.com',
+		'PostgreSQL Tutorial',
+		'Learn PostgreSQL fast and easy',
+		'follow',
+		'2013-06-02'
+	),
+	(
+		'2',
+		'http://www.oreilly.com',
+		'O''Reilly Media',
+		'O''Reilly Media',
+		'nofollow',
+		'2013-06-02'
+	),
+	(
+		'3',
+		'http://www.google.com',
+		'Google',
+		'Google',
+		'nofollow',
+		'2013-06-02'
+	),
+	(
+		'4',
+		'http://www.yahoo.com',
+		'Yahoo',
+		'Yahoo',
+		'nofollow',
+		'2013-06-02'
+	),
+	(
+		'5',
+		'http://www.bing.com',
+		'Bing',
+		'Bing',
+		'nofollow',
+		'2013-06-02'
+	),
+	(
+		'6',
+		'http://www.facebook.com',
+		'Facebook',
+		'Facebook',
+		'nofollow',
+		'2013-06-01'
+	),
+	(
+		'7',
+		'https://www.tumblr.com/',
+		'Tumblr',
+		'Tumblr',
+		'nofollow',
+		'2013-06-02'
+	),
+	(
+		'8',
+		'http://www.postgresql.org',
+		'PostgreSQL',
+		'PostgreSQL',
+		'nofollow',
+		'2013-06-02'
+	);
+
+DELETE FROM
+	links
+WHERE
+	id = 8;
+
+DELETE FROM
+	links
+WHERE
+	id = 10;
+
+DELETE FROM
+	links
+WHERE
+	id = 7 RETURNING *;
+
+DELETE FROM
+	links
+WHERE
+	id IN (6, 5) RETURNING *;
+
+DELETE FROM
+	links;
+
+--- upsert
+DROP TABLE IF EXISTS customers;
+
+CREATE TABLE customers (
+	customer_id serial PRIMARY KEY,
+	name VARCHAR UNIQUE,
+	email VARCHAR NOT NULL,
+	active bool NOT NULL DEFAULT TRUE
+);
+
+INSERT INTO
+	customers (name, email)
+VALUES
+	('IBM', 'contact@ibm.com'),
+	('Microsoft', 'contact@microsoft.com'),
+	('Intel', 'contact@intel.com');
+
+INSERT INTO
+	customers (NAME, email)
+VALUES
+	('Microsoft', 'hotline@microsoft.com') ON CONFLICT ON CONSTRAINT customers_name_key DO NOTHING;
+
+INSERT INTO
+	customers (name, email)
+VALUES
+	('Microsoft', 'hotline@microsoft.com') ON CONFLICT (name) DO NOTHING;
+
+INSERT INTO
+	customers (name, email)
+VALUES
+	('Microsoft', 'hotline@microsoft.com') ON CONFLICT (name) DO
+UPDATE
+SET
+	email = EXCLUDED.email || ';' || customers.email;
+
+--- transaction
+DROP TABLE IF EXISTS accounts;
+
+CREATE TABLE accounts (
+	id INT GENERATED BY DEFAULT AS IDENTITY,
+	name VARCHAR(100) NOT NULL,
+	balance DEC(15, 2) NOT NULL,
+	PRIMARY KEY(id)
+);
+
+INSERT INTO
+	accounts(name, balance)
+VALUES
+	('Bob', 10000);
+
+BEGIN;
+
+INSERT INTO
+	accounts(name, balance)
+VALUES
+	('Alice', 10000);
+
+SELECT
+	id,
+	name,
+	balance
+FROM
+	accounts;
+
+-- start a transaction
+BEGIN;
+
+-- deduct 1000 from account 1
+UPDATE
+	accounts
+SET
+	balance = balance - 1000
+WHERE
+	id = 1;
+
+-- add 1000 to account 2
+UPDATE
+	accounts
+SET
+	balance = balance + 1000
+WHERE
+	id = 2;
+
+-- select the data from accounts
+SELECT
+	id,
+	name,
+	balance
+FROM
+	accounts;
+
+-- commit the transaction
+COMMIT;
+
+-- begin the transaction
+BEGIN;
+
+-- deduct the amount from the account 1
+UPDATE
+	accounts
+SET
+	balance = balance - 1500
+WHERE
+	id = 1;
+
+-- add the amount from the account 3 (instead of 2)
+UPDATE
+	accounts
+SET
+	balance = balance + 1500
+WHERE
+	id = 3;
+
+-- roll back the transaction
+ROLLBACK;
+
+--- create table
+CREATE TABLE [IF NOT EXISTS] table_name (
+	column1 datatype(length) column_contraint,
+	column2 datatype(length) column_contraint,
+	column3 datatype(length) column_contraint,
+	table_constraints
+);
+
+CREATE TABLE accounts (
+	user_id serial PRIMARY KEY,
+	username VARCHAR (50) UNIQUE NOT NULL,
+	password VARCHAR (50) NOT NULL,
+	email VARCHAR (255) UNIQUE NOT NULL,
+	created_on TIMESTAMP NOT NULL,
+	last_login TIMESTAMP
+);
+
+CREATE TABLE roles(
+	role_id serial PRIMARY KEY,
+	role_name VARCHAR (255) UNIQUE NOT NULL
+);
+
+CREATE TABLE account_roles (
+	user_id INT NOT NULL,
+	role_id INT NOT NULL,
+	grant_date TIMESTAMP,
+	PRIMARY KEY (user_id, role_id),
+	FOREIGN KEY (role_id) REFERENCES roles (role_id),
+	FOREIGN KEY (user_id) REFERENCES accounts (user_id)
+);
+
+--- select into
+SELECT
+	select_list INTO [ TEMPORARY | TEMP | UNLOGGED ] [ TABLE ] new_table_name
+FROM
+	table_name
+WHERE
+	search_condition;
+
+SELECT
+	film_id,
+	title,
+	rental_rate INTO TABLE film_r
+FROM
+	film
+WHERE
+	rating = 'R'
+	AND rental_duration = 5
+ORDER BY
+	title;
+
+SELECT
+	film_id,
+	title,
+	length INTO TEMP TABLE short_film
+FROM
+	film
+WHERE
+	length < 60
+ORDER BY
+	title;
+
+--- create table as
+CREATE TABLE new_table_name AS query;
+
+CREATE TEMP TABLE new_table_name AS query;
+
+CREATE UNLOGGED TABLE new_table_name AS query;
+
+CREATE TABLE new_table_name (column_name_list) AS query;
+
+CREATE TABLE IF NOT EXISTS new_table_name AS query;
+
+CREATE TABLE action_film AS
+SELECT
+	film_id,
+	title,
+	release_year,
+	length,
+	rating
+FROM
+	film
+	INNER JOIN film_category USING (film_id)
+WHERE
+	category_id = 1;
+
+CREATE TABLE IF NOT EXISTS film_rating (rating, film_count) AS
+SELECT
+	rating,
+	COUNT (film_id)
+FROM
+	film
+GROUP BY
+	rating;
+
+--- serial to create auto-increment column
+CREATE TABLE table_name(id SERIAL);
+
+CREATE TABLE table_name(id SERIAL);
+
+CREATE SEQUENCE table_name_id_seq;
+
+CREATE TABLE table_name (
+	id integer NOT NULL DEFAULT nextval('table_name_id_seq')
+);
+
+ALTER SEQUENCE table_name_id_seq OWNED BY table_name.id;
+
+CREATE TABLE fruits(id SERIAL PRIMARY KEY, name VARCHAR NOT NULL);
+
+INSERT INTO
+	fruits(name)
+VALUES
+	('Orange');
+
+INSERT INTO
+	fruits(id, name)
+VALUES
+	(DEFAULT, 'Apple');
+
+SELECT
+	currval(pg_get_serial_sequence('fruits', 'id'));
+
+INSERT INTO
+	fruits(name)
+VALUES
+	('Banana') RETURNING id;
