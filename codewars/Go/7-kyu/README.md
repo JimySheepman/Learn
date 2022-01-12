@@ -3,3 +3,4 @@
 Answers to the questions I solved in the 8-kyu degree:
 
 1. Previous multiple of three
+2. Going to the cinema
