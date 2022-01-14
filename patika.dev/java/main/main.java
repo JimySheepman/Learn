@@ -113,20 +113,21 @@ public class main {
         } else {
             System.out.println("Kan verebilmek için yaşınız 18'den büyük olmalıdır.");
 
-        int value = input.nextInt();
-        switch (value) {
-            case 1:
-                // Value 1
-                break;
-            case 2:
-                // Value 1
-                break;
-            case 3:
-                // Value 1
-                break;
-            default:
-                // Value is invalid
-                break;
+            int value = input.nextInt();
+            switch (value) {
+                case 1:
+                    // Value 1
+                    break;
+                case 2:
+                    // Value 1
+                    break;
+                case 3:
+                    // Value 1
+                    break;
+                default:
+                    // Value is invalid
+                    break;
+            }
         }
     }
 }
