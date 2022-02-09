@@ -2,23 +2,6 @@
 
 It is a repository where I practice with multiple ways to gain hands-on `Go` experience.
 
-## Tutorials
-
-- [go-1](https://www.koderhq.com/tutorial/go/)
-- [go-2](https://www.tutorialspoint.com/go/index.htm)
-- [go-3](https://www.practical-go-lessons.com/)
-- [go-4](https://gobyexample.com/)
-- [go-5](https://www.youtube.com/watch?v=wAUL4f0F8hA&list=PLX2txCMVbkjyqrdV5TsJ5iW-bhVNeBMaq&index=1&t=5s)
-- [go-6](https://www.golangprograms.com/)
-- [go-7](https://tutorialedge.net/course/golang/)
-- [go-8](https://golangresources.com/)
-- [go-9](https://halilkocaoz.gitbook.io/go-programlama-dilini-ogren/)
-- [go-10](https://gowebexamples.com/)
-- [go-11](https://github.com/tpphu/golang-training/wiki)
-- [go-12](https://github.com/astaxie/build-web-application-with-golang/blob/master/en/preface.md)
-- [go-13](https://thewhitetulip.gitbook.io/bo/)
-- [go-14](https://www.devdungeon.com/content/go)
-
 ## Basic
 
 - Filenames, keywords, identifiers
@@ -261,3 +244,20 @@ How do you initialize a struct in Go?
        - [Twirp](https://github.com/twitchtv/twirp)
 
 15. [Go-Patterns](https://github.com/tmrts/go-patterns)
+
+# Referense
+
+- [ref](https://www.koderhq.com/tutorial/go/)
+- [ref](https://www.tutorialspoint.com/go/index.htm)
+- [ref](https://www.practical-go-lessons.com/)
+- [ref](https://gobyexample.com/)
+- [ref](https://www.youtube.com/watch?v=wAUL4f0F8hA&list=PLX2txCMVbkjyqrdV5TsJ5iW-bhVNeBMaq&index=1&t=5s)
+- [ref](https://www.golangprograms.com/)
+- [ref](https://tutorialedge.net/course/golang/)
+- [ref](https://golangresources.com/)
+- [ref](https://halilkocaoz.gitbook.io/go-programlama-dilini-ogren/)
+- [ref](https://gowebexamples.com/)
+- [ref](https://github.com/tpphu/golang-training/wiki)
+- [ref](https://github.com/astaxie/build-web-application-with-golang/blob/master/en/preface.md)
+- [ref](https://thewhitetulip.gitbook.io/bo/)
+- [ref](https://www.devdungeon.com/content/go)
