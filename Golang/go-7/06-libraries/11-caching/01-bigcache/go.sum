@@ -1,0 +1,4 @@
+github.com/allegro/bigcache/v2 v2.2.5 h1:mRc8r6GQjuJsmSKQNPsR5jQVXc8IJ1xsW5YXUYMLfqI=
+github.com/allegro/bigcache/v2 v2.2.5/go.mod h1:FppZsIO+IZk7gCuj5FiIDHGygD9xvWQcqg1uIPMb6tY=
+github.com/allegro/bigcache/v3 v3.0.2 h1:AKZCw+5eAaVyNTBmI2fgyPVJhHkdWder3O9IrprcQfI=
+github.com/allegro/bigcache/v3 v3.0.2/go.mod h1:aPyh7jEvrog9zAwx5N7+JUQX5dZTSGpxF1LAR4dr35I=
