@@ -1,4 +1,4 @@
-# Tasarım deseni nedir?
+# Tasarım Örüntüleri (Design Patterns)
 
 Tasarım desenleri, yazılım tasarımında yaygın olarak ortaya çıkan sorunlara tipik çözümlerdir. Kodunuzda yinelenen bir tasarım sorununu çözmek için özelleştirebileceğiniz önceden hazırlanmış planlar gibidirler.
 
@@ -18,17 +18,7 @@ Desen nelerden oluşur?
 
 Bazı kalıp katalogları, kalıbın uygulanabilirliği, uygulama adımları ve diğer kalıplarla ilişkiler gibi diğer faydalı detayları listeler.
 
-# Kalıpların tarihi
-
-Kalıpları kim icat etti? Bu iyi, ama çok doğru bir soru değil. Tasarım kalıpları belirsiz, karmaşık kavramlar değildir - tam tersi. Desenler, nesne yönelimli tasarımdaki yaygın sorunlara tipik çözümlerdir. Bir çözüm çeşitli projelerde defalarca tekrarlandığında, birileri sonunda ona bir isim verir ve çözümü ayrıntılı olarak açıklar. Temelde bir model bu şekilde keşfedilir.
-
-Model kavramı ilk olarak Christopher Alexander tarafından A Pattern Language: Towns, Buildings, Construction adlı kitapta tanımlanmıştır. Kitap, kentsel çevreyi tasarlamak için bir “dil” tanımlıyor. Bu dilin birimleri kalıplardır. Pencerelerin ne kadar yüksek olması gerektiğini, bir binanın kaç katı olması gerektiğini, bir mahallede ne kadar büyük yeşil alanların olması gerektiğini vb. tanımlayabilirler.
-
-Fikir dört yazar tarafından alındı: Erich Gamma, John Vlissides, Ralph Johnson ve Richard Helm. 1994 yılında, tasarım kalıpları kavramını programlamaya uyguladıkları Design Patterns: Elements of Reusable Object-Oriented Software'i yayınladılar. Kitap, nesne yönelimli tasarımın çeşitli problemlerini çözen 23 model içeriyor ve çok hızlı bir şekilde en çok satan haline geldi. Uzun adı nedeniyle, insanlar onu "dörtlü çetenin kitabı" olarak adlandırmaya başladılar ve kısa süre sonra sadece "GoF kitabı" olarak kısaltıldı.
-
-O zamandan beri, düzinelerce başka nesne yönelimli kalıp keşfedildi. "Desen yaklaşımı" diğer programlama alanlarında çok popüler hale geldi, bu nedenle artık nesne yönelimli tasarımın dışında da birçok başka model var.
-
-# Neden kalıpları öğrenmeliyim?
+## Neden kalıpları öğrenmeliyim?
 
 Gerçek şu ki, tek bir model hakkında bilgi sahibi olmadan uzun yıllar programcı olarak çalışmayı başarabilirsiniz. Pek çok insan tam da bunu yapıyor. Bu durumda bile, bilmeden bazı kalıpları uyguluyor olabilirsiniz. Öyleyse neden onları öğrenmek için zaman harcayasınız?
 
@@ -36,27 +26,7 @@ Gerçek şu ki, tek bir model hakkında bilgi sahibi olmadan uzun yıllar progra
 
 - Tasarım kalıpları, sizin ve ekip arkadaşlarınızın daha verimli iletişim kurmak için kullanabileceği ortak bir dili tanımlar. “Ah, bunun için bir Singleton kullan” diyebilirsiniz ve herkes önerinizin arkasındaki fikri anlayacaktır. Deseni ve adını biliyorsanız, singleton'un ne olduğunu açıklamaya gerek yok.
 
-# Kalıp eleştirisi
-
-Görünüşe göre sadece tembel insanlar tasarım modellerini henüz eleştirmedi. Kalıpları kullanmaya karşı en tipik argümanlara bir göz atalım.
-
-## Zayıf bir programlama dili için Kludges
-
-Genellikle kalıplara duyulan ihtiyaç, insanlar gerekli soyutlama seviyesinden yoksun bir programlama dili veya teknoloji seçtiğinde ortaya çıkar. Bu durumda, kalıplar, dile çok ihtiyaç duyulan süper yetenekleri veren bir çamur haline gelir.
-
-Örneğin, Strateji modeli, çoğu modern programlama dilinde basit bir anonim (lambda) işleviyle uygulanabilir.
-
-## verimsiz çözümler
-
-Modeller, halihazırda yaygın olarak kullanılan yaklaşımları sistematize etmeye çalışır. Bu birleştirme birçokları tarafından bir dogma olarak görülüyor ve kalıpları projelerinin bağlamına uyarlamadan "noktasına kadar" uyguluyorlar.
-
-## haksız kullanım
-
-`Sahip olduğun tek şey bir çekiçse, her şey çivi gibi görünür.`
-
-Bu, kalıplara yeni aşina olan birçok acemi için musallat olan sorundur. Kalıpları öğrendikten sonra, daha basit kodun iyi sonuç vereceği durumlarda bile bunları her yerde uygulamaya çalışırlar.
-
-# Kalıpların sınıflandırılması
+## Kalıpların sınıflandırılması
 
 Tasarım kalıpları, karmaşıklıklarına, ayrıntı düzeylerine ve tasarlanmakta olan tüm sisteme uygulanabilirlik derecelerine göre farklılık gösterir. Yol yapımına benzetmeyi seviyorum: Bazı trafik ışıkları kurarak veya yayalar için yeraltı geçitleriyle çok seviyeli bir kavşak inşa ederek bir kavşağı daha güvenli hale getirebilirsiniz.
 
@@ -66,10 +36,43 @@ En evrensel ve üst düzey desenler mimari desenlerdir. Geliştiriciler bu kalı
 
 Ek olarak, tüm desenler amaçlarına veya amaçlarına göre kategorilere ayrılabilir. Bu kitap üç ana kalıp grubunu kapsar:
 
-- Creational patterns: esnekliği ve mevcut kodun yeniden kullanımını artıran nesne oluşturma mekanizmaları sağlar.
-- Structural patterns: yapıları esnek ve verimli tutarken nesnelerin ve sınıfların daha büyük yapılarda nasıl birleştirileceğini açıklar.
-- Behavioral patterns: etkili iletişimi ve nesneler arasında sorumlulukların atanmasını sağlar.
+### Creational Patterns
 
-# Lisans
+Esnekliği ve mevcut kodun yeniden kullanımını artıran nesne oluşturma mekanizmaları sağlar. `new` keyword kullanımını yönetir!
+
+- Abstact Factory
+- Builder
+- Factory Method
+- Prototype
+- Singleton
+
+### Structural Patterns
+
+Yapıları esnek ve verimli tutarken nesnelerin ve sınıfların daha büyük yapılarda nasıl birleştirileceğini açıklar. Sınıflar arası kurulan doğru ilişki/bağlantılar üzerinden kurduğu yapılar ile ilgilenir bunları düzenlemeye ve anlamlandırmaya çalışır.
+
+- Adapter
+- Bridge
+- Composite
+- Decorator
+- Facade
+- Flyweight
+- Proxy
+
+### Behavioral Patterns
+
+Etkili iletişimi ve nesneler arasında sorumlulukların atanmasını sağlar. Davranışsal(Behavioral) örüntüler ise daha çok algoritmalar, algoritmaların, davranışların soyutlanması üzerine olan örüntülerdir. Algoritmalar arası iletişim şekli, sorumlulukların paylaşımı veya aktarımının nasıl yapılacağını tanımlar.
+
+- Chain Of Responsibility
+- Command
+- Interpreter
+- Mediator
+- Memento
+- Observer
+- State
+- Strategy
+- Template Method
+- Visitor
+
+## Lisans
 
 [MIT](https://choosealicense.com/licenses/mit/)
