@@ -1,3 +1,4 @@
+// Concrete factory
 package main
 
 type nike struct {

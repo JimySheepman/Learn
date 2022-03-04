@@ -1,3 +1,4 @@
+// Factory
 package main
 
 import "fmt"

@@ -1,3 +1,4 @@
+//  Prototype interface
 package main
 
 type inode interface {

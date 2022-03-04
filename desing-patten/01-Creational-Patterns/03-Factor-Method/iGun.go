@@ -1,3 +1,4 @@
+// Product interface
 package main
 
 type iGun interface {

@@ -1,3 +1,4 @@
+//  Abstract factory interface
 package main
 
 import "fmt"

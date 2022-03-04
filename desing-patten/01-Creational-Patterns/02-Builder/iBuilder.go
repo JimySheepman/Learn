@@ -1,3 +1,4 @@
+// Builder interface
 package main
 
 type iBuilder interface {

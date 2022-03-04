@@ -1,3 +1,4 @@
+// Client code
 package main
 
 import "fmt"

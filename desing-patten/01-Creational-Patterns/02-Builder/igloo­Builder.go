@@ -1,3 +1,4 @@
+//  Concrete builder
 package main
 
 type iglooBuilder struct {

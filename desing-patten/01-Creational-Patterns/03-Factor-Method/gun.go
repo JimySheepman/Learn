@@ -1,3 +1,4 @@
+// Concrete product
 package main
 
 type gun struct {

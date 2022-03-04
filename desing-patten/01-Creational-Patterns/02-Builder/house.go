@@ -1,3 +1,4 @@
+// Product
 package main
 
 type house struct {

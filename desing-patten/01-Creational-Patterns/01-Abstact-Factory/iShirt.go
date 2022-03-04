@@ -1,3 +1,4 @@
+// Abstract product
 package main
 
 type iShirt interface {

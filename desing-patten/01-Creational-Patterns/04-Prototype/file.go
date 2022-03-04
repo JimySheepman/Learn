@@ -1,3 +1,4 @@
+// Concrete prototype
 package main
 
 import "fmt"
