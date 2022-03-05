@@ -32,3 +32,6 @@ Answers to the questions I solved in the 8-kyu degree:
 28. To square(root) or not to square(root)
 29. If you can't sleep, just count sheep!!
 30. Count Odd Numbers below n
+31. altERnaTIng cAsE <=> ALTerNAtiNG CaSe
+32. Well of Ideas - Easy Version
+33. Total amount of points
