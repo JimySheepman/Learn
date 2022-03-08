@@ -245,19 +245,14 @@ How do you initialize a struct in Go?
 
 15. [Go-Patterns](https://github.com/tmrts/go-patterns)
 
-# Referense
+## Referense
 
-- [ref](https://www.koderhq.com/tutorial/go/)
-- [ref](https://www.tutorialspoint.com/go/index.htm)
-- [ref](https://www.practical-go-lessons.com/)
-- [ref](https://gobyexample.com/)
-- [ref](https://www.youtube.com/watch?v=wAUL4f0F8hA&list=PLX2txCMVbkjyqrdV5TsJ5iW-bhVNeBMaq&index=1&t=5s)
-- [ref](https://www.golangprograms.com/)
-- [ref](https://tutorialedge.net/course/golang/)
-- [ref](https://golangresources.com/)
-- [ref](https://halilkocaoz.gitbook.io/go-programlama-dilini-ogren/)
-- [ref](https://gowebexamples.com/)
-- [ref](https://github.com/tpphu/golang-training/wiki)
-- [ref](https://github.com/astaxie/build-web-application-with-golang/blob/master/en/preface.md)
-- [ref](https://thewhitetulip.gitbook.io/bo/)
-- [ref](https://www.devdungeon.com/content/go)
+- [go-1](https://www.koderhq.com/tutorial/go/)
+- [go-2](https://www.tutorialspoint.com/go/index.htm)
+- [go-3](https://www.practical-go-lessons.com/)
+- [go-4](https://gobyexample.com/)
+- [go-5](https://www.youtube.com/watch?v=wAUL4f0F8hA&list=PLX2txCMVbkjyqrdV5TsJ5iW-bhVNeBMaq&index=1&t=5s)
+- [go-6](https://www.golangprograms.com/)
+- [go-7](https://github.com/oguzhankiyar/here-we-go)
+- [go-8](https://quii.gitbook.io/learn-go-with-tests/)
+- [go-RabbitMQ](https://www.rabbitmq.com/getstarted.html)
