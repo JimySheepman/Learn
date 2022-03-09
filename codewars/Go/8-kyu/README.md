@@ -35,3 +35,8 @@ Answers to the questions I solved in the 8-kyu degree:
 31. altERnaTIng cAsE <=> ALTerNAtiNG CaSe
 32. Well of Ideas - Easy Version
 33. Total amount of points
+34. Count of positives / sum of negatives
+35. The Feast of Many Beasts
+36. Multiple of index
+37. find the unique element
+38. Grasshopper - Terminal game combat function
