@@ -40,3 +40,4 @@ Answers to the questions I solved in the 8-kyu degree:
 36. Multiple of index
 37. find the unique element
 38. Grasshopper - Terminal game combat function
+39. Is this my tail?
