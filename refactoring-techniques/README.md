@@ -31,7 +31,21 @@ Yeniden düzenlemenin çoğu, yöntemleri doğru bir şekilde oluşturmaya ayrı
 
 Bu yeniden düzenleme teknikleri, ilkel öğeleri zengin sınıf işlevselliğiyle değiştirerek veri işlemeye yardımcı olur.Bir diğer önemli sonuç, sınıfları daha taşınabilir ve yeniden kullanılabilir hale getiren sınıf ilişkilendirmelerinin çözülmesidir.
 
-* [](https://github.com/JimySheepman/Learn/blob/main/refactoring-techniques/03-organizing-data/)
+* [Self Encapsulate Field](https://github.com/JimySheepman/Learn/blob/main/refactoring-techniques/03-organizing-data/SelfEncapsulateField.md)
+* [Replace Data Value with Object](https://github.com/JimySheepman/Learn/blob/main/refactoring-techniques/03-organizing-data/ReplaceDataValuewithObject.md)
+* [Change Value to Reference](https://github.com/JimySheepman/Learn/blob/main/refactoring-techniques/03-organizing-data/ChangeValuetoReference.md)
+* [Change Reference to Value](https://github.com/JimySheepman/Learn/blob/main/refactoring-techniques/03-organizing-data/ChangeReferencetoValue.md)
+* [Replace Array with Object](https://github.com/JimySheepman/Learn/blob/main/refactoring-techniques/03-organizing-data/ReplaceArraywithObject.md)
+* [Duplicate Observed Data](https://github.com/JimySheepman/Learn/blob/main/refactoring-techniques/03-organizing-data/)
+* [Change Unidirectional Association to Bidirectional](https://github.com/JimySheepman/Learn/blob/main/refactoring-techniques/03-organizing-data/ChangeUnidirectionalAssociationtoBidirectional.md)
+* [Change Bidirectional Association to Unidirectional](https://github.com/JimySheepman/Learn/blob/main/refactoring-techniques/03-organizing-data/ChangeBidirectionalAssociationtoUnidirectional.md)
+* [Replace Magic Number with Symbolic Constant](https://github.com/JimySheepman/Learn/blob/main/refactoring-techniques/03-organizing-data/ReplaceMagicNumberwithSymbolicConstant.md)
+* [Encapsulate Field](https://github.com/JimySheepman/Learn/blob/main/refactoring-techniques/03-organizing-data/EncapsulateField.md)
+* [Encapsulate Collection](https://github.com/JimySheepman/Learn/blob/main/refactoring-techniques/03-organizing-data/EncapsulateCollection.md)
+* [Replace Type Code with Class](https://github.com/JimySheepman/Learn/blob/main/refactoring-techniques/03-organizing-data/ReplaceTypeCodewithClass.md)
+* [Replace Type Code with Subclasses](https://github.com/JimySheepman/Learn/blob/main/refactoring-techniques/03-organizing-data/ReplaceTypeCodewithSubclasses.md)
+* [Replace Type Code with State/Strategy](https://github.com/JimySheepman/Learn/blob/main/refactoring-techniques/03-organizing-data/ReplaceTypeCodewithStateStrategy.md)
+* [Replace Subclass with Fields](https://github.com/JimySheepman/Learn/blob/main/refactoring-techniques/03-organizing-data/ReplaceSubclasswithFields.md)
 
 ## Simplifying Conditional Expressions
 
