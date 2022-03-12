@@ -255,4 +255,5 @@ How do you initialize a struct in Go?
 - [go-6](https://www.golangprograms.com/)
 - [go-7](https://github.com/oguzhankiyar/here-we-go)
 - [go-8](https://quii.gitbook.io/learn-go-with-tests/)
+- [go-9](https://gowebexamples.com/)
 - [go-RabbitMQ](https://www.rabbitmq.com/getstarted.html)
