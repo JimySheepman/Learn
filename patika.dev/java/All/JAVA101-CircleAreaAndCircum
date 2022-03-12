@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        int r;
+        double pi = 3.14;
+        double area;
+        double circum;
+        double a;
+        double slice;
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter radius value (cm): ");
+        r = scanner.nextInt();
+
+        System.out.print("Enter slice value (cm): ");
+        a = scanner.nextDouble();
+
+        area = (pi * (Math.pow(r, r)));
+        System.out.println("Area size (cm): " + area);
+
+        circum = (2 * pi * r);
+        System.out.println("Circum size (cm): " + circum);
+
+        slice =  (pi * (Math.pow(r, r)) * a) / 360;
+        System.out.println("Slice size (cm): " + slice);
+    }
+}

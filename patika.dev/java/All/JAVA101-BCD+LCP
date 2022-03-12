@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        int bcd = 0;
+        int lcp = 0;
+        int num1;
+        int num2;
+        int i = 1;
+        int max = 0;
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Write the first number: ");
+        num1 = scanner.nextInt();
+
+        System.out.print("Write the second number: ");
+        num2 = scanner.nextInt();
+
+        while(i < num1) {
+            if((num1 % i == 0) && (num2 % i == 0)) {
+                bcd = i;
+            }
+            i++;
+        }
+        System.out.println("Biggest Common Divisor: " + bcd);
+
+        max = num1 * num2;
+        while(max > 0) {
+            if((max % num1 == 0) && (max % num2 == 0)) {
+                lcp = max;
+            }
+            max--;
+        }
+        System.out.println("Lowest Common Pow = " + lcp);
+    }
+}

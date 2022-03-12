@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        int number1;
+        int number2;
+        int pick;
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("1-Plus\n2-Minus\n3-Times\n4-Divide\n");
+        System.out.print("Which transaction would you like to do?: ");
+        pick = scanner.nextInt();
+
+        while (pick > 4) {
+            System.out.println("Wrong choice. Select your transaction again.");
+            System.out.print("1-Plus\n2-Minus\n3-Times\n4-Divide\n");
+            pick = scanner.nextInt();
+        }
+
+        System.out.print("Enter the first number: ");
+        number1 = scanner.nextInt();
+
+        System.out.print("Enter the second number: ");
+        number2 = scanner.nextInt();
+
+        switch (pick) {
+            case 1:
+                System.out.println("Result: " + (number1 + number2));
+                break;
+            case 2:
+                System.out.println("Result: " + (number1 - number2));
+                break;
+            case 3:
+                System.out.println("Result: " + (number1 * number2));
+                break;
+            case 4:
+                System.out.println("Result: " + (number1 / number2));
+                break;
+            default:
+                System.out.println("Wrong choice.");
+        }
+    }
+}

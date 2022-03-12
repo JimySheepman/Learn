@@ -1,0 +1,59 @@
+public class Main {
+
+    public static class Employee {
+        String name;
+        double salary;
+        int workHours;
+        int hireYear;
+
+        Employee(String name, double salary, int workHours, int hireYear) {
+            this.name = name;
+            this.salary = salary;
+            this.workHours = workHours;
+            this.hireYear = hireYear;
+        }
+
+        public double tax() {
+            double tax;
+            if (this.salary < 1000) {
+                tax = 0;
+            }
+            else {
+                tax = this.salary * 0.03;
+            }
+            return tax;
+        }
+
+        public double bonus(){
+            return this.workHours * 4;
+        }
+
+        public double raiseSalary() {
+            int timeDiff = 2021 - this.hireYear;
+            double raise = 0;
+            if (timeDiff < 10) {
+                raise = this.salary * 0.05;
+            }
+            else if ((timeDiff > 9) && (timeDiff < 20)) {
+                raise = this.salary * 0.10;
+            }
+            else if (timeDiff > 19) {
+                raise = this.salary * 0.15;
+            }
+            return raise;
+        }
+
+        @Override
+        public String toString() {
+            return "Name: " + this.name + "\nSalary (EUR): " + this.salary + "\nWeekly Working Hours: " + this.workHours +
+                    "\nStarting Year: " + this.hireYear + "\nTAX (EUR): " + this.tax() + "\nBonus (EUR): " + this.bonus() +
+                    "\nSalary Increase (EUR): " + this.raiseSalary() + "\nSalary (Incl. Taxes & Bonuses (EUR): " +
+                    (this.salary - this.tax() + this.bonus() + "\nTotal Salary (EUR): " + (this.salary +  this.raiseSalary()));
+        }
+    }
+
+    public static void main(String[] args) {
+        Employee employee = new Employee("patika dev",2000,45,2010);
+        System.out.println(employee.toString());
+    }
+}

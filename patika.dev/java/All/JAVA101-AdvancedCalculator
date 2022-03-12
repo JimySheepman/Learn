@@ -1,0 +1,186 @@
+import java.util.Scanner;
+
+public class Main {
+    public static Scanner scanner = new Scanner(System.in);
+
+    static void plus() {
+        int number;
+        int result = 0;
+
+        System.out.print("How many numbers will you enter?: ");
+        int counter = scanner.nextInt();
+
+        for (int i = 1; i <= counter; i++) {
+            System.out.print(i + ". number: ");
+            number = scanner.nextInt();
+            result += number;
+        }
+        System.out.println("Result: " + result + "\n");
+    }
+
+    static void minus() {
+        int number;
+        int result = 0;
+
+        System.out.print("How many numbers will you enter?: ");
+        int counter = scanner.nextInt();
+
+        for (int i = 1; i <= counter; i++) {
+            System.out.print(i + ". number: ");
+            number = scanner.nextInt();
+            if (i == 1) {
+                result = number;
+                continue;
+            }
+            result -= number;
+        }
+        System.out.println("Result: " + result + "\n");
+    }
+
+    static void times() {
+        int number;
+        int result = 1;
+
+        System.out.print("How many numbers will you enter?: ");
+        int counter = scanner.nextInt();
+
+        for (int i = 1; i <= counter; i++) {
+            System.out.print(i + ". number: ");
+            number = scanner.nextInt();
+            if (number == 0) {
+                result = 0;
+                break;
+            }
+            result *= number;
+        }
+        System.out.println("Result: " + result + "\n");
+    }
+
+    static void divided() {
+        double number;
+        double result = 0.0;
+
+        System.out.print("How many numbers will you enter?: ");
+        int counter = scanner.nextInt();
+
+        for (int i = 1; i <= counter; i++) {
+            System.out.print(i + ". number:");
+            number = scanner.nextDouble();
+            if ((i != 1) && (number == 0)) {
+                System.out.println("Dividing number can not be zero.");
+                continue;
+            }
+            if (i == 1) {
+                result = number;
+                continue;
+            }
+            result /= number;
+        }
+        System.out.println("Result: " + result + "\n");
+    }
+
+    static void power() {
+        int result = 1;
+
+        System.out.print("Enter the base value: ");
+        int base = scanner.nextInt();
+
+        System.out.print("Enter the exponent value: ");
+        int exponent = scanner.nextInt();
+
+        for (int i = 1; i <= exponent; i++) {
+            result *= base;
+        }
+        System.out.println("Result: " + result + "\n");
+    }
+
+    static void factorial() {
+        int result = 1;
+
+        System.out.print("Write a number: ");
+        int n = scanner.nextInt();
+
+        for (int i = 1; i <= n; i++) {
+            result *= i;
+        }
+        System.out.println("Result: " + result + "\n");
+    }
+
+    static void mod() {
+
+        System.out.print("Which number do you want to get the mod of?: ");
+        int n = scanner.nextInt();
+
+        System.out.print("Enter the mod value: ");
+        int mod = scanner.nextInt();
+
+        int result = n % mod;
+        System.out.print("Result of " + n + " % " + mod + " >> " + result + "\n");
+    }
+
+    static void rectangleCircumArea() {
+
+        System.out.print("Enter the value of short edge: ");
+        int shortEdge = scanner.nextInt();
+
+        System.out.print("Enter the value of long edge: ");
+        int longEdge = scanner.nextInt();
+
+        int circum = 2 * (shortEdge + longEdge);
+        int area = shortEdge * longEdge;
+
+        System.out.println("Rectangle Circum: " + circum);
+        System.out.println("Rectangle Area: " + area + "\n");
+    }
+
+    public static void main(String[] args) {
+        int select;
+
+        String menu = "\n1- Plus\n"
+                + "2- Minus\n"
+                + "3- Times\n"
+                + "4- Divide\n"
+                + "5- Exponential\n"
+                + "6- Factorial\n"
+                + "7- Mod\n"
+                + "8- Rectangle Circum and Area\n"
+                + "0- Exit";
+
+        do {
+            System.out.println(menu);
+            System.out.print("Please, select your transaction: ");
+            select = scanner.nextInt();
+
+            switch (select) {
+                case 1:
+                    plus();
+                    break;
+                case 2:
+                    minus();
+                    break;
+                case 3:
+                    times();
+                    break;
+                case 4:
+                    divided();
+                    break;
+                case 5:
+                    power();
+                    break;
+                case 6:
+                    factorial();
+                    break;
+                case 7:
+                    mod();
+                    break;
+                case 8:
+                    rectangleCircumArea();
+                    break;
+                case 0:
+                    break;
+                default:
+                    System.out.println("Wrong choice. Please, try again.\n");
+            }
+        } while (select != 0);
+    }
+}

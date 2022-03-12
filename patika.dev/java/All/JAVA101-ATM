@@ -1,0 +1,65 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        String username;
+        String password;
+        int right = 3;
+        int balance = 1500;
+        int select;
+        Scanner scanner = new Scanner(System.in);
+
+        while (right > 0) {
+            System.out.print("Username: ");
+            username = scanner.nextLine();
+            System.out.print("Password: ");
+            password = scanner.nextLine();
+
+            if (username.equals("patika") && password.equals("dev123")) {
+                System.out.print("\n** WELCOME TO THE BANK OF KODLUYORUZ **\n");
+                do {
+                    System.out.print("1-Deposit\n2-Withdraw\n3-Balance Check\n4-Exit\n");
+                    System.out.print("Please select your action to do: ");
+                    select = scanner.nextInt();
+                    switch (select) {
+                        case 1:
+                            System.out.print("Enter the amount you want to deposit: ");
+                            int price = scanner.nextInt();
+                            System.out.println("Your transaction has been completed successfully. Your current balance (EUR): " + (balance += price) + "\n");
+                            break;
+                        case 2:
+                            System.out.print("Enter the amount you want to withdraw: ");
+                            price = scanner.nextInt();
+                            if (price > balance) {
+                                System.out.println("You do not have enough balance for this transaction.\n");
+                            }
+                            else {
+                                System.out.println("Your transaction has been completed successfully. Your current balance (EUR): " + (balance -= price) + "\n");
+                            }
+                            break;
+                        case 3:
+                            System.out.println("Your current balance (EUR): " + balance + "\n");
+                            break;
+                        default:
+                            break;
+                    }
+                }
+
+                while (select != 4);
+                System.out.println("Goodbye " + username + " have a nice day.");
+                break;
+            }
+            else {
+                right--;
+                System.out.println("You entered an incorrect username or password. Please try again.");
+                if (right == 0) {
+                    System.out.println("Your account has been blocked, please contact the bank.");
+                }
+                else {
+                    System.out.println("Your remaining attempts to log in: " + right);
+                }
+            }
+        }
+    }
+}

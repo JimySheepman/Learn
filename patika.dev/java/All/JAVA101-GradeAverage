@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        int math , physic, chemical, english, sport, music;
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter your Math grade: ");
+        math = scanner.nextInt();
+
+        System.out.print("Enter your Physic grade: ");
+        physic = scanner.nextInt();
+
+        System.out.print("Enter your Chemical grade: ");
+        chemical = scanner.nextInt();
+
+        System.out.print("Enter your English grade: ");
+        english = scanner.nextInt();
+
+        System.out.print("Enter your Sport grade: ");
+        sport = scanner.nextInt();
+
+        System.out.print("Enter your Music grade: ");
+        music = scanner.nextInt();
+
+        int average = (math + physic + chemical + english + sport + music) / 6;
+        System.out.println("Your average: " + average);
+
+        String result = (average >= 60) ? ("You have successfully completed the class with " + average + " grade average.") : ("You did not successfully complete the class with " + average + " grade average.");
+        System.out.println(result);
+    }
+}

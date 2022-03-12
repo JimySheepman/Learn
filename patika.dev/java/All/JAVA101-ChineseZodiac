@@ -1,0 +1,49 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        int birthYear;
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Write your birth year: ");
+        birthYear = scanner.nextInt();
+
+        if (birthYear % 12 == 0) {
+            System.out.println("Your chinese zodiac is Monkey");
+        }
+        else if (birthYear % 12 == 1) {
+            System.out.println("Your chinese zodiac is Cockerel");
+        }
+        else if (birthYear % 12 == 2) {
+            System.out.println("Your chinese zodiac is Dog");
+        }
+        else if (birthYear % 12 == 3) {
+            System.out.println("Your chinese zodiac is Pork");
+        }
+        else if (birthYear % 12 == 4) {
+            System.out.println("Your chinese zodiac is Rat");
+        }
+        else if (birthYear % 12 == 5) {
+            System.out.println("Your chinese zodiac is Cow");
+        }
+        else if (birthYear % 12 == 6) {
+            System.out.println("Your chinese zodiac is Tiger");
+        }
+        else if (birthYear % 12 == 7) {
+            System.out.println("Your chinese zodiac is Rabbit");
+        }
+        else if (birthYear % 12 == 8) {
+            System.out.println("Your chinese zodiac is Dragon");
+        }
+        else if (birthYear % 12 == 9) {
+            System.out.println("Your chinese zodiac is Snake");
+        }
+        else if (birthYear % 12 == 10) {
+            System.out.println("Your chinese zodiac is Horse");
+        }
+        else if (birthYear % 12 == 11) {
+            System.out.println("Your chinese zodiac is Sheep");
+        }
+    }
+}

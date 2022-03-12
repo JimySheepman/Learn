@@ -1,0 +1,112 @@
+public class Main {
+
+    public static class Match {
+        Fighter f1;
+        Fighter f2;
+        int minWeight;
+        int maxWeight;
+
+        public Match(Fighter f1, Fighter f2, int minWeight, int maxWeight) {
+            this.f1 = f1;
+            this.f2 = f2;
+            this.minWeight = minWeight;
+            this.maxWeight = maxWeight;
+        }
+
+        public void run() {
+            if(isCheck()) {
+                while (this.f1.health > 0 && this.f2.health > 0) {
+                    System.out.println("\n**** NEW ROUND ****");
+                    this.f2.health = this.f1.hit(this.f2);
+                    if (isWin()) {
+                        break;
+                    }
+                    this.f1.health = this.f2.hit((this.f1));
+                    if (isWin()) {
+                        break;
+                    }
+                    System.out.println(this.f1.name + "'s health: " + this.f1.health);
+                    System.out.println(this.f2.name + "'s health: " + this.f2.health);
+                }
+            }
+            else {
+                System.out.println("Athletes' weights are not equal.");
+            }
+        }
+
+        public boolean isCheck() {
+            return ((this.f1.weight >= minWeight) && (this.f1.weight <= maxWeight))
+                    &&
+                    ((this.f2.weight >= minWeight) && (this.f2.weight <= maxWeight));
+        }
+
+        public boolean isWin() {
+            if (this.f1.health == 0) {
+                System.out.println(this.f2.name + " won.");
+                return true;
+            }
+            if (this.f2.health == 0) {
+                System.out.println(this.f1.name + " won.");
+                return true;
+            }
+            return false;
+        }
+    }
+
+    public static class Fighter {
+        String name;
+        int damage;
+        int health;
+        int weight;
+        int dodge;
+
+        Fighter(String name, int damage, int health, int weight, int dodge) {
+            this.name = name;
+            this.damage = damage;
+            this.health = health;
+            this.weight = weight;
+
+            if ((dodge >= 0) && (dodge <= 100)) {
+                this.dodge = dodge;
+            }
+            else {
+                this.dodge = 0;
+            }
+        }
+
+        public int hit(Fighter f) {
+            System.out.println(this.name + " is struck " + this.damage + " damage to " + f.name);
+            if (f.isDodge()) {
+                System.out.println(f.name + " blocked the incoming damage.");
+                System.out.println("----------------");
+                return f.health;
+            }
+            if (f.health - this.damage < 0) {
+                return 0;
+            }
+            return f.health - this.damage;
+        }
+
+        public boolean isDodge() {
+            double randomNumber = Math.random() * 100;
+            return randomNumber <= this.dodge;
+        }
+    }
+
+    public static void main(String[] args) {
+        Fighter f1 = new Fighter("Fighter1", 10, 100, 100, 30);
+        Fighter f2 = new Fighter("Fighter2", 10, 100, 90, 40);
+
+        int whoWillStart = (int) (Math.random() * 2);
+        if(whoWillStart == 0) {
+            System.out.println("\n" + f1.name + " is starting the game first.");
+            Match match = new Match(f1, f2, 90 , 100);
+            match.run();
+        }
+        if (whoWillStart == 1) {
+            System.out.println("\n" + f2.name + " is starting the game first.");
+            Match match = new Match(f2, f1, 90 , 100);
+            match.run();
+        }
+    }
+}

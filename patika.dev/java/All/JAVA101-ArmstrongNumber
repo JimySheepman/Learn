@@ -1,0 +1,57 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        int number;
+        int baseNumber = 0;
+        int temporaryNumber;
+        int baseValue;
+        int result = 0;
+        int basePow;
+        int counter = 0;
+        int total;
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Sayı Giriniz: ");
+        number = scanner.nextInt();
+
+        temporaryNumber = number;
+        while (temporaryNumber != 0) {
+            temporaryNumber /= 10;
+            baseNumber++;
+        }
+
+        temporaryNumber = number;
+        while (temporaryNumber != 0) {
+            baseValue = temporaryNumber % 10;
+            basePow = 1;
+            for (int i = 1; i <= baseNumber; i++) {
+                basePow *= baseValue;
+            }
+            result += basePow;
+            temporaryNumber /= 10;
+        }
+
+        if (result == number) {
+            System.out.println(number + " is an *ARMSTRONG* number.");
+        }
+        else {
+            System.out.println(number + " is not an *ARMSTRONG* number.");
+        }
+
+        temporaryNumber = number;
+        while (temporaryNumber != 0) {
+            temporaryNumber /= 10;
+            counter++;
+        }
+        System.out.println(number + " is " + counter + " digit number.");
+
+        total = 0;
+        while (number > 0) {
+            total += (number % 10);
+            number /= 10;
+        }
+        System.out.println("Sum of digits >> " + total);
+    }
+}

@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        double taxExcluded;
+        double taxValue = 1.18;
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the Amount (Tax Excluded): ");
+        taxExcluded = scanner.nextDouble();
+
+        double includingTax = taxExcluded * taxValue;
+
+        System.out.println("Total Amount (Tax Included): " + includingTax);
+    }
+}

@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        int n;
+        int m;
+        int i;
+        int j;
+        int k;
+        int nf = 1;
+        int mf = 1;
+        int df = 1;
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the value of N: ");
+        n = scanner.nextInt();
+
+        System.out.print("Enter the value of M: ");
+        m = scanner.nextInt();
+
+        int x = (n - m);
+
+        for (i = 1; i <= n; i++) {
+            nf *= i;
+        }
+
+        for (j = 1; j <= m; j++) {
+            mf *= j;
+        }
+
+        for (k = 1; k <= x; k++) {
+            df *= k;
+        }
+
+        int combination = nf / (mf * (df));
+        System.out.println("Combination("+ n + "," + m + ") = " + combination);
+    }
+}

@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void patternMethod(int n, int m, boolean status) {
+        if (n <= m) {
+            System.out.println(n);
+            if (n > 0 && !status) {
+                patternMethod(n - 5, m, false);
+            }
+            else{
+                patternMethod(n + 5, m, true);
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Write a number: ");
+        int i = scanner.nextInt();
+
+        int k = i;
+        patternMethod(i, k, false);
+    }
+}

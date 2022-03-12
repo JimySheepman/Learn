@@ -1,0 +1,58 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        int age;
+        int distance;
+        int check;
+        int total;
+        int sale10, sale20, sale30, sale50, sale70;
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter your age: ");
+        age = scanner.nextInt();
+
+        System.out.print("Enter the distance (KM): ");
+        distance = scanner.nextInt();
+
+        System.out.print("Enter the trip type (1 => One Way , 2 => Round Trip): ");
+        check = scanner.nextInt();
+
+        total = distance * 10;
+        sale10 = (total * (100 - 10) / 100);
+        sale20 = (total * (100 - 20) / 100);
+        sale30 = (total * (100 - 30) / 100);
+        sale50 = (total * (100 - 50) / 100);
+        sale70 = (total * (100 - 70) / 100);
+
+
+        while (check >= 3) {
+            System.out.println("Wrong Information!");
+            System.out.print("Enter the trip type (1 => One Way , 2 => Round Trip): ");
+            check = scanner.nextInt();
+        }
+
+        if (age < 12 && check == 1) {
+            System.out.println("Amount to be paid (EUR): " + sale50);
+        }
+        else if (age < 12 && check == 2) {
+            System.out.println("Amount to be paid (EUR): " + sale70);
+        }
+        else if (age >= 12 && age <= 24 && check == 1) {
+            System.out.println("Amount to be paid (EUR): " + sale10);
+        }
+        else if (age >= 12 && age <= 24 && check == 2) {
+            System.out.println("Amount to be paid (EUR): " + sale30);
+        }
+        else if (age >= 65 && check == 1) {
+            System.out.println("Amount to be paid (EUR): " + sale30);
+        }
+        else if (age >= 65 && check == 2) {
+            System.out.println("Amount to be paid (EUR): " + sale50);
+        }
+        else {
+            System.out.println("Amount to be paid (EUR): " + sale20);
+        }
+    }
+}

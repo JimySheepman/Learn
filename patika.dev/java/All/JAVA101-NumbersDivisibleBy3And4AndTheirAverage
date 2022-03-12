@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        int i = 0;
+        int k;
+        int avg = 0;
+        int sum = 0;
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a number: ");
+        k = scanner.nextInt();
+
+        while (i <= k) {
+            i++;
+            if ((i % 3 == 0) && (i % 4 == 0)) {
+                System.out.println("Number divisible by 3 and 4 according to the entered number: " + i);
+                avg++;
+                sum += i;
+            }
+        }
+        System.out.println("Average of numbers divisible by 3 and 4: " + sum / avg);
+    }
+}

@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        double openingPrice = 10;
+        double pricePerKM = 2.20;
+        double minPrice = 20;
+        double totalAmount;
+        double distance;
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("What is the distance traveled? (KM): ");
+        distance = scanner.nextDouble();
+
+        totalAmount = (distance * pricePerKM) + openingPrice;
+        System.out.print("Total Amount by distance (KM): " + totalAmount);
+
+        String lowerLimit = (totalAmount <= minPrice) ? ("\nLower Limit Price: " + minPrice) : ("\nTotal Fee: " + totalAmount);
+        System.out.println(lowerLimit);
+    }
+}

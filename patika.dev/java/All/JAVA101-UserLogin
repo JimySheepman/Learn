@@ -1,0 +1,46 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        String id;
+        String password;
+        String passwordReset;
+        String newPassword;
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Username: ");
+        id = scanner.nextLine();
+
+        System.out.print("Password: ");
+        password = scanner.nextLine();
+
+        if (id.equals("patika") && (password.equals("java1234"))) {
+            System.out.println("Login successful.");
+        }
+        else if (!id.equals("patika") && (password.equals("java1234"))) {
+            System.out.println("Username is incorrect.");
+        }
+        else if (id.equals("patika") && (!password.equals("java1234"))) {
+            System.out.println("Password is incorrect.");
+        }
+        else {
+            System.out.println("Login failed.");
+        }
+        System.out.print("Would you like to reset your password?\nYes - No: ");
+        passwordReset = scanner.nextLine();
+
+        switch (passwordReset) {
+            case "Yes", "y", "Y":
+                System.out.print("Enter the new password: ");
+                newPassword = scanner.nextLine();
+                if (!newPassword.equals("java1234"))
+                    System.out.println("Congratulations, the new password has been created.");
+                else System.out.println("The new password cannot be the same as the old password. Try again.");
+                break;
+            case "No", "n", "N":
+                System.out.println("Failed to create password. Logging out...");
+                break;
+        }
+    }
+}

@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        int degree;
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("How many degrees is temperature today?: ");
+        degree = scanner.nextInt();
+
+        if (degree <= 5) {
+            System.out.println("Temperature is " + degree + " degree. You can ski.");
+        }
+        else if (degree > 5 && degree <= 15) {
+            System.out.println("Temperature is " + degree + " degree. You can go to the cinema.");
+        }
+        else if (degree > 15 && degree <= 25) {
+            System.out.println("Temperature is " + degree + " degree. You can go to the eating.");
+        }
+        else {
+            System.out.println("Temperature is " + degree + " degree. You can swim.");
+        }
+    }
+}

@@ -1,0 +1,14 @@
+public class Main {
+
+    public static void main(String[] args) {
+        int[] list = {15, 6, 7, 12, 7, 9, 3};
+        double average = 0.0;
+
+        for (int i = 0; i < list.length; i++) {
+            average = average + (1.0 / list[i]);
+        }
+
+        average = list.length / average;
+        System.out.println("Harmonic Average: " + average);
+    }
+}

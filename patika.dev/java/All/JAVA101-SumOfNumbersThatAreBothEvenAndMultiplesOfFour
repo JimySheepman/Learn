@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        int i = 0;
+        int sum = 0;
+        Scanner scanner = new Scanner(System.in);
+
+        do {
+            System.out.print("Write a number: ");
+            i = scanner.nextInt();
+            if ((i % 2 == 0) && (i % 4 == 0)) {
+                sum += i;
+            }
+        }
+        while (i % 2 != 1);
+
+        System.out.println(sum);
+    }
+}

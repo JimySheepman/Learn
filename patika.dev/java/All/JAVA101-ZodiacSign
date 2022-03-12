@@ -1,0 +1,50 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        int birthday;
+        int birthOfMonth;
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Write your birthday: ");
+        birthday = scanner.nextInt();
+
+        System.out.print("Write your birth of month: ");
+        birthOfMonth = scanner.nextInt();
+
+        if ((birthday == 1) && (birthOfMonth <= 22)) {
+            System.out.println("Capricorn");
+        }
+        else if ((birthOfMonth == 1) && (birthday > 22)){
+            System.out.println("Aquarius");
+        }
+        else if ((birthOfMonth == 2) && (birthday <= 19)){
+            System.out.println("Aquarius");
+        }
+        else if ((birthOfMonth == 2) && (birthday > 19)){
+            System.out.println("Pisces");
+        }
+        else if ((birthOfMonth == 3) && (birthday <= 20)){
+            System.out.println("Pisces");
+        }
+        else if ((birthOfMonth == 3) && (birthday > 20)){
+            System.out.println("Aries");
+        }
+        else if ((birthOfMonth == 4) && (birthday <= 20)){
+            System.out.println("Aries");
+        }
+        else if ((birthOfMonth == 4) && (birthday > 20)){
+            System.out.println("Taurus");
+        }
+        else if ((birthOfMonth == 5) && (birthday <= 21)){
+            System.out.println("Taurus");
+        }
+        else if ((birthOfMonth == 5) && (birthday > 21)){
+            System.out.println("Gemini");
+        }
+        else if ((birthOfMonth == 6) && (birthday <= 22)){
+            System.out.println("Gemini");
+        }
+    }
+}

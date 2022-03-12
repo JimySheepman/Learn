@@ -1,0 +1,21 @@
+public class Main {
+
+    public static void main(String[] args) {
+        int number;
+        int checkNumber;
+
+        System.out.println("\n*LIST OF PRIME NUMBERS UP TO 100*");
+        for (number = 2; number <= 100; number++) {
+            checkNumber = 0;
+            for (int i = 2; i < number; i++) {
+                if (number % i == 0) {
+                    checkNumber = 1;
+                    break;
+                }
+            }
+            if (checkNumber == 0) {
+                System.out.print(number + "\n");
+            }
+        }
+    }
+}

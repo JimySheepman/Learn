@@ -1,0 +1,48 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        int n;
+        int m;
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the matrix row count: ");
+        m = scanner.nextInt();
+
+        System.out.print("Enter the matrix column count: ");
+        n = scanner.nextInt();
+
+        int matrix[][] = new int[m][n];
+        System.out.println("\nEnter the elements of matrix.");
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.print("Enter the elements of " + (i + 1) + ". row & elements of " + (j + 1) + ". column: ");
+                matrix[i][j] = scanner.nextInt();
+            }
+        }
+        System.out.println("\nMatrix: ");
+
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.print(matrix[i][j] + "\t");
+            }
+            System.out.print("\n");
+        }
+
+        int transpose[][] = new int[n][m];
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                transpose[j][i] = matrix[i][j];
+            }
+        }
+        System.out.println("Transpose: ");
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                System.out.print(transpose[i][j] + "\t");
+            }
+            System.out.print("\n");
+        }
+    }
+}

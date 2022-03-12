@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class Main {
+    
+    public static void main(String[] args) {
+        double i;
+        double result = 0;
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Write a number: ");
+        i = scanner.nextInt();
+
+        while (i > 0) {
+            result += (1 / i);
+            i--;
+        }
+        System.out.println("Result = " + result);
+    }
+}

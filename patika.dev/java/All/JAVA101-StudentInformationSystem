@@ -1,0 +1,159 @@
+public class Main {
+
+    public static class Student {
+        String name;
+        String studentNo;
+        int classes;
+        Course math;
+        Course physic;
+        Course chemical;
+        double average;
+        boolean isPass;
+
+        public Student(String name, String studentNo, int classes, Course math, Course physic, Course chemical) {
+            this.name = name;
+            this.studentNo = studentNo;
+            this.classes = classes;
+            this.math = math;
+            this.physic = physic;
+            this.chemical = chemical;
+            calculateAverage();
+            this.isPass = false;
+        }
+
+        public void addBulkExamNote(int math, int physic, int chemical) {
+            if (math >= 0 && math <= 100) {
+                this.math.note = math;
+            }
+            if (physic >= 0 && physic <= 100) {
+                this.physic.note = physic;
+            }
+            if (chemical >= 0 && chemical <= 100) {
+                this.chemical.note = chemical;
+            }
+        }
+
+        public void addBulkVerbalNote(int math, int physic, int chemical) {
+            if (math >= 0 && math <= 100) {
+                this.math.verbal = math;
+            }
+            if (physic >= 0 && physic <= 100) {
+                this.physic.verbal = physic;
+            }
+            if (chemical >= 0 && chemical <= 100) {
+                this.chemical.verbal = chemical;
+            }
+        }
+
+        public void isPass() {
+            if (this.math.note == 0 || this.physic.note == 0 || this.chemical.note == 0 || this.math.verbal == 0 || this.physic.verbal == 0 || this.chemical.verbal == 0) {
+                System.out.println("Grades are not fully entered.");
+            }
+            else {
+                this.isPass = isCheckPass();
+                printNote();
+                System.out.println("Average: " + this.average);
+                if (this.isPass) {
+                    System.out.println("You have successfully completed the class.");
+                }
+                else {
+                    System.out.println("You did not successfully complete the class.");
+                }
+            }
+        }
+
+        public void calculateAverage() {
+            this.average = (((this.physic.note * 0.80) + (this.physic.verbal * 0.20)) + ((this.chemical.note * 0.80) + (this.chemical.verbal * 0.20)) + ((this.math.note * 0.80) + (this.math.verbal * 0.20))) / 3;
+        }
+
+        public boolean isCheckPass() {
+            calculateAverage();
+            return this.average > 55;
+        }
+
+        public void printNote() {
+            System.out.println("**************************");
+            System.out.println("Student name: " + this.name);
+            System.out.println("Math written exam grade: " + this.math.note + "\nMath oral exam grade: " + this.math.verbal);
+            System.out.println("Physic written exam grade: " + this.physic.note + "\nPhysic oral exam grade: " + this.physic.verbal);
+            System.out.println("Chemical written exam grade: " + this.chemical.note + "\nChemical oral exam grade: " + this.chemical.verbal);
+        }
+    }
+
+    public static class Course {
+        Teacher courseTeacher;
+        String name;
+        String code;
+        String prefix;
+        int note;
+        int verbal;
+
+        public Course(String name, String code, String prefix) {
+            this.name = name;
+            this.code = code;
+            this.prefix = prefix;
+            this.note = 0;
+            this.verbal = 0;
+        }
+
+        public void addTeacher(Teacher teacher) {
+            if (this.prefix.equals(teacher.branch)) {
+                this.courseTeacher = teacher;
+                System.out.println("Transaction successful.");
+            }
+            else {
+                System.out.println("Professor " + teacher.name + " cannot apply this course.");
+            }
+        }
+
+        public void printTeacher() {
+            if (courseTeacher != null) {
+                System.out.println("Professor of " + this.name + " lesson is: " + courseTeacher.name);
+            }
+            else {
+                System.out.println("No Professor has been assigned to the " + this.name + " lesson.");
+            }
+        }
+    }
+
+    public static class Teacher {
+        String name;
+        String mpNo;
+        String branch;
+
+        public Teacher(String name, String mpNo, String branch) {
+            this.name = name;
+            this.mpNo = mpNo;
+            this.branch = branch;
+        }
+    }
+
+    public static void main(String[] args) {
+        Course math = new Course("MATH", "MATH101", "MATH");
+        Course physic = new Course("PHYSIC", "PHY101", "PHY");
+        Course chemical = new Course("CHEMICAL", "CHE101", "CHE");
+
+        Teacher teacher1 = new Teacher("Descartes", "90550000000", "MATH");
+        Teacher teacher2 = new Teacher("Newton", "90550000001", "PHY");
+        Teacher teacher3 = new Teacher("Lavoisier", "90550000002", "CHE");
+
+        math.addTeacher(teacher1);
+        physic.addTeacher(teacher2);
+        chemical.addTeacher(teacher3);
+
+        Student student1 = new Student("KODLUYORUZ","246810", 3, math, physic, chemical);
+        student1.addBulkExamNote(80, 70, 60);
+        student1.addBulkVerbalNote(60, 70, 80);
+        student1.isPass();
+
+        Student student2 = new Student("PATIKA","135710", 4, math, physic, chemical);
+        student2.addBulkExamNote(90, 80, 70);
+        student2.addBulkVerbalNote(70, 80, 90);
+        student2.isPass();
+
+        Student student3 = new Student("DEV","123410", 5, math, physic, chemical);
+        student3.addBulkExamNote(40, 50, 60);
+        student3.addBulkVerbalNote(50, 55, 60);
+        student3.isPass();
+    }
+}

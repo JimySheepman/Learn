@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        int a;
+        int b;
+        double hypo;
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a value for edge A: ");
+        a = scanner.nextInt();
+        System.out.print("Enter a value for edge B: ");
+        b = scanner.nextInt();
+
+        hypo = Math.sqrt((a * a) + (b * b));
+        System.out.print("Hypotenuse: " + hypo);
+    }
+}

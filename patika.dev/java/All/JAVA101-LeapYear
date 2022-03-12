@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        int leapYear;
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Write a year: ");
+        leapYear = scanner.nextInt();
+
+        if (leapYear % 400 == 0) {
+            System.out.println("Right! " + leapYear + " is a *LEAP YEAR*");
+        }
+        else if ((leapYear % 4 == 0) && (leapYear % 100 != 0)) {
+            System.out.println("Right! " + leapYear + " is a *LEAP YEAR*");
+        }
+        else {
+            System.out.println("Wrong!! " + leapYear + " is not a *LEAP YEAR*");
+        }
+    }
+}

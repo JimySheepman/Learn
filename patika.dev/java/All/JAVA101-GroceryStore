@@ -1,0 +1,46 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        String[] groceryList = {"1:Pear", "2:Apple", "3:Tomato", "4:Banana", "5:Eggplant"};
+        double pearPrice = 2.14;
+        double applePrice = 3.67;
+        double tomatoPrice = 1.11;
+        double bananaPrice = 0.95;
+        double eggplantPrice = 5.00;
+        double pearKg;
+        double appleKg;
+        double tomatoKg;
+        double bananaKg;
+        double eggplantKg;
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("** LIST OF PRODUCTS IN PATIKA GROCERY STORE **");
+        for (String gl : groceryList) {
+            System.out.println(gl);
+        }
+
+        System.out.print("How many kg of pears do you want to buy: ");
+        pearKg = scanner.nextInt();
+        System.out.print("How many kg of apples do you want to buy: ");
+        appleKg = scanner.nextInt();
+        System.out.print("How many kg of tomatoes do you want to buy: ");
+        tomatoKg = scanner.nextInt();
+        System.out.print("How many kg of bananas do you want to buy: ");
+        bananaKg = scanner.nextInt();
+        System.out.print("How many kg of eggplants do you want to buy: ");
+        eggplantKg = scanner.nextInt();
+
+        double pearTotal = pearPrice * pearKg;
+        double appleTotal = applePrice * appleKg;
+        double tomatoTotal = tomatoPrice * tomatoKg;
+        double bananaTotal = bananaPrice * bananaKg;
+        double eggplantTotal = eggplantPrice * eggplantKg;
+
+        double totalAmount;
+
+        totalAmount = (pearTotal + appleTotal + tomatoTotal + bananaTotal + eggplantTotal);
+        System.out.println("Total Amount (EUR): " + totalAmount);
+    }
+}

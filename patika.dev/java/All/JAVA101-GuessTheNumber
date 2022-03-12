@@ -1,0 +1,55 @@
+import java.util.Scanner;
+import java.util.Random;
+import java.util.Arrays;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Random random = new Random();
+        int machineNumber = random.nextInt(100);
+        int right = 0;
+        int userNumber;
+        int[] wrong = new int[5];
+        boolean isWin = false;
+        boolean isWrong = false;
+
+        while (right < 5) {
+            System.out.print("Guess a number: ");
+            userNumber = scanner.nextInt();
+            if (userNumber < 0 || userNumber > 99) {
+                System.out.println("ERROR! Enter a number between 0-100.");
+                if (isWrong) {
+                    right++;
+                    System.out.println("You made too many incorrect entries. Your remaining right: " + (5 - right));
+                }
+                else {
+                    isWrong = true;
+                    System.out.println("It will be deducted next time.");
+                }
+                continue;
+            }
+            if (userNumber == machineNumber) {
+                System.out.println("Congratulations, you win with " + (5 - right) + " right left.");
+                isWin = true;
+                break;
+            }
+            else {
+                if (userNumber > machineNumber) {
+                    System.out.println("Enter a smaller number.");
+                }
+                else {
+                    System.out.println("Enter a larger number.");
+                }
+                wrong[right++] = userNumber;
+                System.out.println("Your remaining right: " + (5 - right));
+            }
+        }
+        if (!isWin) {
+            System.out.println("\nSorry, you lost. The correct number should be " + machineNumber + ".");
+            if (!isWrong) {
+                System.out.println("Numbers you guess: " + Arrays.toString(wrong));
+            }
+        }
+    }
+}

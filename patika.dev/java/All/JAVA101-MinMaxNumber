@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        int min = 0;
+        int max = 0;
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("How many numbers will be processed?: ");
+        int n = scanner.nextInt();
+
+        for (int i = 1; i <= n; i++) {
+            System.out.print("Enter the " + i + ". number: ");
+            int number = scanner.nextInt();
+            if (i == 1) {
+                min = number;
+                max = number;
+            }
+            else if (number < min) {
+                min = number;
+            }
+            else {
+                max = number;
+            }
+        }
+        System.out.println("\nMin number: " + min);
+        System.out.println("Max number: " + max);
+    }
+}

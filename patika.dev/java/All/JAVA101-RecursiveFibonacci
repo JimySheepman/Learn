@@ -1,0 +1,13 @@
+public class Main {
+
+    static int fibonacciSeries(int n) {
+        if (n == 1 || n == 2) {
+            return 1;
+        }
+        return fibonacciSeries(n - 1) + fibonacciSeries(n - 2);
+    }
+
+    public static void main(String[] args) {
+        System.out.println(fibonacciSeries(3));
+    }
+}

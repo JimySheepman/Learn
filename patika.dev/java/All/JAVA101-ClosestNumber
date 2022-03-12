@@ -1,0 +1,29 @@
+import java.util.Scanner;
+import java.util.Arrays;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int[] list = {15, 12, 788, 1, -1, -778, 2, 0};
+        System.out.println("\nElements of array: " + Arrays.toString(list));
+        int minNumber = list[0];
+        int maxNumber = list[0];
+
+        int number;
+        System.out.print("Write a number: ");
+        number = scanner.nextInt();
+
+        for (int i : list) {
+            if (i < number && (number - i < 0 ? (number - i) * - 1 : number - i) < (number - minNumber < 0 ? (number - minNumber) * - 1 : number - minNumber)) {
+                minNumber = i;
+            }
+            if (i > number && (number - i < 0 ? (number - i) * - 1 : number - i) < (number - minNumber < 0 ? (number - minNumber) * - 1 : number - minNumber)) {
+                maxNumber = i;
+            }
+        }
+        System.out.println("The number you entered: " + number);
+        System.out.println("The number less than " + number + " and closest to it is >> " + minNumber);
+        System.out.println("The number greater than " + number + " and closest to it is >> " + maxNumber);
+    }
+}
