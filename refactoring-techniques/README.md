@@ -51,16 +51,46 @@ Bu yeniden düzenleme teknikleri, ilkel öğeleri zengin sınıf işlevselliğiy
 
 Koşullar zaman içinde mantıklarında giderek daha karmaşık hale gelme eğilimindedir ve bununla mücadele etmek için daha fazla teknik vardır.
 
-* [](https://github.com/JimySheepman/Learn/blob/main/refactoring-techniques/04-simplifying-conditional-expressions/)
+* [Decompose Conditional](https://github.com/JimySheepman/Learn/blob/main/refactoring-techniques/04-simplifying-conditional-expressions/DecomposeConditional.md)
+* [Consolidate Conditional Expression](https://github.com/JimySheepman/Learn/blob/main/refactoring-techniques/04-simplifying-conditional-expressions/ConsolidateConditionalExpression.md)
+* [Consolidate Duplicate Conditional Fragments](https://github.com/JimySheepman/Learn/blob/main/refactoring-techniques/04-simplifying-conditional-expressions/ConsolidateDuplicateConditionalFragments.md)
+* [Remove Control Flag](https://github.com/JimySheepman/Learn/blob/main/refactoring-techniques/04-simplifying-conditional-expressions/RemoveControlFlag.md)
+* [Replace Nested Conditional with Guard Clauses](https://github.com/JimySheepman/Learn/blob/main/refactoring-techniques/04-simplifying-conditional-expressions/ReplaceNestedConditionalwithGuardClauses.md)
+* [Replace Conditional with Polymorphism](https://github.com/JimySheepman/Learn/blob/main/refactoring-techniques/04-simplifying-conditional-expressions/ReplaceConditionalwithPolymorphism.md)
+* [Introduce Null Object](https://github.com/JimySheepman/Learn/blob/main/refactoring-techniques/04-simplifying-conditional-expressions/IntroduceNullObject.md)
+* [Introduce Assertion](https://github.com/JimySheepman/Learn/blob/main/refactoring-techniques/04-simplifying-conditional-expressions/IntroduceAssertion.md)
 
 ## Simplifying Method Calls
 
 Bu teknikler, yöntem çağrılarını daha basit ve anlaşılmasını kolaylaştırır. Bu da, sınıflar arasındaki etkileşim için arayüzleri basitleştirir.
 
-* [](https://github.com/JimySheepman/Learn/blob/main/refactoring-techniques/05-simplifying-method-calls/)
+* [Rename Method](https://github.com/JimySheepman/Learn/blob/main/refactoring-techniques/05-simplifying-method-calls/RenameMethod.md)
+* [Add Parameter](https://github.com/JimySheepman/Learn/blob/main/refactoring-techniques/05-simplifying-method-calls/AddParameter.md)
+* [Remove Parameter](https://github.com/JimySheepman/Learn/blob/main/refactoring-techniques/05-simplifying-method-calls/RemoveParameter.md)
+* [Separate Query from Modifier](https://github.com/JimySheepman/Learn/blob/main/refactoring-techniques/05-simplifying-method-calls/SeparateQueryfromModifier.md)
+* [Parameterize Method](https://github.com/JimySheepman/Learn/blob/main/refactoring-techniques/05-simplifying-method-calls/ParameterizeMethod.md)
+* [Replace Parameter with Explicit Methods](https://github.com/JimySheepman/Learn/blob/main/refactoring-techniques/05-simplifying-method-calls/ReplaceParameterwithExplicitMethods.md)
+* [Preserve Whole Object](https://github.com/JimySheepman/Learn/blob/main/refactoring-techniques/05-simplifying-method-calls/PreserveWholeObject.md)
+* [Replace Parameter with Method Call](https://github.com/JimySheepman/Learn/blob/main/refactoring-techniques/05-simplifying-method-calls/ReplaceParameterwithMethodCall.md)
+* [Introduce Parameter Object](https://github.com/JimySheepman/Learn/blob/main/refactoring-techniques/05-simplifying-method-calls/IntroduceParameterObject.md)
+* [Remove Setting Method](https://github.com/JimySheepman/Learn/blob/main/refactoring-techniques/05-simplifying-method-calls/RemoveSettingMethod.md)
+* [Hide Method](https://github.com/JimySheepman/Learn/blob/main/refactoring-techniques/05-simplifying-method-calls/HideMethod.md)
+* [Replace Constructor with Factory Method](https://github.com/JimySheepman/Learn/blob/main/refactoring-techniques/05-simplifying-method-calls/ReplaceConstructorwithFactoryMethod.md)
+* [Replace Error Code with Exception](https://github.com/JimySheepman/Learn/blob/main/refactoring-techniques/05-simplifying-method-calls/ReplaceErrorCodewithException.md)
+* [Replace Exception with Test](https://github.com/JimySheepman/Learn/blob/main/refactoring-techniques/05-simplifying-method-calls/ReplaceExceptionwithTest.md)
 
 ## Dealing with Generalization
 
 Soyutlamanın, öncelikle sınıf miras hiyerarşisi boyunca işlevsellik taşıma, yeni sınıflar ve arabirimler oluşturma ve kalıtımı yetkilendirme ile değiştirme ve bunun tersi ile ilişkili kendi yeniden düzenleme teknikleri grubu vardır.
 
-* [](https://github.com/JimySheepman/Learn/blob/main/refactoring-techniques/06-dealing-with-generalization/)
+* [Pull Up Field](https://github.com/JimySheepman/Learn/blob/main/refactoring-techniques/06-dealing-with-generalization/PullUpField.md)
+* [Pull Up Method](https://github.com/JimySheepman/Learn/blob/main/refactoring-techniques/06-dealing-with-generalization/PullUpMethod.md)
+* [Pull Up Constructor Body](https://github.com/JimySheepman/Learn/blob/main/refactoring-techniques/06-dealing-with-generalization/PullUpConstructorBody.md)
+* [Push Down Method](https://github.com/JimySheepman/Learn/blob/main/refactoring-techniques/06-dealing-with-generalization/PushDownMethod.md)
+* [Push Down Field](https://github.com/JimySheepman/Learn/blob/main/refactoring-techniques/06-dealing-with-generalization/PushDownField.md)
+* [Extract Subclass](https://github.com/JimySheepman/Learn/blob/main/refactoring-techniques/06-dealing-with-generalization/ExtractSuperclass.md)
+* [Extract Interface](https://github.com/JimySheepman/Learn/blob/main/refactoring-techniques/06-dealing-with-generalization/ExtractInterface.md)
+* [Collapse Hierarchy](https://github.com/JimySheepman/Learn/blob/main/refactoring-techniques/06-dealing-with-generalization/CollapseHierarchy.md)
+* [Form Template Method](https://github.com/JimySheepman/Learn/blob/main/refactoring-techniques/06-dealing-with-generalization/FormTemplateMethod.md)
+* [Replace Inheritance with Delegation](https://github.com/JimySheepman/Learn/blob/main/refactoring-techniques/06-dealing-with-generalization/ReplaceInheritancewithDelegation.md)
+* [Replace Delegation with Inheritance](https://github.com/JimySheepman/Learn/blob/main/refactoring-techniques/06-dealing-with-generalization/ReplaceDelegationwithInheritance.md)
