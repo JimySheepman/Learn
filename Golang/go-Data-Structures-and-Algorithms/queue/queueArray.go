@@ -1,4 +1,4 @@
-package main
+package queue
 
 var ListQueue []interface{}
 

@@ -1,6 +1,4 @@
-package main
-
-import "fmt"
+package queue
 
 type Node struct {
 	data int
@@ -68,18 +66,4 @@ func (list *Queue) IsEmpty() bool {
 
 func (list *Queue) Empty() {
 	list.rear = nil
-}
-
-func main() {
-	queue := New()
-	queue.Enqueue(1)
-	queue.Enqueue(2)
-	queue.Enqueue(3)
-	queue.Enqueue(5)
-	fmt.Println(queue.Get())
-	queue.Dequeue()
-	fmt.Println(queue.Get())
-	fmt.Println(queue.IsEmpty())
-	queue.Empty()
-	fmt.Println(queue.Get())
 }

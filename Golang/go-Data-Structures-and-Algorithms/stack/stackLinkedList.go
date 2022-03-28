@@ -1,6 +1,4 @@
-package main
-
-import "fmt"
+package stack
 
 type Node struct {
 	Val  interface{}
@@ -52,18 +50,4 @@ func (ll *Stack) show() (in []interface{}) {
 		current = current.Next
 	}
 	return
-}
-
-func main() {
-	stack := New()
-	stack.push(1)
-	stack.push(2)
-	stack.push(3)
-	stack.push(4)
-	fmt.Println(stack.show())
-	fmt.Println(stack.isEmpty())
-	fmt.Println(stack.len())
-	fmt.Println(stack.pop())
-	fmt.Println(stack.show())
-
 }

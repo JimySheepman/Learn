@@ -1,6 +1,4 @@
-package main
-
-import "fmt"
+package stack
 
 const arraySize = 10
 
@@ -47,23 +45,4 @@ func (s *Stack) IsEmpty() bool {
 func (s *Stack) Empty() {
 	s.top = 0
 	s.data = [arraySize]int{}
-}
-
-func main() {
-	stack := New()
-	stack.Push(1)
-	fmt.Println(stack.data)
-	stack.Push(4)
-	stack.Push(5)
-	stack.Push(2)
-	stack.Push(7)
-	fmt.Println(stack.data)
-	stack.Pop()
-	stack.Pop()
-	fmt.Println(stack.data)
-	fmt.Println(stack.Peek())
-	fmt.Println(stack.IsEmpty())
-	stack.Empty()
-	fmt.Println(stack.IsEmpty())
-	fmt.Println(stack.data)
 }
