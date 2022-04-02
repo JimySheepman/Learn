@@ -258,5 +258,6 @@ How do you initialize a struct in Go?
 - [go-12](https://thewhitetulip.gitbook.io/bo/)
 - [go-13](https://www.devdungeon.com/content/go)
 - [go-14](https://tutorialedge.net/course/golang/)
-- [go-15](https://pkg.go.dev/std@go1.17.8)
+- [go-15](https://github.com/GoesToEleven/GolangTraining)
+- [go-16](https://pkg.go.dev/std@go1.17.8)
 - [go-RabbitMQ](https://www.rabbitmq.com/getstarted.html)
