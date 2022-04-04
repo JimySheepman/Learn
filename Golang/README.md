@@ -14,7 +14,6 @@ It is a repository where I practice with multiple ways to gain hands-on `Go` exp
 - [X] Goroutine, Channel, Buffer
 - [X] Panic, Defer, Error, Recover
 
-
 ## Medium
 
 - [X] Go dependency management tools
@@ -26,18 +25,16 @@ It is a repository where I practice with multiple ways to gain hands-on `Go` exp
 - [X] Basic authentication
 - [X] HTTP/HTTPS
 - [X] Relational databases (PostgreSQL)
-- Web frameworks and routers
-  - Fiber
-- CLI
-  - cobra / viper
+- [ ] Web frameworks and routers
+- [ ] CLI
 
 ## Advance
 
 - [X] design patterns
 - [X] Unit testing
-- Integration testing
-- Behavior testing
-- E2E testing
+- [ ] Integration testing
+- [ ] Behavior testing
+- [ ] E2E testing
 
 ## Building out a portfolio includes
 
@@ -255,8 +252,8 @@ How do you initialize a struct in Go?
 - [go-9](https://gowebexamples.com/)
 - [go-10](https://github.com/tpphu/golang-training/wiki)
 - [go-11](https://github.com/astaxie/build-web-application-with-golang/blob/master/en/preface.md)
-- [go-12](https://tutorialedge.net/course/golang/)
+- [go-12](https://github.com/GoesToEleven/GolangTraining)
 - [go-13](https://www.devdungeon.com/content/go)
-- [go-14](https://github.com/canro91/LetsGo)
-- [go-15](https://github.com/GoesToEleven/GolangTraining)
 - [go-RabbitMQ](https://www.rabbitmq.com/getstarted.html)
+- [go-Standart-Library](https://pkg.go.dev/std)
+- [go-Data-Structures-and-Algorithms](https://the-algorithms.com/language/go)
