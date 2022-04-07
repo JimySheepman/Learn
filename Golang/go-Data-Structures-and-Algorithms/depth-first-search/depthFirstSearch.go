@@ -15,6 +15,7 @@ func NotExist(target int, slice []int) bool {
 			return false
 		}
 	}
+
 	return true
 }
 

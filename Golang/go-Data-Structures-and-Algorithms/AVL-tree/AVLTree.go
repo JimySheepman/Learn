@@ -22,6 +22,7 @@ func Get(root *Node, key int) *Node {
 		root = root.Left
 	}
 	return Get(root, key)
+
 }
 
 func Insert(root **Node, key int) {

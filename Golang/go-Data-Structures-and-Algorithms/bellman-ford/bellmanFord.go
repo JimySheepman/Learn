@@ -39,6 +39,7 @@ func (g *Graph) AddWeightedEdge(one, two, weight int) {
 	if !g.Directed {
 		g.edges[two][one] = weight
 	}
+
 }
 
 func (g *Graph) BellmanFord(start, end int) (isReachable bool, distance int, err error) {

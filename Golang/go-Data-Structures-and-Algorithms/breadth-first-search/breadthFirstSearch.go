@@ -18,5 +18,6 @@ func BreadthFirstSearch(start, end, nodes int, edges [][]int) (isConnected bool,
 			}
 		}
 	}
+
 	return false, 0
 }
