@@ -1,13 +1,14 @@
-Package (EConvergents)
-Package (Fibonacci)
-Package (Sqrt2)
-Float (Shift)
-Float.Add
-Float.Cmp
-Float.Scan
-Float.SetString
-Int.Scan
-Int.SetString
-Rat.Scan
-Rat.SetString
-RoundingMode
+package main
+
+import (
+	"fmt"
+	"math"
+)
+
+func main() {
+	x := math.Abs(-2)
+	fmt.Printf("%.1f\n", x)
+
+	y := math.Abs(2)
+	fmt.Printf("%.1f\n", y)
+}
