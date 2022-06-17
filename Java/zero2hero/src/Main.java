@@ -33,10 +33,24 @@ public class Main {
 * Instance variables -> bir sınıf içindeki ancak herhangi bir yöntemin dışındaki değişkenlerdir.
 * Class variables ->  static anahtar sözcüğüyle herhangi bir yöntemin dışında bir sınıf içinde bildirilen değişkenlerdir.
 * Constructors -> Her sınıfın bir constructor vardır. Bir sınıf için açıkça bir constructor yazmazsak, Java derleyicisi
-*                 o sınıf için varsayılan bir constructor oluşturur. Class lar ile aynı adı taşımalıdır.
+*                 o sınıf için varsayılan bir constructor oluşturur. Class lar ile aynı adı taşımalıdır. Constructors'lar
+*                 paramete alarak yada almayarak oluşturulabilinir.
 * Declaration ->  Bir nesne tipine sahip bir değişken adına sahip bir değişken bildirimi.
 * Instantiation -> Nesneyi oluşturmak için 'new' anahtar sözcüğü kullanılır.
 * Initialization -> 'new' anahtar sözcüğünü bir yapıcıya yapılan çağrı izler. Bu çağrı, yeni nesneyi başlatır.
+! DERS-3
+* Java'da kullanılabilen iki veri türü vardır -
+* Primitive Data Types :Java tarafından desteklenen sekiz ilkel veri türü vardır. İlkel veri türleri, dil tarafından
+*                       önceden tanımlanır ve bir anahtar sözcükle adlandırılır. Şimdi sekiz ilkel veri türünü
+*                       ayrıntılı olarak inceleyelim.
+
+* Reference/Object Data Types: Referans değişkenleri, sınıfların tanımlı kurucuları kullanılarak oluşturulur.
+*                              Nesnelere erişmek için kullanılırlar. Bu değişkenler, değiştirilemeyen belirli
+*                              bir tür olarak bildirilir. Örneğin, Çalışan, Köpek Yavrusu vb. Sınıf nesneleri
+*                              ve çeşitli dizi değişkenleri, referans veri tipine girer. Herhangi bir başvuru
+*                              değişkeninin varsayılan değeri boştur. Bir başvuru değişkeni, bildirilen türdeki
+*                              herhangi bir nesneye veya herhangi bir uyumlu türe başvurmak için kullanılabilir.
+*                              Örnek: Animal Animal = new Animal("zürafa");
 */
 
     public static void main(String []args){
@@ -57,6 +71,9 @@ public class Main {
         puppy.setPuppyAge(2);
         puppy.getPuppyAge();
         System.out.println("variable value:"+puppy.puppyAge);
+        //! DERS-3
+        AllDataType allDataType = new AllDataType();
+        allDataType.printType();
 
     }
 }
