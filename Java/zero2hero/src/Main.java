@@ -74,6 +74,9 @@ public class Main {
         //! DERS-3
         AllDataType allDataType = new AllDataType();
         allDataType.printType();
+        EmployeeTwo empOne = new EmployeeTwo("Ransika");
+        empOne.setSalary(1000);
+        empOne.printEmp();
 
     }
 }
