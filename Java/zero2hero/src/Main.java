@@ -51,6 +51,17 @@ public class Main {
 *                              değişkeninin varsayılan değeri boştur. Bir başvuru değişkeni, bildirilen türdeki
 *                              herhangi bir nesneye veya herhangi bir uyumlu türe başvurmak için kullanılabilir.
 *                              Örnek: Animal Animal = new Animal("zürafa");
+! DERS-4
+* Modifier Types ikiye ayrılır;
+* Access Control Modifiers ->
+*                           public -> her yerden erşilebilir.
+*                           private -> Yalnızca Class tarafından görülebilir
+*                           protected -> Pakete ve tüm alt sınıflara görünür.
+* Non-Access Modifiers ->
+*                       static -> Sınıf yöntemleri ve değişkenleri oluşturmak için  kullanılır.
+*                       final -> implementations sonlandırmak için sınıf, method ve variable'a kullanılır.
+*                       abstract -> Soyut sınıflar ve yöntemler oluşturmak için kullanılır.
+*                       synchronized & volatile -> threads için kullanılır.
 */
 
     public static void main(String []args){
@@ -74,9 +85,24 @@ public class Main {
         //! DERS-3
         AllDataType allDataType = new AllDataType();
         allDataType.printType();
+
         EmployeeTwo empOne = new EmployeeTwo("Ransika");
         empOne.setSalary(1000);
         empOne.printEmp();
+        // ! DERS-4
+        Operators operators = new Operators();
+        operators.printArithmeticOperators();
+        operators.printRelationalOperators();
+        operators.printBitwiseOperators();
+        operators.printLogicalOperators();
+        operators.printAssignmentOperators();
+        operators.printMiscellaneousOperators();
+
+        Loops loops = new Loops();
+        loops.forLoop();
+        loops.whileLoop();
+        loops.doWhileLoop();
+        loops.enhancedLoop();
 
     }
 }
