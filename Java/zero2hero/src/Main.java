@@ -62,6 +62,10 @@ public class Main {
 *                       final -> implementations sonlandırmak için sınıf, method ve variable'a kullanılır.
 *                       abstract -> Soyut sınıflar ve yöntemler oluşturmak için kullanılır.
 *                       synchronized & volatile -> threads için kullanılır.
+! DERS-5
+* Numbers Class -> Geliştirme aşamasında primitive data type yerine nesneleri kullanmamız gereken
+*                  durumlarla karşılaşıyoruz. Bunu başarmak için Java, wrapper classes sağlar.
+*                  primitive data type nesneye dönüştürmeye boxing denir ve bu, derleyici tarafından halledilir.
 */
 
     public static void main(String []args){
@@ -103,6 +107,14 @@ public class Main {
         loops.whileLoop();
         loops.doWhileLoop();
         loops.enhancedLoop();
+        // ! DERS-5
+        DecisionMaking decisionMaking = new DecisionMaking();
+        decisionMaking.printIfStatement();
+        decisionMaking.printIfIfElseElseStatement();
+        decisionMaking.printNestedIfStatement();
+        decisionMaking.printSwitchStatement();
 
+        NumbersClass numbersClass = new NumbersClass();
+        numbersClass.printAll();
     }
 }
