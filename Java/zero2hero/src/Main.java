@@ -116,5 +116,6 @@ public class Main {
 
         NumbersClass numbersClass = new NumbersClass();
         numbersClass.printAll();
+        // ! DERS-6
     }
 }
