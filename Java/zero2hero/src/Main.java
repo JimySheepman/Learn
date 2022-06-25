@@ -113,9 +113,11 @@ public class Main {
         decisionMaking.printIfIfElseElseStatement();
         decisionMaking.printNestedIfStatement();
         decisionMaking.printSwitchStatement();
-
+        // ! DERS-6
         NumbersClass numbersClass = new NumbersClass();
         numbersClass.printAll();
-        // ! DERS-6
+        // ! DERS-7
+        StringsClass stringsClass = new StringsClass();
+        stringsClass.printAll();
     }
 }
