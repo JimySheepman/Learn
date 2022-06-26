@@ -119,5 +119,11 @@ public class Main {
         // ! DERS-7
         StringsClass stringsClass = new StringsClass();
         stringsClass.printAll();
+        // ! DERS-8
+        Array array = new Array();
+        array.printArray();
+
+        DateTime dateTime =new DateTime();
+        dateTime.printDate();
     }
 }
