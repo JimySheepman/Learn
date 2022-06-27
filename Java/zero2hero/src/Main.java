@@ -31,10 +31,10 @@ public class Main {
 * Message Passing, Method, sahiptir.
 * Local variables -> Yöntemler, yapıcılar veya bloklar içinde tanımlanan değişkenlere yerel değişkenler denir.
 * Instance variables -> bir sınıf içindeki ancak herhangi bir yöntemin dışındaki değişkenlerdir.
-* Class variables ->  static anahtar sözcüğüyle herhangi bir yöntemin dışında bir sınıf içinde bildirilen değişkenlerdir.
+* Class variables -> static anahtar sözcüğüyle herhangi bir yöntemin dışında bir sınıf içinde bildirilen değişkenlerdir.
 * Constructors -> Her sınıfın bir constructor vardır. Bir sınıf için açıkça bir constructor yazmazsak, Java derleyicisi
-*                 o sınıf için varsayılan bir constructor oluşturur. Class lar ile aynı adı taşımalıdır. Constructors'lar
-*                 paramete alarak yada almayarak oluşturulabilinir.
+*                 o sınıf için varsayılan bir constructor oluşturur. Class lar ile aynı adı taşımalıdır.
+*                  Constructors'lar paramete alarak yada almayarak oluşturulabilinir.
 * Declaration ->  Bir nesne tipine sahip bir değişken adına sahip bir değişken bildirimi.
 * Instantiation -> Nesneyi oluşturmak için 'new' anahtar sözcüğü kullanılır.
 * Initialization -> 'new' anahtar sözcüğünü bir yapıcıya yapılan çağrı izler. Bu çağrı, yeni nesneyi başlatır.
@@ -66,6 +66,50 @@ public class Main {
 * Numbers Class -> Geliştirme aşamasında primitive data type yerine nesneleri kullanmamız gereken
 *                  durumlarla karşılaşıyoruz. Bunu başarmak için Java, wrapper classes sağlar.
 *                  primitive data type nesneye dönüştürmeye boxing denir ve bu, derleyici tarafından halledilir.
+! DERS-9
+* Regular Expressions -> 3 class'tan oluşur.
+*                        Pattern Class -> normal bir ifadenin derlenmiş bir temsilidir.
+*                        Matcher Class -> kalıbı yorumlayan ve bir girdi dizesine karşı eşleştirme işlemleri
+*                                         gerçekleştiren motordur.
+*                        PatternSyntaxException -> normal ifade modelinde bir sözdizimi hatasını gösteren denetlenmeyen
+*                                                  bir istisnadır.
+* Regular Expression Syntax ->
+*                             ^	Satırın başlangıcıyla eşleşir.
+*                             $ 	Satırın sonuyla eşleşir.
+*                             . 	Yeni satır dışında herhangi bir tek karakterle eşleşir. M seçeneğini kullanmak ,
+*                                   yeni satırla da eşleşmesini sağlar.
+*                             [...] 	Parantez içindeki herhangi bir karakterle eşleşir.
+*                             [^...] 	Parantez içinde olmayan herhangi bir karakterle eşleşir.
+*                             \A 	Tüm dizenin başlangıcı.
+*                             \z 	Tüm dizenin sonu.
+*                             \Z 	İzin verilen son satır sonlandırıcı dışında tüm dizenin sonu.
+*                             re* 	Önceki ifadenin 0 veya daha fazla tekrarı ile eşleşir.
+*                             re 	Önceki şeyden 1 veya daha fazlasıyla eşleşir.
+*                             re? 	Önceki ifadenin 0 veya 1 tekrarıyla eşleşir.
+*                             re { n} 	Önceki ifadenin tam olarak n tekrarı ile eşleşir.
+*                             re { n,} 	Önceki ifadenin n veya daha fazla tekrarı ile eşleşir.
+*                             re { n, m} 	Önceki ifadenin en az n ve en fazla m tekrarı ile eşleşir.
+*                             a | b 	a veya b ile eşleşir.
+*                             (re) 	Normal ifadeleri gruplandırır ve eşleşen metni hatırlar.
+*                             (?: re) 	Eşleşen metni hatırlamadan normal ifadeleri gruplandırır.
+*                             (?> re) 	Geri izleme olmadan bağımsız desenle eşleşir.
+*                             \w 	Kelime karakterleriyle eşleşir.
+*                             \W 	Sözcük olmayan karakterlerle eşleşir.
+*                             \s 	Boşlukla eşleşir. [\t\n\r\f] ile eşdeğerdir.
+*                             \S 	Beyaz olmayan boşlukla eşleşir.
+*                             \d 	Rakamlarla eşleşir. [0-9] ile eşdeğerdir.
+*                             \D 	Rakam olmayanlarla eşleşir.
+*                             \A 	Dizenin başlangıcıyla eşleşir.
+*                             \Z 	Dizenin sonuyla eşleşir. Yeni satır varsa, satırsonu satırından hemen önce eşleşir.
+*                             \z 	Dizenin sonuyla eşleşir.
+*                             \G 	Son eşleşmenin bittiği noktayla eşleşir.
+*                             \n 	"n" grup numarasını yakalamak için geri referans.
+*                             \b 	Köşeli parantezlerin dışındayken sözcük sınırlarıyla eşleşir. Köşeli ayraçların
+*                                   içindeyken geri al (0x08) ile eşleşir.
+*                             \B 	Sözcük olmayan sınırlarla eşleşir.
+*                             \n, \t, vb. 	Yeni satırlar, satır başları, sekmeler vb. ile eşleşir.
+*                             \Q 	\E'ye kadar olan tüm karakterlerden kaçın (alıntı yapın).
+*                             \E 	\Q ile başlayan alıntıyı bitirir.
 */
 
     public static void main(String []args){
@@ -125,5 +169,9 @@ public class Main {
 
         DateTime dateTime =new DateTime();
         dateTime.printDate();
+        // ! DERS-9
+        RegexMatches regexMatches = new RegexMatches();
+        regexMatches.printAll();
+
     }
 }
