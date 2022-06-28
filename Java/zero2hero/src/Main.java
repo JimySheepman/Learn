@@ -113,65 +113,75 @@ public class Main {
 */
 
     public static void main(String []args){
-        // ! DERS-1
-        FreshJuice juice = new FreshJuice();
-        juice.size = FreshJuice.FreshJuiceSize.MEDIUM;
-        System.out.println("Size: "+juice.size);
-        System.out.println("Hello, World!");
-        // ! DERS-2
-        Dog dog = new Dog();
-        dog.age=12;
-        dog.breed="pug";
-        dog.color="white";
-        dog.info();
-        dog.barking();
+            //  Command-Line Argumentları görmek için
+            for(int i = 0; i<args.length; i++) {
+                System.out.println("args[" + i + "]: " +  args[i]);
+            }
+            // ! DERS-1
+            FreshJuice juice = new FreshJuice();
+            juice.size = FreshJuice.FreshJuiceSize.MEDIUM;
+            System.out.println("Size: "+juice.size);
+            System.out.println("Hello, World!");
+            // ! DERS-2
+            Dog dog = new Dog();
+            dog.age=12;
+            dog.breed="pug";
+            dog.color="white";
+            dog.info();
+            dog.barking();
 
-        Puppy puppy = new Puppy("tommy");
-        puppy.setPuppyAge(2);
-        puppy.getPuppyAge();
-        System.out.println("variable value:"+puppy.puppyAge);
-        //! DERS-3
-        AllDataType allDataType = new AllDataType();
-        allDataType.printType();
+            Puppy puppy = new Puppy("tommy");
+            puppy.setPuppyAge(2);
+            puppy.getPuppyAge();
+            System.out.println("variable value:"+puppy.puppyAge);
+            //! DERS-3
+            AllDataType allDataType = new AllDataType();
+            allDataType.printType();
 
-        EmployeeTwo empOne = new EmployeeTwo("Ransika");
-        empOne.setSalary(1000);
-        empOne.printEmp();
-        // ! DERS-4
-        Operators operators = new Operators();
-        operators.printArithmeticOperators();
-        operators.printRelationalOperators();
-        operators.printBitwiseOperators();
-        operators.printLogicalOperators();
-        operators.printAssignmentOperators();
-        operators.printMiscellaneousOperators();
+            EmployeeTwo empOne = new EmployeeTwo("Ransika");
+            empOne.setSalary(1000);
+            empOne.printEmp();
+            // ! DERS-4
+            Operators operators = new Operators();
+            operators.printArithmeticOperators();
+            operators.printRelationalOperators();
+            operators.printBitwiseOperators();
+            operators.printLogicalOperators();
+            operators.printAssignmentOperators();
+            operators.printMiscellaneousOperators();
 
-        Loops loops = new Loops();
-        loops.forLoop();
-        loops.whileLoop();
-        loops.doWhileLoop();
-        loops.enhancedLoop();
-        // ! DERS-5
-        DecisionMaking decisionMaking = new DecisionMaking();
-        decisionMaking.printIfStatement();
-        decisionMaking.printIfIfElseElseStatement();
-        decisionMaking.printNestedIfStatement();
-        decisionMaking.printSwitchStatement();
-        // ! DERS-6
-        NumbersClass numbersClass = new NumbersClass();
-        numbersClass.printAll();
-        // ! DERS-7
-        StringsClass stringsClass = new StringsClass();
-        stringsClass.printAll();
-        // ! DERS-8
-        Array array = new Array();
-        array.printArray();
+            Loops loops = new Loops();
+            loops.forLoop();
+            loops.whileLoop();
+            loops.doWhileLoop();
+            loops.enhancedLoop();
+            // ! DERS-5
+            DecisionMaking decisionMaking = new DecisionMaking();
+            decisionMaking.printIfStatement();
+            decisionMaking.printIfIfElseElseStatement();
+            decisionMaking.printNestedIfStatement();
+            decisionMaking.printSwitchStatement();
+            // ! DERS-6
+            NumbersClass numbersClass = new NumbersClass();
+            numbersClass.printAll();
+            // ! DERS-7
+            StringsClass stringsClass = new StringsClass();
+            stringsClass.printAll();
+            // ! DERS-8
+            Array array = new Array();
+            array.printArray();
 
-        DateTime dateTime =new DateTime();
-        dateTime.printDate();
-        // ! DERS-9
-        RegexMatches regexMatches = new RegexMatches();
-        regexMatches.printAll();
-
+            DateTime dateTime =new DateTime();
+            dateTime.printDate();
+            // ! DERS-9
+            RegexMatches regexMatches = new RegexMatches();
+            regexMatches.printAll();
+            // ! DERS-10
+            Method methods = new Method();
+            methods.minFuction(123,1232);
+            methods.methodRankPoints(123.4);
+            methods.swapFunction(12,6);
+            // overloding
+            methods.minFunction(7.12,23.2);
     }
 }
