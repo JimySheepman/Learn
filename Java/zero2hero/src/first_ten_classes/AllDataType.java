@@ -1,4 +1,4 @@
-/*
+package first_ten_classes;/*
 * Java language supports few special escape sequences for String and char literals as well.
 * \n 	Newline (0x0a)
 * \r 	Carriage return (0x0d)

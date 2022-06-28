@@ -1,3 +1,5 @@
+package first_ten_classes;
+
 public class Operators {
     private int a =30;
     private int b =10;

@@ -1,3 +1,5 @@
+package first_ten_classes;
+
 public class Puppy {
     int puppyAge;
 
@@ -6,7 +8,7 @@ public class Puppy {
     }
 
     public int getPuppyAge() {
-        System.out.println("Puppy's age is :"+puppyAge);
+        System.out.println("firstTen.Puppy's age is :"+puppyAge);
         return puppyAge;
     }
 

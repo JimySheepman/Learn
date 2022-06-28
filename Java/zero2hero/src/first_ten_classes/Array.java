@@ -1,4 +1,4 @@
-import java.util.Arrays;
+package first_ten_classes;
 
 public class Array {
 

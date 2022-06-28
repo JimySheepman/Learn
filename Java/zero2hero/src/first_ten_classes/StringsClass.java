@@ -1,3 +1,5 @@
+package first_ten_classes;
+
 import java.io.*;
 
 public class StringsClass {

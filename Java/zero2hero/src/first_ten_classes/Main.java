@@ -1,3 +1,5 @@
+package first_ten_classes;
+
 public class Main {
 /*
 ! DERS-1
@@ -11,7 +13,7 @@ public class Main {
 * Case Sensitivity bir dildir.
 * Genellikle community camel case kullanıyor. Class'ların ilk harfi
 * her zaman büyük.
-* Method Names küçük harf ile başlamalıdır.
+* firstTen.Method Names küçük harf ile başlamalıdır.
 * Program File Name, Program dosyasının adı, sınıf adıyla tam olarak eşleşmelidir.
 * main ile başlamak zorundadır.
 * variable name -> {[a-z],[A-Z],_,$} ile başlamalıdır.
@@ -28,7 +30,7 @@ public class Main {
 ! DERS-2
 * java nesne yönelimli bir dildir;
 * Polymorphism, Inheritance, Abstraction, Encapsulation, Classes, Objects, Instance,
-* Message Passing, Method, sahiptir.
+* Message Passing, firstTen.Method, sahiptir.
 * Local variables -> Yöntemler, yapıcılar veya bloklar içinde tanımlanan değişkenlere yerel değişkenler denir.
 * Instance variables -> bir sınıf içindeki ancak herhangi bir yöntemin dışındaki değişkenlerdir.
 * Class variables -> static anahtar sözcüğüyle herhangi bir yöntemin dışında bir sınıf içinde bildirilen değişkenlerdir.

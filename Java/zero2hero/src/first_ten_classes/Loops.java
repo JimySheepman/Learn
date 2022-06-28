@@ -1,3 +1,5 @@
+package first_ten_classes;
+
 public class Loops {
     private int a = 5;
 

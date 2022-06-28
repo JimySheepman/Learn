@@ -1,4 +1,4 @@
-import java.io.*;
+package first_ten_classes;
 
 public class Employee {
     String name;
