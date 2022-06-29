@@ -4,8 +4,7 @@ import java.io.*;
 
 public class Files {
 
-
-    public void copyFile() throws IOException{
+    public void copyFile() throws IOException {
         try {
             FileInputStream in = new FileInputStream("input.txt");
             FileOutputStream out = new FileOutputStream("output.txt");
@@ -14,7 +13,7 @@ public class Files {
             while ((c = in.read()) != -1) {
                 out.write(c);
             }
-        }finally {
+        } finally {
             if (in != null) {
                 in.close();
             }
@@ -24,7 +23,7 @@ public class Files {
         }
     }
 
-    public void coptFile2() throws IOException{
+    public void coptFile2() throws IOException {
         FileReader in = null;
         FileWriter out = null;
 
@@ -36,9 +35,9 @@ public class Files {
             while ((c = in.read()) != -1) {
                 out.write(c);
             }
-        }finally {
-                in.close();
-                out.close();
+        } finally {
+            in.close();
+            out.close();
         }
     }
 }
