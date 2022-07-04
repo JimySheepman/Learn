@@ -1,8 +1,6 @@
 package second_ten_classes;
 
 import java.io.IOException;
-
-import javax.print.attribute.standard.Media;
 /*
 * Inheritance -> Kalıtım, bir sınıfın diğerinin özelliklerini (yöntemleri ve alanları)
 *                edindiği süreç olarak tanımlanabilir. Kalıtım kullanımı ile bilgiler
@@ -29,6 +27,18 @@ import javax.print.attribute.standard.Media;
 * Overriding -> Alt sınıf türüne özgü bir davranışı tanımlama yeteneğidir; bu, bir alt
 *               sınıfın gereksinimine göre bir üst sınıf yöntemini uygulayabileceği
 *               anlamına gelir.
+* Polymorphism -> Bir nesnenin birçok form alma yeteneğidir. OOP'de polimorfizmin en
+*                 yaygın kullanımı, bir alt sınıf nesnesine atıfta bulunmak için bir
+*                 üst sınıf referansı kullanıldığında ortaya çıkar.
+* Abstraction -> Anahtar sözcüğünü bildiriminde içeren bir sınıf, soyut sınıf olarak
+*                bilinir. Soyut sınıflar, soyut yöntemler içerebilir veya içermeyebilir,
+*                yani gövdesiz yöntemler ( public void get(); ).  Ancak, bir sınıfın en
+*                az bir soyut yöntemi varsa, sınıf soyut olarak bildirilmelidir. Bir sınıf
+*                soyut olarak bildirilirse, somutlaştırılamaz. Soyut bir sınıf kullanmak
+*                için, onu başka bir sınıftan miras almanız, içindeki soyut yöntemlere
+*                uygulamalar sağlamanız gerekir. Soyut bir sınıfı miras alırsanız, içindeki
+*                tüm soyut yöntemlere uygulamalar sağlamanız gerekir.
+
 */
 
 public class Main {
@@ -69,5 +79,25 @@ public class Main {
         Vehicle car = new Car();         // Vehicle reference but Car object
         vehicle.move();
         car.move();
+        // ! DERS-13
+        Salary sal = new Salary("merlins","Ambehta, UP",3 ,3600.00);
+        Employee emp = new Salary("John Adams","Boston, MA",2,2400.00);
+        System.out.println("Call mailCheck using salar reference");
+        sal.mailCheck();
+        System.out.println("\n Call mailCheck usinng Employee reference");
+        emp.mailCheck();
+
+        Salary s = new Salary("Mohd Mohtashim", "Ambehta, UP", 3, 3600.00);
+        Employee e = new Salary("John Adams", "Boston, MA", 2, 2400.00);
+        System.out.println("Call mailCheck using Salary reference --");
+        s.mailCheck();
+        System.out.println("\n Call mailCheck using Employee reference--");
+        e.mailCheck();
+
+        EncapTest encap = new EncapTest();
+        encap.setName("James");
+        encap.setAge(20);
+        encap.setIdNum("12343ms");
+        System.out.print("Name : " + encap.getName() + " Age : " + encap.getAge());
     }
 }
