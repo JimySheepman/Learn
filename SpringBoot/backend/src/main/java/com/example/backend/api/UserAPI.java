@@ -7,9 +7,11 @@ import com.example.backend.dto.UserViewDTO;
 import com.example.backend.service.UserService;
 import com.example.backend.shared.GenericResponse;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -32,7 +34,7 @@ public class UserAPI {
     }
 
     @PostMapping("v1/user")
-    public ResponseEntity<?> createUser(@RequestBody UserCreateDTO userCreateDTO){
+    public ResponseEntity<?> createUser(@Valid @RequestBody UserCreateDTO userCreateDTO){
         userService.createUser(userCreateDTO);
         return ResponseEntity.ok(new GenericResponse("User Created."));
     }
@@ -48,6 +50,11 @@ public class UserAPI {
         userService.deleteUser(id);
         return ResponseEntity.ok(new GenericResponse("User Deleted!"));
     }
-    // @PatchMapping
+
+    @GetMapping("v1/user/slice")
+    public ResponseEntity<List<UserViewDTO>> slice(Pageable pageable){
+        final List<UserViewDTO> users = userService.slice(pageable);
+        return ResponseEntity.ok(users);
+    }
 
 }

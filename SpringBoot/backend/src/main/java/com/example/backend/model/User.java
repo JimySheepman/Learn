@@ -8,20 +8,26 @@ import javax.persistence.*;
 @Data
 @NoArgsConstructor
 @Entity
-@Table(name="users")
+@Table(name = "users")
 public class User {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "first_name",nullable = false,length = 50)
+    @Column(name = "user_name", nullable = false, length = 50, unique = true)
+    private String username;
+
+    @Column(name = "first_name", nullable = false, length = 50)
     private String firstName;
 
-    @Column(name = "last_name",nullable = false,length = 50)
-    private  String lastName;
+    @Column(name = "last_name", nullable = false, length = 50)
+    private String lastName;
 
-    public User(String firstName, String lastName) {
+    public User(String username, String firstName, String lastName) {
+        this.username = username;
         this.firstName = firstName;
         this.lastName = lastName;
     }
+
 }
