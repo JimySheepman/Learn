@@ -1,0 +1,21 @@
+### Login user
+POST http://localhost:8080/login
+Content-Type: application/x-www-form-urlencoded
+
+username=jdoe&password=1234
+
+### Login admin
+POST http://localhost:8080/login
+Content-Type: application/x-www-form-urlencoded
+
+username=jdoe2&password=1234
+
+### List Users  user
+GET http://localhost:8080/api/users
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZG9lIiwicm9sZXMiOlsiUk9MRV9VU0VSIl0sImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MC9sb2dpbiIsImV4cCI6MTY1NzYzMDgzOX0.pgveIc7ojwHd5o0dKb-q175FliHgxSmNt2TFRcqncpU
+
+### List Users  admin
+GET http://localhost:8080/api/users
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZG9lMiIsInJvbGVzIjpbIlJPTEVfQURNSU4iXSwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL2xvZ2luIiwiZXhwIjoxNjU3NjMwOTI2fQ.7osoflkGOd-p7iY-965iCpVHPUxpYGTAPpxsIlEUk70
