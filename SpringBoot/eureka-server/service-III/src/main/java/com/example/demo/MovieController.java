@@ -20,11 +20,11 @@ public class MovieController {
     @GetMapping("/")
     public String handleRequest(Model model) {
 
-        List<ServiceInstance> instances = discoveryClient.getInstances("Movie-Service");
+        List<ServiceInstance> instances = discoveryClient.getInstances("discovery-client");
         if (instances != null && !instances.isEmpty()) {
             ServiceInstance serviceInstance = instances.get(0);
             String url = serviceInstance.getUri().toString();
-            url = url + "/list";
+            url = url + "/login";
             RestTemplate restTemplate = new RestTemplate();
             List<Movie> result = restTemplate.getForObject(url, List.class);
 

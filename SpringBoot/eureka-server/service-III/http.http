@@ -1,0 +1,9 @@
+POST http://localhost:9090/
+Content-Type: application/x-www-form-urlencoded
+
+username=jdoe&password=1234
+
+### List Users  user
+GET  http://localhost:9090/api/users
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZG9lIiwicm9sZXMiOlsiUk9MRV9VU0VSIl0sImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MC9sb2dpbiIsImV4cCI6MTY1NzYzMDgzOX0.pgveIc7ojwHd5o0dKb-q175FliHgxSmNt2TFRcqncpU
