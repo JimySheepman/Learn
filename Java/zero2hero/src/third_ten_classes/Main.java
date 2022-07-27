@@ -148,5 +148,10 @@ public class Main {
         SerializeDemo serializeDemo = new SerializeDemo();
         serializeDemo.printSerialize();
         serializeDemo.printDeserialize();
+
+        TestThread testThread = new TestThread();
+        testThread.test1();
+        testThread.test2();
+        testThread.test3();
     }
 }
