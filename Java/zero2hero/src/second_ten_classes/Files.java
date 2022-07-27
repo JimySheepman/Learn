@@ -5,15 +5,18 @@ import java.io.*;
 public class Files {
 
     public void copyFile() throws IOException {
+        FileInputStream in = null;
+        FileOutputStream out = null;
+
         try {
-            FileInputStream in = new FileInputStream("input.txt");
-            FileOutputStream out = new FileOutputStream("output.txt");
+            in = new FileInputStream("input.txt");
+            out = new FileOutputStream("output.txt");
 
             int c;
             while ((c = in.read()) != -1) {
                 out.write(c);
             }
-        } finally {
+        }finally {
             if (in != null) {
                 in.close();
             }
@@ -35,9 +38,13 @@ public class Files {
             while ((c = in.read()) != -1) {
                 out.write(c);
             }
-        } finally {
-            in.close();
-            out.close();
+        }finally {
+            if (in != null) {
+                in.close();
+            }
+            if (out != null) {
+                out.close();
+            }
         }
     }
 }
