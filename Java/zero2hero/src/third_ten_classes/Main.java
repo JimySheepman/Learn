@@ -144,5 +144,9 @@ public class Main {
 
         GenericMethodTest genericMethodTest = new GenericMethodTest();
         genericMethodTest.printAll();
+
+        SerializeDemo serializeDemo = new SerializeDemo();
+        serializeDemo.printSerialize();
+        serializeDemo.printDeserialize();
     }
 }
