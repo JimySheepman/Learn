@@ -8,5 +8,9 @@ public class Main {
 
         MethodReference methodReference = new MethodReference();
         methodReference.printAll();
+
+        FunctionalInterface functionalInterface = new FunctionalInterface();
+        functionalInterface.printAll();
+
     }
 }
