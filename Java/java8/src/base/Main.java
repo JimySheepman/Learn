@@ -12,5 +12,7 @@ public class Main {
         FunctionalInterface functionalInterface = new FunctionalInterface();
         functionalInterface.printAll();
 
+        DefaultMethod defaultMethod = new DefaultMethod();
+        defaultMethod.printAll();
     }
 }
