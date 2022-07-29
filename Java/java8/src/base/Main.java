@@ -17,5 +17,8 @@ public class Main {
 
         Streams streams = new Streams();
         streams.printAll();
+
+        OptionalClass optionalClass = new OptionalClass();
+        optionalClass.printAll();
     }
 }
