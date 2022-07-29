@@ -20,5 +20,8 @@ public class Main {
 
         OptionalClass optionalClass = new OptionalClass();
         optionalClass.printAll();
+
+        NashornJavaScript nashornJavaScript = new NashornJavaScript();
+        nashornJavaScript.printAll();
     }
 }

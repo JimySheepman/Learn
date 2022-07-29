@@ -85,7 +85,7 @@ public class Streams {
 
         IntSummaryStatistics stats = numbers
                 .stream()
-                .mapToInt((x)-> x)
+                .mapToInt((x)-> (int) x)
                 .summaryStatistics();
 
         System.out.println("Highest number in List : " + stats.getMax());
