@@ -14,5 +14,8 @@ public class Main {
 
         DefaultMethod defaultMethod = new DefaultMethod();
         defaultMethod.printAll();
+
+        Streams streams = new Streams();
+        streams.printAll();
     }
 }
