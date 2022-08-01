@@ -26,5 +26,8 @@ public class Main {
 
         Base64Class base64Class = new Base64Class();
         base64Class.printAll();
+
+        TimeAPI api = new TimeAPI();
+        api.printAll();
     }
 }
