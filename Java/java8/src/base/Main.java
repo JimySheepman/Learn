@@ -29,5 +29,6 @@ public class Main {
 
         TimeAPI api = new TimeAPI();
         api.printAll();
+        
     }
 }

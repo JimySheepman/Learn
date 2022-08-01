@@ -6,7 +6,7 @@ import java.time.temporal.TemporalAdjusters;
 import java.util.Date;
 
 public class TimeAPI {
-    private void localTime(){
+    private void localTime() {
         LocalDateTime currentTime = LocalDateTime.now();
         System.out.println("current dateTime: " + currentTime);
 
@@ -17,7 +17,7 @@ public class TimeAPI {
         int day = currentTime.getDayOfMonth();
         int seconds = currentTime.getSecond();
 
-        System.out.println("Month: " + month +"day: " + day +"seconds: " + seconds);
+        System.out.println("Month: " + month + "day: " + day + "seconds: " + seconds);
 
         LocalDateTime date2 = currentTime.withDayOfMonth(10).withYear(2012);
         System.out.println("date2: " + date2);
@@ -33,9 +33,9 @@ public class TimeAPI {
 
     }
 
-    private void zonedDate(){
+    private void zonedDate() {
         ZonedDateTime date1 = ZonedDateTime.parse("2007-12-03T10:15:30+05:30[Asia/Karachi]");
-        System.out.println("date1: "+date1);
+        System.out.println("date1: " + date1);
 
         ZoneId id = ZoneId.of("Europe/Paris");
         System.out.println("ZoneId: " + id);
@@ -44,7 +44,7 @@ public class TimeAPI {
         System.out.println("CurrentZone: " + currentZone);
     }
 
-    private void chronoUnits(){
+    private void chronoUnits() {
         LocalDate today = LocalDate.now();
         System.out.println("Current date: " + today);
 
@@ -61,7 +61,7 @@ public class TimeAPI {
         System.out.println("Date after ten year: " + nextDecade);
     }
 
-    private void period(){
+    private void period() {
         LocalDate date1 = LocalDate.now();
         System.out.println("Current date: " + date1);
 
@@ -71,7 +71,8 @@ public class TimeAPI {
         Period period = Period.between(date2, date1);
         System.out.println("Period: " + period);
     }
-    private void duration(){
+
+    private void duration() {
         LocalTime time1 = LocalTime.now();
         Duration twoHours = Duration.ofHours(2);
 
@@ -81,20 +82,20 @@ public class TimeAPI {
         System.out.println("Duration: " + duration);
     }
 
-    private void temporalAdjusters(){
+    private void temporalAdjusters() {
         LocalDate date1 = LocalDate.now();
         System.out.println("Current date: " + date1);
 
         LocalDate nextTuesday = date1.with(TemporalAdjusters.next(DayOfWeek.TUESDAY));
         System.out.println("Next Tuesday on : " + nextTuesday);
 
-        LocalDate firstInYear = LocalDate.of(date1.getYear(),date1.getMonth(), 1);
+        LocalDate firstInYear = LocalDate.of(date1.getYear(), date1.getMonth(), 1);
         LocalDate secondSaturday = firstInYear.with(TemporalAdjusters.nextOrSame(
                 DayOfWeek.SATURDAY)).with(TemporalAdjusters.next(DayOfWeek.SATURDAY));
         System.out.println("Second Saturday on : " + secondSaturday);
     }
 
-    private void  backwardCompatibility(){
+    private void backwardCompatibility() {
         Date currentDate = new Date();
         System.out.println("Current date: " + currentDate);
 
@@ -108,13 +109,14 @@ public class TimeAPI {
         System.out.println("Zoned date: " + zonedDateTime);
     }
 
-     public void printAll(){
+    public void printAll() {
         localTime();
         zonedDate();
         chronoUnits();
         period();
         period();
         duration();
-
-     }
+        temporalAdjusters();
+        backwardCompatibility();
+    }
 }
