@@ -31,4 +31,5 @@ func main() {
 		1938: "Italy",
 		1950: "Uruguay"}
 	fmt.Println(worldCupWinners)
+
 }

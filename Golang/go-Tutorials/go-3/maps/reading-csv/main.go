@@ -27,4 +27,5 @@ func main() {
 		}
 		fmt.Println(record)
 	}
+
 }
