@@ -1,6 +1,8 @@
 package main
 
-// Concrete product
+// Concrete Product
+//
+// Concrete Products are different implementations of the product interface.
 type Gun struct {
 	name  string
 	power int

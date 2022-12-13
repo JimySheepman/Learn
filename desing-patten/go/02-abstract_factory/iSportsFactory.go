@@ -2,6 +2,9 @@ package main
 
 import "fmt"
 
+// Abstract Factory interface
+//
+// The Abstract Factory interface declares a set of methods for creating each of the abstract products.
 type ISportsFactory interface {
 	makeShoe() IShirt
 	makeShirt() IShirt

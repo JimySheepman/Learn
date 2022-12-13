@@ -1,5 +1,8 @@
 package main
 
+// Builder
+//
+// The Builder interface declares product construction steps that are common to all types of builders.
 type IBuilder interface {
 	setWindowType()
 	setDoorType()

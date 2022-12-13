@@ -1,5 +1,9 @@
 package main
 
+// Concrete Builders
+//
+// Concrete Builders provide different implementations of the construction steps.
+// Concrete builders may produce products that don’t follow the common interface.
 type NormalBuilder struct {
 	windowType string
 	doorType   string

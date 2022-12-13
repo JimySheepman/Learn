@@ -1,5 +1,9 @@
 package main
 
+// Director
+//
+// The Director class defines the order in which to call construction steps,
+// so you can create and reuse specific configurations of products.
 type Director struct {
 	builder IBuilder
 }

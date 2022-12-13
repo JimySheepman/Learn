@@ -2,6 +2,13 @@ package main
 
 import "fmt"
 
+// Client
+//
+// The Client must associate one of the builder objects with the director. Usually,
+// it’s done just once, via parameters of the director’s constructor. Then the director
+// uses that builder object for all further construction.  However, there’s an alternative
+// approach for when the client passes the builder object to the production method of the director.
+// In this case, you can use a different builder each time you produce something with the director.
 func main() {
 	normalBuilder := getBuilder("normal")
 	iglooBuilder := getBuilder("igloo")

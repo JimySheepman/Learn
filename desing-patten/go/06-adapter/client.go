@@ -2,6 +2,9 @@ package main
 
 import "fmt"
 
+// Client
+//
+// The Client is a class that contains the existing business logic of the program.
 type Client struct {
 }
 

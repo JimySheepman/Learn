@@ -1,5 +1,8 @@
 package main
 
+// Abstract Products
+//
+// Abstract Products declare interfaces for a set of distinct but related products which make up a product family.
 type IShirt interface {
 	setLogo(logo string)
 	setSize(size int)

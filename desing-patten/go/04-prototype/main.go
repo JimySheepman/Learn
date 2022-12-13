@@ -2,6 +2,9 @@ package main
 
 import "fmt"
 
+// Client
+//
+// The Client can produce a copy of any object that follows the prototype interface.
 func main() {
 	file1 := &File{name: "File1"}
 	file2 := &File{name: "File2"}

@@ -7,6 +7,12 @@ import (
 
 var lock = &sync.Mutex{}
 
+// Singleton
+//
+// The Singleton class declares the static method getInstance that returns
+// the same instance of its own class. The Singleton’s constructor should be
+// hidden from the client code. Calling the getInstance method should be
+// the only way of getting the Singleton object.
 type single struct {
 }
 
