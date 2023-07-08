@@ -1,8 +1,0 @@
-CREATE TABLE `teacher` (
-    `id` INT(11) NOT NULL AUTO_INCREMENT,
-    `create_time` TIMESTAMP DEFAULT NULL,
-    `update_time` TIMESTAMP DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
-    `firstname` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-    `lastname` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-    PRIMARY KEY (`id`)
-) ENGINE = InnoDB;
