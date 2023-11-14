@@ -90,7 +90,7 @@
 * */
 
 fun main() {
-    var string:String = "Hello, World!"
+    var string: String = "Hello, World!"
     println("$string")
 
     // this is first commit
@@ -111,7 +111,7 @@ fun main() {
     println(name)
     println(height)
 
-    println("Name = "+name)
+    println("Name = " + name)
 
     // Read-only Variables
     val readOnly = "test name"
@@ -128,7 +128,7 @@ fun main() {
     println("Int Value is " + a)
     println("Double  Value is " + d)
     println("Float Value is " + f)
-    println("Long Value is " + l )
+    println("Long Value is " + l)
     println("Short Value is " + s)
     println("Byte Value is " + b)
 
@@ -142,8 +142,8 @@ fun main() {
     println('\\') //prints a back-slash \ character
 
     // Kotlin String Data Type
-    val escapedString : String  = "I am escaped String!\n"
-    var rawString :String  = """This is going to be a
+    val escapedString: String = "I am escaped String!\n"
+    var rawString: String = """This is going to be a
    multi-line string and will
    not have any escape sequence""";
 
@@ -155,17 +155,106 @@ fun main() {
     val B: Boolean = false   // defining a variable with false value
     val boolNull: Boolean? = null
 
-    println("Value of variable A "+ A )
-    println("Value of variable B "+ B )
-    println("Value of variable boolNull "+ boolNull )
+    println("Value of variable A " + A)
+    println("Value of variable B " + B)
+    println("Value of variable boolNull " + boolNull)
 
     // Kotlin Array Data Type
     val numbers: IntArray = intArrayOf(1, 2, 3, 4, 5)
     println("Value at 3rd position : " + numbers[2])
 
     // Kotlin Data Type Conversion
-    val x: Int = 100
-    val y: Long = x.toLong()
+    val x1: Int = 100
+    val y1: Long = x1.toLong()
 
-    println(y)
+    println(y1)
+
+    var operatorsX: Int = 40
+    var operatorsY: Int = 20
+
+    var operatorsZ: Boolean = true
+    var operatorsW: Boolean = false
+    var operatorsT: Boolean = true
+
+    var x: Int = 60      // 60 = 0011 1100
+    var y: Int = 13      // 13 = 0000 1101
+    var z: Int
+
+    // Arithmetic Operators
+    println("x + y = " + (operatorsX + operatorsY))
+    println("x - y = " + (operatorsX - operatorsY))
+    println("x / y = " + (operatorsX / operatorsY))
+    println("x * y = " + (operatorsX * operatorsY))
+    println("x % y = " + (operatorsX % operatorsY))
+
+    // Relational Operators
+    println("x > y = " + (operatorsX > operatorsY))
+    println("x < y = " + (operatorsX < operatorsY))
+    println("x >= y = " + (operatorsX >= operatorsY))
+    println("x <= y = " + (operatorsX <= operatorsY))
+    println("x == y = " + (operatorsX == operatorsY))
+    println("x != y = " + (operatorsX != operatorsY))
+
+    // Assignment Operators
+    operatorsX += 5
+    println("x += 5 = " + operatorsX)
+
+    operatorsX = 40;
+    operatorsX -= 5
+    println("x -= 5 = " + operatorsX)
+
+    operatorsX = 40
+    operatorsX *= 5
+    println("x *= 5 = " + operatorsX)
+
+    operatorsX = 40
+    operatorsX /= 5
+    println("x /= 5 = " + operatorsX)
+
+    operatorsX = 43
+    operatorsX %= 5
+    println("x %= 5 = " + operatorsX)
+
+    // Unary Operators
+    println("+x = " + (+operatorsX))
+    println("-x = " + (-operatorsX))
+    println("++x = " + (++operatorsX))
+    println("--x = " + (--operatorsX))
+    println("!x = " + (!true))
+
+    // Logical Operators
+    println("x && y =" + (operatorsZ && operatorsW))
+    println("x || y =" + (operatorsZ || operatorsW))
+    println("!y =" + (!operatorsW))
+
+    // Bitwise Operations
+    // 240 = 1111 0000
+    z = x.shl(2)
+    println("x.shl(2) = " + z)
+
+    // 15 = 0000 1111
+    z = x.shr(2)
+    println("x.shr(2) = " + z)
+
+    // 12 = 0000 1100
+    z = x.and(y)
+    println("x.and(y)  = " + z)
+
+    // 61 = 0011 1101
+    z = x.or(y)
+    println("x.or(y)  = " + z)
+
+    // 49 = 0011 0001
+    z = x.xor(y)
+    println("x.xor(y)  = " + z)
+
+    // -61 = 1100 0011
+    z = x.inv()
+    println("x.inv()  = " + z)
+
+    println("x.and(y) = " + operatorsZ.and(operatorsW))
+    println("x.or(y) = " + operatorsZ.or(operatorsW))
+    println("x.and(z) = " + operatorsZ.and(operatorsT))
+
+    println("operatorsZ.toString() = " + operatorsZ.toString())
 }
