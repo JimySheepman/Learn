@@ -1,0 +1,33 @@
+# This is an example goreleaser.yaml file with some sane defaults.
+# Make sure to check the documentation at http://goreleaser.com
+before:
+  hooks:
+  - make grafana
+  - go mod download
+builds:
+- env:
+  - CGO_ENABLED=0
+  goarch:
+  - amd64
+  goos:
+  - linux
+  - darwin
+archives:
+- files:
+  - grafana/dashboard.json
+  - prometheus/prometheus.yml
+  - prometheus/rules/couchbase.rules.yml
+dockers:
+- image_templates:
+  - "totvslabs/couchbase-exporter:latest"
+  - "totvslabs/couchbase-exporter:{{ .Tag }}"
+  build_flag_templates:
+  - "--label=org.label-schema.schema-version=1.0"
+  - "--label=org.label-schema.version={{ .Version }}"
+  - "--label=org.label-schema.name={{ .ProjectName }}"
+changelog:
+  sort: asc
+  filters:
+    exclude:
+    - '^docs:'
+    - '^test:'
