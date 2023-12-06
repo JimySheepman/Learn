@@ -1,0 +1,163 @@
+#
+#
+# Do not edit.
+#
+# source: https://github.com/totvslabs/couchbase-exporter/blob/master/prometheus/rules/couchbase.rules.yml
+#
+#
+groups:
+- name: couchbase
+  rules:
+  - record: couchbase::node_count
+    expr: count(couchbase_node_healthy) by (instance)
+  - alert: CouchbaseDown
+    expr: up{job="couchbase"} == 0
+    for: 1m
+    labels:
+      severity: critical
+      page: 'true'
+    annotations:
+      summary: 'Couchbase is down'
+  - alert: CouchbaseNotBalanced
+    expr: couchbase_cluster_balanced == 0 and couchbase_task_rebalance_progress == 0
+    for: 10m
+    labels:
+      severity: critical
+    annotations:
+      summary: 'Couchbase cluster is not balanced'
+  - alert: CouchbaseNodeNotHealthy
+    expr: couchbase_node_healthy == 0
+    for: 1m
+    labels:
+      severity: critical
+      page: 'true'
+    annotations:
+      summary: "Node {{ $labels.node }} is not healthy, you may want to fail it over"
+  - alert: CouchbaseTooFragmented
+    expr: couchbase_bucket_couch_docs_fragmentation > 30 and couchbase_task_compacting_progress == 0
+    for: 10m
+    labels:
+      severity: warning
+    annotations:
+      summary: '{{ $labels.bucket }}: too fragmented ({{ $value | printf "%.2f" }}%)'
+  - alert: CouchbaseNodesDying
+    expr: couchbase::node_count offset 10m > couchbase::node_count + 1
+    for: 5m
+    labels:
+      severity: critical
+    annotations:
+      summary: 'Couchbase nodes are dying, only {{ $value }} nodes running'
+  - alert: CouchbaseRebalanceStarted
+    expr: increase(couchbase_cluster_rebalance_start_total[5m]) > 0
+    for: 1s
+    labels:
+      severity: info
+    annotations:
+      summary: 'A rebalance just started'
+  - alert: CouchbaseRebalanceSuccess
+    expr: increase(couchbase_cluster_rebalance_success_total[5m]) > 0
+    for: 1s
+    labels:
+      severity: info
+    annotations:
+      summary: 'A rebalance just successfully finished'
+  - alert: CouchbaseRebalanceStopped
+    expr: increase(couchbase_cluster_rebalance_stop_total[5m]) > 0
+    for: 1s
+    labels:
+      severity: info
+    annotations:
+      summary: 'A rebalance was stopped'
+  - alert: CouchbaseRebalanceFailed
+    expr: increase(couchbase_cluster_rebalance_fail_total[5m]) > 0
+    for: 1s
+    labels:
+      severity: warning
+    annotations:
+      summary: 'A rebalance just failed'
+  - alert: CouchbaseFailover
+    expr: increase(couchbase_cluster_failover_total[5m]) > 0
+    for: 1s
+    labels:
+      severity: warning
+    annotations:
+      summary: 'A node has been failover has started'
+  - alert: CouchbaseFailoverComplete
+    expr: increase(couchbase_cluster_failover_complete_total[5m]) > 0
+    for: 1s
+    labels:
+      severity: info
+    annotations:
+      summary: 'A node has been failover has been completed'
+  - alert: CouchbaseFailoverIncomplete
+    expr: increase(couchbase_cluster_failover_incomplete_total[5m]) > 0
+    for: 1s
+    labels:
+      severity: critical
+      page: 'true'
+    annotations:
+      summary: 'A node has been failover failed'
+  - alert: CouchbaseQuotaUsageHigh
+    expr: couchbase_bucket_basicstats_quota_user_percent > 85
+    for: 1m
+    labels:
+      severity: critical
+    annotations:
+      summary: 'Couchbase quota usage for {{ $labels.bucket }} is {{ $value | printf "%.2f" }}%'
+  - alert: CouchbaseHardOutOfMemoryErrors
+    expr: increase(couchbase_bucket_stats_ep_oom_errors[5m]) > 0
+    for: 1m
+    labels:
+      severity: critical
+    annotations:
+      summary: '{{ $labels.bucket }}: Hard out of memory error'
+  - alert: CouchbaseDiskUsageIncreasing
+    expr: sum by (instance) (couchbase_bucket_basicstats_diskused_bytes) - sum by (instance) (couchbase_bucket_basicstats_diskused_bytes offset 1d) > 1E+12
+    for: 1s
+    labels:
+      severity: info
+    annotations:
+      summary: 'Disk usage increased more than 1tb in the last 24h'
+  - alert: CouchbaseDiskUsageDecreasing
+    expr: sum by (instance) (couchbase_bucket_basicstats_diskused_bytes offset 1d) - sum by (instance) (couchbase_bucket_basicstats_diskused_bytes) > 1E+12
+    for: 1s
+    labels:
+      severity: info
+    annotations:
+      summary: 'Disk usage decreased more than 1tb in the last 24h'
+  - alert: CouchbaseLowResidentRatio
+    expr: couchbase_bucket_stats_vbuckets_active_resident_items_ratio < 20
+    for: 1m
+    labels:
+      severity: warning
+    annotations:
+      summary: '{{ $labels.bucket }}: resident ratio is {{ $value | printf "%.2f" }}%'
+  - alert: CouchbaseHighCacheMissRate
+    expr: couchbase_bucket_stats_ep_cache_miss_rate > 20
+    for: 1m
+    labels:
+      severity: warning
+    annotations:
+      summary: '{{ $labels.bucket }}: cache miss rate is {{ $value | printf "%.2f" }}%'
+  - alert: CouchbaseHighDiskWriteQueue
+    expr: couchbase_bucket_stats_disk_write_queue > 200
+    for: 1m
+    labels:
+      severity: warning
+    annotations:
+      summary: '{{ $labels.bucket }}: disk write queue is big'
+  - alert: CouchbaseXDCRErroring
+    expr: couchbase_task_xdcr_errors > 0
+    for: 1m
+    labels:
+      severity: warning
+    annotations:
+      summary: 'Couchbase XDCR from {{ $labels.bucket }} to {{ $labels.target }} is erroring'
+  - alert: CouchbaseScrapeError
+    expr: couchbase_bucket_up == 0 OR couchbase_cluster_up == 0 OR couchbase_node_up == 0 OR couchbase_task_up == 0
+    for: 1m
+    labels:
+      severity: critical
+    annotations:
+      summary: 'Couchbase is failing to scrape {{ $labels.instance }}'
+      description: 'It may be a problem within the cluster or a bug in the exporter.'
