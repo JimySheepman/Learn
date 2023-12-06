@@ -1,0 +1,96 @@
+version: "3.7"
+services:
+  app:
+    build: .
+    restart: always
+    ports:
+      - "8081:8081"
+
+  prometheus:
+    image: prom/prometheus:v2.32.1
+    #image: prom/prometheus-linux-arm64:v2.40.2
+    user: root
+    volumes:
+      - "./etc/prometheus/:/etc/prometheus/"
+      - "./var/prometheus/prometheus_data:/prometheus"
+    command:
+      - "--config.file=/etc/prometheus/prometheus.yml"
+      - "--storage.tsdb.path=/prometheus"
+      - "--web.console.libraries=/usr/share/prometheus/console_libraries"
+      - "--web.console.templates=/usr/share/prometheus/consoles"
+      - "--web.enable-lifecycle"
+    ports:
+      - "9090:9090"
+
+  grafana:
+    image: grafana/grafana
+    user: root
+    ports:
+      - "3000:3000"
+    volumes:
+      - "./var/grafana/grafana_data:/var/lib/grafana"
+      - "./etc/grafana/provisioning/:/etc/grafana/provisioning/"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=foobar
+      - GF_USERS_ALLOW_SIGN_UP=false
+
+  alertmanager:
+    image: prom/alertmanager:v0.24.0
+    ports:
+      - 9093:9093
+    volumes:
+      - ./etc/alertmanager/:/etc/alertmanager/
+    command:
+      - "--config.file=/etc/alertmanager/config.yml"
+      - "--storage.path=/alertmanager"
+
+  db:
+    image: mysql:5.7
+    #platform: linux/amd64
+    restart: always
+    environment:
+      MYSQL_DATABASE: "db"
+      MYSQL_USER: "user"
+      MYSQL_PASSWORD: "password"
+      MYSQL_ROOT_PASSWORD: "password"
+    ports:
+      - "3306:3306"
+    volumes:
+      - "./var/mysql:/var/lib/mysql"
+      - "./ops/database:/docker-entrypoint-initdb.d"
+      - "./var/log/mysql:/var/log/mysql"
+
+  mysqld_exporter:
+    image: prom/mysqld-exporter
+    user: root
+    ports:
+      - "9104:9104"
+    environment:
+      - "DATA_SOURCE_NAME=root:password@(db:3306)/db"
+      - "collect.info_schema.tablestats=true"
+      - "collect.info_schema.userstats=true"
+      - "collect.info_schema.query_response_time=true"
+      - "collect.auto_increment.columns=true"
+      - "collect.perf_schema.tableiowaits=true"
+      - "collect.perf_schema.tablelocks=true"
+    depends_on:
+      - db
+
+  pushgateway:
+    image: prom/pushgateway
+    ports:
+      - "9091:9091"
+    depends_on:
+      - prometheus
+
+  #https://logz.io/blog/devops/prometheus-architecture-at-scale/
+  cortex:
+    image: cortexproject/cortex:v0.1.0
+    #image: ubuntu/cortex:latest
+    ports:
+      - "9009:9009"
+    command: "-config.file=/etc/single-process-config.yaml"
+    depends_on:
+      - prometheus
+    volumes:
+      - "./etc/cortex/single-process-config.yaml:/etc/single-process-config.yaml"
